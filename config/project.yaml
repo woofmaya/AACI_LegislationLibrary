@@ -10,7 +10,7 @@ categoryGroups:
     structure:
       maxLevels: null
       uid: f86a74ca-7e91-4e78-8af6-452451af6d4a
-dateModified: 1553907963
+dateModified: 1553908094
 email:
   fromEmail: egiuse@andrew.cmu.edu
   fromName: Craft3manual
@@ -530,7 +530,7 @@ superTableBlockTypes:
 system:
   edition: pro
   live: true
-  name: 'testing name'
+  name: 'testing name2'
   schemaVersion: 3.1.25
   timeZone: America/Los_Angeles
 tagGroups:
