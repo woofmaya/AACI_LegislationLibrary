@@ -6,5 +6,11 @@ title: {{ entry.title }} <br>
 short description: {{ entry.shortDescription }} <br>
 slogan: {{ entry.slogan }} <br>
 
+<br>
+{% for doc in entry.documents.all() %}
+    <a href="{{ doc.url }}">{{ doc }}</a>
+    <iframe src="{{ doc.url }}">{{ doc }}</iframe>
+{% endfor %}
+
 </body>
 </html>

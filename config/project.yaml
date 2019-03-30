@@ -10,10 +10,12 @@ categoryGroups:
     structure:
       maxLevels: null
       uid: f86a74ca-7e91-4e78-8af6-452451af6d4a
-dateModified: 1553908094
+dateModified: 1553971056
 email:
   fromEmail: egiuse@andrew.cmu.edu
   fromName: Craft3manual
+  template: ''
+  transportSettings: null
   transportType: craft\mail\transportadapters\Sendmail
 fieldGroups:
   7aec1807-48f2-41c7-b821-83a622e4258f:
@@ -124,9 +126,9 @@ fields:
   820ecbe8-2ac2-4a00-84a9-dd4a5331d6fe:
     contentColumnType: string
     fieldGroup: 7aec1807-48f2-41c7-b821-83a622e4258f
-    handle: subtopicResourcesTags
+    handle: documentTagsField
     instructions: ''
-    name: 'Subtopic Resources Tags'
+    name: 'Document Tags'
     searchable: true
     settings:
       columns:
@@ -138,7 +140,7 @@ fields:
           width: ''
         32:
           width: ''
-      contentTable: '{{%stc_subtopicresourcestags}}'
+      contentTable: '{{%stc_documenttagsfield}}'
       fieldLayout: row
       localizeBlocks: false
       maxRows: ''
@@ -169,7 +171,7 @@ fields:
   af0c2fba-82a5-4eb5-860f-606d34e9ee17:
     contentColumnType: string
     fieldGroup: 7aec1807-48f2-41c7-b821-83a622e4258f
-    handle: subtopicIcon
+    handle: icon
     instructions: ''
     name: Icon
     searchable: true
@@ -212,9 +214,9 @@ fields:
   f9540f2f-94dc-4496-bb78-51b9dde2a76f:
     contentColumnType: string
     fieldGroup: 7aec1807-48f2-41c7-b821-83a622e4258f
-    handle: subtopicResources
+    handle: documents
     instructions: 'After adding an asset, double click on it for its information.'
-    name: 'Subtopic Resources'
+    name: Documents
     searchable: true
     settings:
       allowedKinds: null
@@ -393,8 +395,8 @@ sections:
       06419039-5941-41b4-a10b-a0003a4a0a8a:
         enabledByDefault: true
         hasUrls: true
-        template: subtopics/_index.html
-        uriFormat: 'subtopics/{slug}'
+        template: topics/_index.html
+        uriFormat: '{parent.uri}/{slug}'
     structure:
       maxLevels: ''
       uid: 1cdb4495-063e-48df-b0e9-31f4b275d062
@@ -458,7 +460,7 @@ superTableBlockTypes:
       2a23569a-a1d0-4191-bed6-fc858f3b4bb2:
         contentColumnType: string
         fieldGroup: null
-        handle: stateTag
+        handle: stateTagField
         instructions: ''
         name: 'State Tag'
         searchable: true
@@ -476,7 +478,7 @@ superTableBlockTypes:
       481a06cd-7b7b-4896-b424-92f974707d75:
         contentColumnType: string
         fieldGroup: null
-        handle: institutionTag
+        handle: institutionTagField
         instructions: ''
         name: 'Institution Tag'
         searchable: true
@@ -494,7 +496,7 @@ superTableBlockTypes:
       81a65cb5-3e61-4703-9956-f476c8a6ea05:
         contentColumnType: string
         fieldGroup: null
-        handle: contentTag
+        handle: contentTagField
         instructions: ''
         name: 'Content Tag'
         searchable: true
@@ -512,7 +514,7 @@ superTableBlockTypes:
       94cc11fa-8674-4f16-a557-280a339f59f8:
         contentColumnType: string
         fieldGroup: null
-        handle: fileTypeTag
+        handle: fileTypeTagField
         instructions: ''
         name: 'File Type Tag'
         searchable: true
@@ -530,7 +532,7 @@ superTableBlockTypes:
 system:
   edition: pro
   live: true
-  name: 'testing name2'
+  name: 'AACI Library'
   schemaVersion: 3.1.25
   timeZone: America/Los_Angeles
 tagGroups:
