@@ -10,7 +10,7 @@ categoryGroups:
     structure:
       maxLevels: null
       uid: f86a74ca-7e91-4e78-8af6-452451af6d4a
-dateModified: 1553971056
+dateModified: 1554229950
 email:
   fromEmail: egiuse@andrew.cmu.edu
   fromName: Craft3manual
@@ -158,16 +158,15 @@ fields:
     name: Heading
     searchable: true
     settings:
-      availableTransforms: '*'
-      availableVolumes: '*'
-      cleanupHtml: '1'
+      charLimit: ''
+      code: ''
       columnType: text
-      purifierConfig: ''
-      purifyHtml: '1'
-      redactorConfig: ''
+      initialRows: '4'
+      multiline: ''
+      placeholder: 'This will show at the top of the page.'
     translationKeyFormat: null
     translationMethod: none
-    type: craft\redactor\Field
+    type: craft\fields\PlainText
   af0c2fba-82a5-4eb5-860f-606d34e9ee17:
     contentColumnType: string
     fieldGroup: 7aec1807-48f2-41c7-b821-83a622e4258f
@@ -303,12 +302,22 @@ sections:
     enableVersioning: true
     entryTypes:
       d28dcdf2-fece-4f08-8997-be4605045f0d:
+        fieldLayouts:
+          4711eda5-f6b1-4a0f-9292-752e23d80424:
+            tabs:
+              -
+                fields:
+                  a45974e5-3976-47ad-8022-b97e2e2b7e46:
+                    required: true
+                    sortOrder: 1
+                name: Content
+                sortOrder: 1
         handle: home
-        hasTitleField: false
+        hasTitleField: true
         name: Home
         sortOrder: 1
         titleFormat: '{section.name|raw}'
-        titleLabel: null
+        titleLabel: Title
     handle: home
     name: Home
     propagateEntries: true
@@ -316,19 +325,59 @@ sections:
       06419039-5941-41b4-a10b-a0003a4a0a8a:
         enabledByDefault: true
         hasUrls: true
-        template: ''
+        template: home
         uriFormat: __home__
     type: single
-  384861ed-690a-4568-89e5-ba84ba7eaaa4:
+  467a7187-2226-4c46-bcc4-3b390493f66a:
     enableVersioning: true
     entryTypes:
-      6aed5380-e8b5-4c45-995a-47f9a633589b:
+      f73d5627-97e9-4ce2-8239-72feadd13639:
+        fieldLayouts:
+          88d9e27f-a3e2-406f-b2ef-47da2f72ed51:
+            tabs:
+              -
+                fields:
+                  a45974e5-3976-47ad-8022-b97e2e2b7e46:
+                    required: true
+                    sortOrder: 1
+                name: Content
+                sortOrder: 1
+        handle: topicsIndex
+        hasTitleField: true
+        name: 'Topics Index'
+        sortOrder: 1
+        titleFormat: '{section.name|raw}'
+        titleLabel: 'Topics Index'
+    handle: topicsIndex
+    name: 'Topics Index'
+    propagateEntries: true
+    siteSettings:
+      06419039-5941-41b4-a10b-a0003a4a0a8a:
+        enabledByDefault: true
+        hasUrls: true
+        template: topics_index
+        uriFormat: /topics
+    type: single
+  6bf6ecfb-cd83-47f9-8c99-d75b4e1b9b89:
+    enableVersioning: true
+    entryTypes:
+      ad1814ea-c8e3-4ce8-bcc8-f017f3f3bc45:
+        fieldLayouts:
+          64cd9903-ea4f-469a-a59d-b6721a893839:
+            tabs:
+              -
+                fields:
+                  a45974e5-3976-47ad-8022-b97e2e2b7e46:
+                    required: true
+                    sortOrder: 1
+                name: Content
+                sortOrder: 1
         handle: about
         hasTitleField: false
         name: About
         sortOrder: 1
-        titleFormat: '{section.name|raw}'
-        titleLabel: ''
+        titleFormat: About
+        titleLabel: Title
     handle: about
     name: About
     propagateEntries: true
@@ -336,28 +385,8 @@ sections:
       06419039-5941-41b4-a10b-a0003a4a0a8a:
         enabledByDefault: true
         hasUrls: true
-        template: ''
-        uriFormat: about
-    type: single
-  b9841718-f5d2-45c3-814f-2c4d7d9d7257:
-    enableVersioning: true
-    entryTypes:
-      9c990765-82ae-48ab-b61e-fbd52b601ece:
-        handle: login
-        hasTitleField: false
-        name: Login
-        sortOrder: 1
-        titleFormat: '{section.name|raw}'
-        titleLabel: null
-    handle: login
-    name: Login
-    propagateEntries: true
-    siteSettings:
-      06419039-5941-41b4-a10b-a0003a4a0a8a:
-        enabledByDefault: true
-        hasUrls: true
-        template: ''
-        uriFormat: login
+        template: about
+        uriFormat: /about
     type: single
   c469a882-e929-4b33-9e7b-bea1c720755e:
     enableVersioning: true
@@ -370,57 +399,40 @@ sections:
                 fields:
                   0e50d7a7-a7e6-44a5-93b4-c81eff229a26:
                     required: false
-                    sortOrder: 2
+                    sortOrder: 3
+                  a45974e5-3976-47ad-8022-b97e2e2b7e46:
+                    required: true
+                    sortOrder: 1
                   af0c2fba-82a5-4eb5-860f-606d34e9ee17:
                     required: false
-                    sortOrder: 1
+                    sortOrder: 2
                   b782df66-c05d-4de6-be7b-963cc07585d5:
                     required: false
-                    sortOrder: 3
+                    sortOrder: 4
                   f9540f2f-94dc-4496-bb78-51b9dde2a76f:
                     required: false
-                    sortOrder: 4
+                    sortOrder: 5
                 name: Content
                 sortOrder: 1
-        handle: topics_subtopics_entry_type
+        handle: topics_entry_type
         hasTitleField: true
-        name: Topics/Subtopics
+        name: topics_entry_type
         sortOrder: 1
         titleFormat: ''
         titleLabel: Title
-    handle: topics_subtopics
-    name: Topics/Subtopics
+    handle: topics_section
+    name: 'Topics Entries'
     propagateEntries: true
     siteSettings:
       06419039-5941-41b4-a10b-a0003a4a0a8a:
         enabledByDefault: true
         hasUrls: true
-        template: topics/_index.html
+        template: topic_show
         uriFormat: '{parent.uri}/{slug}'
     structure:
       maxLevels: ''
       uid: 1cdb4495-063e-48df-b0e9-31f4b275d062
     type: structure
-  ccb21397-4937-4acd-83de-7a94303a8ead:
-    enableVersioning: true
-    entryTypes:
-      f887a8ad-9bde-4e4e-8673-aa695050ca0f:
-        handle: contact
-        hasTitleField: false
-        name: Contact
-        sortOrder: 1
-        titleFormat: '{section.name|raw}'
-        titleLabel: null
-    handle: contact
-    name: Contact
-    propagateEntries: true
-    siteSettings:
-      06419039-5941-41b4-a10b-a0003a4a0a8a:
-        enabledByDefault: true
-        hasUrls: true
-        template: ''
-        uriFormat: contact
-    type: single
 siteGroups:
   36f6937e-673b-4f31-845c-d37b7f19de90:
     name: Craft3manual
@@ -536,18 +548,12 @@ system:
   schemaVersion: 3.1.25
   timeZone: America/Los_Angeles
 tagGroups:
-  230a2487-2ccf-4065-88c9-55e380e3ea59:
-    handle: resourceDate
-    name: 'Resource Date'
   3cf0a51d-6681-4ef9-a9d2-827f9e0ed36a:
     handle: institution
     name: Institution
-  46218243-f168-4c02-b462-7a520b7b5890:
-    handle: locationCountry
-    name: 'Location: Country'
   5fd43216-4949-46d6-a2c5-07b661977ab1:
-    handle: locationState
-    name: 'Location: State'
+    handle: documentState
+    name: State
   d9eafeb5-1a3b-41cd-9ca3-6f880f1a131d:
     fieldLayouts:
       14f2db13-e780-4939-a8d5-1d352f62dce9:
@@ -562,23 +568,11 @@ tagGroups:
     handle: fileType
     name: 'File Type'
   f2cd8507-090e-414c-b6ea-fb24c7120ee9:
-    fieldLayouts:
-      01057868-5f77-4424-8e4a-6fab1b1062db:
-        tabs:
-          -
-            name: Content
-            sortOrder: 1
-    handle: resourceTitle
-    name: 'Resource Title'
+    handle: documentTitle
+    name: Title
   f870fcf5-c00e-4116-8119-beb68daab851:
-    fieldLayouts:
-      61e7ad1c-5a5b-435a-ac8a-753902609cca:
-        tabs:
-          -
-            name: Content
-            sortOrder: 1
-    handle: contentCategory
-    name: 'Content Category'
+    handle: documentContent
+    name: Content
 users:
   allowPublicRegistration: false
   defaultGroup: null

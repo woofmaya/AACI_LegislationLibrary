@@ -1,0 +1,81 @@
+{% extends "base_site" %}
+
+
+{% block main %}
+	<!-- search bar -->
+        <!-- source: https://codepen.io/huange/pen/rbqsD -->
+        <section class="content-section">
+            <div class="wrap">
+                <div class="search">
+                    <input type="text" class="searchTerm" placeholder="What are you looking for?">
+                    <button type="submit" class="searchButton">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+        
+        <!-- topics -->
+        <section class="content-section" id="programs-section">
+            <div class="bg bg-light-gray"></div>
+            <div class="container">
+                <div id="programs-list" class="row mb-big">
+                    <div class="col-sm-4 item">
+                        <div class="item-image">
+                            <img src={{ alias('@web/assets/img/img02.jpg') }} alt="image">
+                        </div>
+                        <div class="item-content">
+                            <div class="inner-wrap mb">
+                                <h4>Toacco 21</h4>
+                                <div class="textbox small">
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                    </p>
+                                </div>
+                            </div>
+                            <a class="more-link link-block" href="serg">Learn More </a>
+                        </div>
+                        <div class="border bg-green"></div>
+                    </div>
+                    <div class="col-sm-4 item">
+                        <div class="item-image">
+                            <img src={{ alias('@web/assets/img/img03.jpg') }} alt="image">
+                        </div>
+                        <div class="item-content">
+                            <div class="inner-wrap mb">
+                                <h4>HPV Vaccination</h4>
+                                <div class="textbox small">
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                    </p>
+                                </div>
+                            </div>
+                            <a class="more-link link-block" href="serg">Learn More</a>
+                        </div>
+                        <div class="border bg-yellow"></div>
+                    </div>
+                    <div class="col-sm-4 item">
+                        <div class="item-image">
+                            <img src={{ alias('@web/assets/img/img04.jpg') }} alt="image">
+                        </div>
+                        <div class="item-content">
+                            <div class="inner-wrap mb">
+                                <h4>Oral Chemotherapy Parity</h4>
+                                <div class="textbox small">
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                    </p>
+                                </div>
+                            </div>
+                            <a class="more-link link-block" href="serg">Learn More</a>
+                        </div>
+                        <div class="border bg-blue"></div>
+                    </div>
+                </div>
+                <div class=" text-center">
+                    <a class="btn btn-default" href="internal.html">View All Topics</a>
+                </div>
+            </div>
+        </section>
+        <!-- /topics -->
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends "base_site" %}
+
+{% block main %}
+
+    <!-- search bar -->
+    <!-- source: https://codepen.io/huange/pen/rbqsD -->
+    <section class="content-section">
+        <div class="wrap">
+            <div class="search">
+                <input type="text" class="searchTerm" placeholder="What are you looking for?">
+                <button type="submit" class="searchButton">
+
+                    <a href="home.html"><img src={{ alias('@web/assets/img/search.svg') }} alt="search"></a>
+           <!--          <i class="fa fa-search"></i> -->
+                </button>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

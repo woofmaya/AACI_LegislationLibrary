@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="description" content="">        
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/fonts.css" rel="stylesheet">
+    <link href="js/slick/slick.css" rel="stylesheet">
+    <link href="css/theme.css" rel="stylesheet">
+    <link href="css/responsive.css" rel="stylesheet">
+</head>
+
+<body>
+	<a class="affix-top" href="#top" id="scrollup" data-spy="affix" data-offset-top="101" title="Scroll Up"></a>
+	
+	<!-- PAGE_BODY -->
+    <section id="page-wrap">
+        
+        <!-- header -->
+        <header id="header">
+            
+            <nav class="navbar affix-top" data-spy="affix" data-offset-top="101">
+                <div class="container">
+                
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="{{ siteUrl }}">
+                            <img src={{ alias('@web/assets/img/logo.png') }} alt="Company Logo" title="">
+                        </a>
+                        <button id="mobile_nav_btn" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target-custom="#navigation">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="fa fa-bars fa-lg"></span>
+                        </button>
+                    </div>
+
+                    <div class="collapse navbar-collapse" id="navigation">
+                        <div class="inner-wrap">
+
+                            <ul class="nav navbar-nav" id="main-nav">
+                                <li><a href="{{ siteUrl }}">Home</a></li>
+                                <li><a href="{{ url('about') }}">About</a></li>
+                                <li><a href="{{ url('topics') }}">Topics</a></li>
+                            </ul>
+
+                            <ul class="nav navbar-nav" id="top-nav">
+                            </ul>
+                            
+                        </div>
+                    </div>
+                
+                </div>
+            </nav>
+
+        </header>
+        <!-- /header -->
+        
+        <!-- internal-header -->
+        <section class="internal-header-section bg-dark-blue color-white">
+            <div class="front-graphic-top"></div>
+            <div class="front-graphic-bottom"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-1 col-sm-11 col-sm-offset-1">
+                        <h1>{{ entry.heading }}</h1>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- /internal-header -->
+
+        {% block main %}
+        {% endblock %}
+            
+    </section>
+    <!-- /PAGE_BODY -->
+    
+    <!-- FOOTER -->
+    <footer id="footer">
+ 
+        <!-- footer-top -->
+        <section id="footer-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 mb-sm mb-big-xs">
+                    
+                        <div class="contacts-wrap">
+                            <div class="item footer-brand mb">
+                                <a href="index.html"><img src={{ alias('@web/assets/img/logo-compact.png') }} alt="imge"></a>
+                            </div>
+                            <div class="item mb">
+                                <div class="item-label small color-blue">
+                                    Address
+                                </div>
+                                <div>
+                                    <strong>Association of American Cancer Institutes</strong>
+                                </div>
+                                <div>
+                                    3708 Fifth Avenue Medical Arts Building, Suite 503 Pittsburgh, PA 15213 
+                                </div>
+                            </div>
+                            <div class="item mb">
+                                <div class="item-label small color-blue">
+                                    Phone
+                                </div>
+                                <div>
+                                    <a href="tel:4126476111">412-647-6111</a>
+                                </div>
+                            </div>
+                            <div class="item mb">
+                                <div class="item-label small color-blue">
+                                    Email
+                                </div>
+                                <div>
+                                    <a href="mailto:mail@accicancer.org">mail@accicancer.org</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+            </div>
+        </section>
+        <!-- /footer-top -->
+        
+        <!-- footer-bottom -->
+        <section id="footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 mb-xs">
+                        Copyright 2018 AACI
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="privacy-links">
+                            <span><a href="serger">Privacy Policy</a></span>
+                            <span><a href="sehr">Disclosures</a></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- /footer-bottom -->
+        
+    </footer>
+    <!-- /FOOTER -->
+    
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/custom.js"></script>
+    
+    <!-- slick carousel -->
+    <script type="text/javascript" src="js/slick/slick.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('#main-slider').slick({
+                infinite: false,
+                dots:true,
+                arrows:false,
+                autoplay:false,
+                fade:true
+            });
+        });
+    </script>
+</body>
+</html>

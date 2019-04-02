@@ -1,0 +1,71 @@
+@font-face {
+    font-family: 'Karla';
+    src: url('../fonts/karla-regular.eot');
+    src: local('../fonts/karla-regular'), local('../fonts/karla-regular'), 
+         url('../fonts/karla-regular.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/karla-regular.woff') format('woff'),
+         url('../fonts/karla-regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Karla';
+    src: url('../fonts/karla-bold.eot');
+    src: local('../fonts/karla-bold'), local('../fonts/karla-bold'), 
+         url('../fonts/karla-bold.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/karla-bold.woff') format('woff'),
+         url('../fonts/karla-bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Karla';
+    src: url('../fonts/karla-italic.eot');
+    src: local('../fonts/karla-italic'), local('../fonts/karla-italic'), 
+         url('../fonts/karla-italic.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/karla-italic.woff') format('woff'),
+         url('../fonts/karla-italic.ttf') format('truetype');
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'PlayfairDisplay';
+    src: url('../fonts/playfairdisplay-regular.eot');
+    src: local('../fonts/playfairdisplay-regular'), local('../fonts/playfairdisplay-regular'), 
+         url('../fonts/playfairdisplay-regular.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/playfairdisplay-regular.woff') format('woff'),
+         url('../fonts/playfairdisplay-regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'PlayfairDisplay';
+    src: url('../fonts/playfairdisplay-italic.eot');
+    src: local('../fonts/playfairdisplay-italic'), local('../fonts/playfairdisplay-italic'), 
+         url('../fonts/playfairdisplay-italic.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/playfairdisplay-italic.woff') format('woff'),
+         url('../fonts/playfairdisplay-italic.ttf') format('truetype');
+    font-weight: 400;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'PlayfairDisplay';
+    src: url('../fonts/playfairdisplay-bold.eot');
+    src: local('../fonts/playfairdisplay-bold'), local('../fonts/playfairdisplay-bold'), 
+         url('../fonts/playfairdisplay-bold.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/playfairdisplay-bold.woff') format('woff'),
+         url('../fonts/playfairdisplay-bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'PlayfairDisplay';
+    src: url('../fonts/playfairdisplay-bolditalic.eot');
+    src: local('../fonts/playfairdisplay-bolditalic'), local('../fonts/playfairdisplay-bolditalic'), 
+         url('../fonts/playfairdisplay-bolditalic.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/playfairdisplay-bolditalic.woff') format('woff'),
+         url('../fonts/playfairdisplay-bolditalic.ttf') format('truetype');
+    font-weight: 700;
+    font-style: italic;
+}
