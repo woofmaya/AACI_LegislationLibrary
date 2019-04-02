@@ -10,7 +10,7 @@ categoryGroups:
     structure:
       maxLevels: null
       uid: f86a74ca-7e91-4e78-8af6-452451af6d4a
-dateModified: 1554229950
+dateModified: 1554238085
 email:
   fromEmail: egiuse@andrew.cmu.edu
   fromName: Craft3manual
@@ -186,10 +186,10 @@ fields:
       singleUploadLocationSubpath: ''
       source: null
       sources:
-        - 'volume:14a5170c-9eed-42d3-a7e7-103749b44e85'
+        - 'volume:af5d9f4c-8370-4936-b18f-2656c9900a8d'
       targetSiteId: null
       useSingleFolder: ''
-      viewMode: list
+      viewMode: large
     translationKeyFormat: null
     translationMethod: site
     type: craft\fields\Assets
@@ -308,17 +308,17 @@ sections:
               -
                 fields:
                   a45974e5-3976-47ad-8022-b97e2e2b7e46:
-                    required: true
-                    sortOrder: 1
+                    required: '1'
+                    sortOrder: '1'
                 name: Content
-                sortOrder: 1
-        handle: home
-        hasTitleField: true
+                sortOrder: '1'
+        handle: home_section
+        hasTitleField: '1'
         name: Home
         sortOrder: 1
         titleFormat: '{section.name|raw}'
         titleLabel: Title
-    handle: home
+    handle: home_section
     name: Home
     propagateEntries: true
     siteSettings:
@@ -338,17 +338,17 @@ sections:
               -
                 fields:
                   a45974e5-3976-47ad-8022-b97e2e2b7e46:
-                    required: true
-                    sortOrder: 1
+                    required: '1'
+                    sortOrder: '1'
                 name: Content
-                sortOrder: 1
-        handle: topicsIndex
-        hasTitleField: true
+                sortOrder: '1'
+        handle: topics_index_section
+        hasTitleField: '1'
         name: 'Topics Index'
         sortOrder: 1
         titleFormat: '{section.name|raw}'
         titleLabel: 'Topics Index'
-    handle: topicsIndex
+    handle: topics_index_section
     name: 'Topics Index'
     propagateEntries: true
     siteSettings:
@@ -368,17 +368,17 @@ sections:
               -
                 fields:
                   a45974e5-3976-47ad-8022-b97e2e2b7e46:
-                    required: true
-                    sortOrder: 1
+                    required: '1'
+                    sortOrder: '1'
                 name: Content
-                sortOrder: 1
-        handle: about
-        hasTitleField: false
+                sortOrder: '1'
+        handle: about_section
+        hasTitleField: '0'
         name: About
         sortOrder: 1
         titleFormat: About
         titleLabel: Title
-    handle: about
+    handle: about_section
     name: About
     propagateEntries: true
     siteSettings:
@@ -590,20 +590,14 @@ volumes:
     type: craft\volumes\Local
     url: ''
   af5d9f4c-8370-4936-b18f-2656c9900a8d:
-    fieldLayouts:
-      24338092-df26-48b3-8f9c-fa9416f26b27:
-        tabs:
-          -
-            name: Content
-            sortOrder: 1
     handle: topicIcons
-    hasUrls: false
+    hasUrls: true
     name: 'Topic Icons'
     settings:
-      path: '@webroot/assets/images/topic-icons'
+      path: '@webroot/assets/img/topic-icons'
     sortOrder: '1'
     type: craft\volumes\Local
-    url: ''
+    url: /assets/img/topic-icons
   c9fb2884-b316-47b8-8ee1-8c13739b99cb:
     fieldLayouts:
       4e5a5859-199e-4487-af13-9869b3a713d2:
