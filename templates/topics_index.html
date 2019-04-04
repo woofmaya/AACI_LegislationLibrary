@@ -1,5 +1,5 @@
 {% extends "base_site" %}
-
+<!-- List of all Topics -->
 
 {% block main %}
 	<!-- search bar -->
@@ -22,8 +22,10 @@
                 <div id="programs-list" class="row mb-big">
                     
                     {# Create the query to display topics as panels #}
+
+                    <!-- Take all the entries under the section "all_topics" -->
 					{% set topicsEntryQuery = craft.entries()
-					    .section('topics_section')
+					    .section('all_topics')
 					    .level('1') %}
 
 					{# Fetch the topics entries #}

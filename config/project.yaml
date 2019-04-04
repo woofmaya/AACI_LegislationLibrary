@@ -10,7 +10,7 @@ categoryGroups:
     structure:
       maxLevels: null
       uid: f86a74ca-7e91-4e78-8af6-452451af6d4a
-dateModified: 1554238085
+dateModified: 1554353090
 email:
   fromEmail: egiuse@andrew.cmu.edu
   fromName: Craft3manual
@@ -126,9 +126,9 @@ fields:
   820ecbe8-2ac2-4a00-84a9-dd4a5331d6fe:
     contentColumnType: string
     fieldGroup: 7aec1807-48f2-41c7-b821-83a622e4258f
-    handle: documentTagsField
+    handle: resourceTagsField
     instructions: ''
-    name: 'Document Tags'
+    name: 'Resource Tags'
     searchable: true
     settings:
       columns:
@@ -140,7 +140,7 @@ fields:
           width: ''
         32:
           width: ''
-      contentTable: '{{%stc_documenttagsfield}}'
+      contentTable: '{{%stc_resourcetagsfield}}'
       fieldLayout: row
       localizeBlocks: false
       maxRows: ''
@@ -314,12 +314,12 @@ sections:
                 sortOrder: '1'
         handle: home_section
         hasTitleField: '1'
-        name: Home
+        name: 'Home Page'
         sortOrder: 1
         titleFormat: '{section.name|raw}'
         titleLabel: Title
-    handle: home_section
-    name: Home
+    handle: home_index
+    name: 'Home Page'
     propagateEntries: true
     siteSettings:
       06419039-5941-41b4-a10b-a0003a4a0a8a:
@@ -342,14 +342,14 @@ sections:
                     sortOrder: '1'
                 name: Content
                 sortOrder: '1'
-        handle: topics_index_section
+        handle: topics_list
         hasTitleField: '1'
-        name: 'Topics Index'
+        name: 'Topics - Index Page'
         sortOrder: 1
         titleFormat: '{section.name|raw}'
-        titleLabel: 'Topics Index'
-    handle: topics_index_section
-    name: 'Topics Index'
+        titleLabel: 'List of All The AACI Topics'
+    handle: topics_index
+    name: 'Topics - Index Page'
     propagateEntries: true
     siteSettings:
       06419039-5941-41b4-a10b-a0003a4a0a8a:
@@ -372,14 +372,14 @@ sections:
                     sortOrder: '1'
                 name: Content
                 sortOrder: '1'
-        handle: about_section
+        handle: about_index
         hasTitleField: '0'
-        name: About
+        name: 'About Page'
         sortOrder: 1
         titleFormat: About
         titleLabel: Title
-    handle: about_section
-    name: About
+    handle: about_index
+    name: 'About Page'
     propagateEntries: true
     siteSettings:
       06419039-5941-41b4-a10b-a0003a4a0a8a:
@@ -420,8 +420,8 @@ sections:
         sortOrder: 1
         titleFormat: ''
         titleLabel: Title
-    handle: topics_section
-    name: 'Topics Entries'
+    handle: all_topics
+    name: 'Topic - Show Page'
     propagateEntries: true
     siteSettings:
       06419039-5941-41b4-a10b-a0003a4a0a8a:
