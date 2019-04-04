@@ -1,0 +1,61 @@
+{% extends "base_site" %}
+
+
+{% block main %}
+	<!-- search bar -->
+        <!-- source: https://codepen.io/huange/pen/rbqsD -->
+        <section class="content-section">
+            <div class="wrap">
+                <div class="search">
+                    <input type="text" class="searchTerm" placeholder="What are you looking for?">
+                    <button type="submit" class="searchButton">
+                        <a href="home.html"><img src={{ alias('@web/assets/img/search.svg') }} alt="search"></a>
+                    </button>
+                </div>
+            </div>
+        </section>
+        
+        <!-- topics -->
+        <section class="content-section" id="programs-section">
+            <div class="bg bg-light-gray"></div>
+            <div class="container">
+                <div id="programs-list" class="row mb-big">
+                    
+                    {# Create the query to display topics as panels #}
+					{% set topicsEntryQuery = craft.entries()
+					    .section('topics_section')
+					    .level('1') %}
+
+					{# Fetch the topics entries #}
+					{% set topicsEntries = topicsEntryQuery.all() %}
+
+					{# Display the entries #}
+					{% for entry in topicsEntries %}
+					    <div class="col-sm-4 item">
+                        	<div class="item-image">
+                        		{% set topicIcon = craft.assets.volume('topicIcons').title('Default').one() %}
+
+                        		{% if entry.icon|length %}
+                        			{% set topicIcon = entry.icon.one() %}
+                        		{% endif %}
+
+                        		<img src="{{ topicIcon.url }}" alt="{{ topicIcon.title }}">
+
+                        	</div>
+                        	<div class="item-content">
+                            	<div class="inner-wrap mb">
+                                	<h4>{{ entry.heading }}</h4>
+                                	<div class="textbox small">
+                                    	<p>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                    	</p>
+                                	</div>
+                            	</div>
+                            	<!-- <a class="more-link link-block" href="serg">Learn More </a> -->
+                        	</div>
+                        	<div class="border bg-green"></div>
+                    	</div>
+					{% endfor %}
+
+        <!-- /topics -->
+{% endblock %}
