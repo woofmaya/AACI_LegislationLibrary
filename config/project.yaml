@@ -10,7 +10,7 @@ categoryGroups:
     structure:
       maxLevels: null
       uid: f86a74ca-7e91-4e78-8af6-452451af6d4a
-dateModified: 1554238085
+dateModified: 1554661264
 email:
   fromEmail: egiuse@andrew.cmu.edu
   fromName: Craft3manual
@@ -298,6 +298,36 @@ plugins:
     enabled: true
     schemaVersion: 1.0.0
 sections:
+  224e0509-d570-4ba4-8c43-ea611ee7f008:
+    enableVersioning: true
+    entryTypes:
+      6d64bb68-60cd-4fad-a088-7d754ac7ea2d:
+        fieldLayouts:
+          51ee265f-e2d8-4ca7-b7cd-094d1a0db0b5:
+            tabs:
+              -
+                fields:
+                  a45974e5-3976-47ad-8022-b97e2e2b7e46:
+                    required: false
+                    sortOrder: 1
+                name: Content
+                sortOrder: 1
+        handle: searchResults_section
+        hasTitleField: false
+        name: 'Search Results'
+        sortOrder: 1
+        titleFormat: '{section.name|raw}'
+        titleLabel: ''
+    handle: searchResults_section
+    name: 'Search Results'
+    propagateEntries: true
+    siteSettings:
+      06419039-5941-41b4-a10b-a0003a4a0a8a:
+        enabledByDefault: true
+        hasUrls: true
+        template: /search_results
+        uriFormat: search-results
+    type: single
   3323900d-bc90-4c77-8638-89fe3d9baaa1:
     enableVersioning: true
     entryTypes:
