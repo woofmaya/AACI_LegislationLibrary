@@ -24,7 +24,7 @@
                     
                     {# Create the query to display topics as panels #}
 					{% set topicsEntryQuery = craft.entries()
-					    .section('topics_section')
+					    .section('all_topics')
 					    .level('1') %}
 
 					{# Fetch the topics entries #}
@@ -52,7 +52,7 @@
                                     	</p>
                                 	</div>
                             	</div>
-                            	<!-- <a class="more-link link-block" href="serg">Learn More </a> -->
+                            	<a class="more-link link-block" href="{{ entry.url }}">Learn More </a>
                         	</div>
                         	<div class="border bg-green"></div>
                     	</div>

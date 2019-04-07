@@ -1,7 +1,68 @@
-<!-- topic show page -->
+{# topic show page #}
 
 {% extends "base_site" %}
 
 {% block main %}
+
+
+   <!-- topics -->
+       <section class="content-section" id="programs-section">
+           <div class="bg bg-light-gray"></div>
+           <div class="container">
+               <div id="programs-list" class="row mb-big">
+
+                   {# Create the query to display the topic and related information #}
+               </div>
+           </div>
+            <!-- topics -->
+       <section class="content-section" id="programs-section">
+           <div class="bg bg-light-gray"></div>
+           <div class="container">
+               <div id="programs-list" class="row mb-big">
+
+                   {# Create the query to display topics as panels #}
+
+                   <!-- Take all the entries under the section "all_topics" -->
+                   {% set subtopicsEntryQuery = craft.entries()
+                       .section('all_topics')
+                       .level('2') %}
+
+                   {# Fetch the topics entries #}
+                   {% set subtopicsEntries = subtopicsEntryQuery.all() %}
+
+                   {# Display the entries #}
+                   {% for entry in subtopicsEntries %}
+                       <div class="col-sm-4 item">
+                           <div class="item-image">
+                               {% set subtopicIcon = craft.assets.volume('subtopicIcons').title('Default').one() %}
+
+                               {# if there is an icon given #}
+                               {# set the subtopic icon to it #}
+                               {% if entry.icon|length %}
+                                   {% set subtopicIcon = entry.icon.one() %}
+                               {% endif %}
+
+                                 <img src="{{ subtopicIcon.url }}" alt="{{ subtopicIcon.title }}">
+
+                           </div>
+                           <div class="item-content">
+                               <div class="inner-wrap mb">
+                                   <h4>{{ entry.heading }}</h4>
+                                   <div class="textbox small">
+                                       <p>
+                                       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                       </p>
+                                   </div>
+                               </div>
+                               <a class="more-link link-block" href="{{ entry.url }}">Learn More </a>
+                           </div>
+                           <div class="border bg-green"></div>
+                       </div>
+                   {% endfor %}
+
+       <!-- /topics -->
+
+
+
 
 {% endblock %}

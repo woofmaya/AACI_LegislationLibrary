@@ -10,7 +10,7 @@ categoryGroups:
     structure:
       maxLevels: null
       uid: f86a74ca-7e91-4e78-8af6-452451af6d4a
-dateModified: 1554671853
+dateModified: 1554678023
 email:
   fromEmail: egiuse@andrew.cmu.edu
   fromName: Craft3manual
@@ -450,7 +450,7 @@ sections:
         sortOrder: 1
         titleFormat: ''
         titleLabel: Title
-    handle: topics_section
+    handle: all_topics
     name: 'Topics Entries'
     propagateEntries: true
     siteSettings:
