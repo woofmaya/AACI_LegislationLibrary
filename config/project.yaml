@@ -10,7 +10,7 @@ categoryGroups:
     structure:
       maxLevels: null
       uid: f86a74ca-7e91-4e78-8af6-452451af6d4a
-dateModified: 1554353090
+dateModified: 1554668544
 email:
   fromEmail: egiuse@andrew.cmu.edu
   fromName: Craft3manual
@@ -585,8 +585,8 @@ volumes:
     hasUrls: false
     name: 'Subtopic Icons'
     settings:
-      path: '@webroot/assets/images/subtopic-icons'
-    sortOrder: 2
+      path: '@webroot/assets/icons/subtopic-icons'
+    sortOrder: '2'
     type: craft\volumes\Local
     url: ''
   af5d9f4c-8370-4936-b18f-2656c9900a8d:
