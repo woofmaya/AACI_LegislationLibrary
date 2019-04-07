@@ -1,9 +1,16 @@
 {% extends "base_site" %}
 
 {% set searchTerm = craft.app.request.getParam('q') %}
-{% set searchResults = craft.entries.search(searchTerm).orderBy('score') %}
+
+{% set searchResults = craft.assets.search(searchTerm).orderBy('score') %}
 
 {% block main %}
-{{ searchTerm }}
+	
+		{% if searchResults|length %}
+			{% for asset in searchResults.all() %}
+				{{ asset.title }}
+				<br>
+			{% endfor %}
+		{% endif %}
 
 {% endblock %}

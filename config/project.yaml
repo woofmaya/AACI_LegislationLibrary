@@ -10,7 +10,7 @@ categoryGroups:
     structure:
       maxLevels: null
       uid: f86a74ca-7e91-4e78-8af6-452451af6d4a
-dateModified: 1554661264
+dateModified: 1554671853
 email:
   fromEmail: egiuse@andrew.cmu.edu
   fromName: Craft3manual
@@ -502,7 +502,7 @@ superTableBlockTypes:
       2a23569a-a1d0-4191-bed6-fc858f3b4bb2:
         contentColumnType: string
         fieldGroup: null
-        handle: stateTagField
+        handle: stateTag
         instructions: ''
         name: 'State Tag'
         searchable: true
@@ -520,7 +520,7 @@ superTableBlockTypes:
       481a06cd-7b7b-4896-b424-92f974707d75:
         contentColumnType: string
         fieldGroup: null
-        handle: institutionTagField
+        handle: institutionTag
         instructions: ''
         name: 'Institution Tag'
         searchable: true
@@ -538,7 +538,7 @@ superTableBlockTypes:
       81a65cb5-3e61-4703-9956-f476c8a6ea05:
         contentColumnType: string
         fieldGroup: null
-        handle: contentTagField
+        handle: contentTag
         instructions: ''
         name: 'Content Tag'
         searchable: true
@@ -556,7 +556,7 @@ superTableBlockTypes:
       94cc11fa-8674-4f16-a557-280a339f59f8:
         contentColumnType: string
         fieldGroup: null
-        handle: fileTypeTagField
+        handle: fileTypeTag
         instructions: ''
         name: 'File Type Tag'
         searchable: true
@@ -582,7 +582,7 @@ tagGroups:
     handle: institution
     name: Institution
   5fd43216-4949-46d6-a2c5-07b661977ab1:
-    handle: documentState
+    handle: stateTagGroup
     name: State
   d9eafeb5-1a3b-41cd-9ca3-6f880f1a131d:
     fieldLayouts:
