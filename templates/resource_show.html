@@ -6,11 +6,25 @@
 
 {% block main %}
 
-    <section id="page-wrap">
-        <div class="container">
-            <div class="row">
+    <!-- content -->
+        <section class="content-section">
+            <div class="container">
+                <div class="row">
+                    <!-- main-col -->
+                    <div class="col-md-8 mb-big-sm">
+                        
+                        <div class="textbox">
 
+                            <p>{{ asset.shortDescription }}</p>
+
+                        </div>
+
+                        <embed src="{{ asset.url }}" type="application/pdf" width="100%" height="600px" />
+
+                    </div>
+
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+
 {% endblock %}
