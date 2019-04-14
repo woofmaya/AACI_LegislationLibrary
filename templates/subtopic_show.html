@@ -3,19 +3,21 @@
 {% block main %}
 <section class="content-section">
     <div class="container">
-        <div class="row">
 
-      <div class="col-md-7 col-lg-8">
 
-        {% set subtopic_assets = craft.assets() %}
-    <ul>
-        {% for asset in subtopic_assets %}
-                <a href="{{ asset.url }}" type="application/pdf;"</a>
+        {% set subtopic_assets = craft.assets.volume('resources').all() %}
+<table>
+        <tr>
+          <th>Name</th>
+    <th colspan="2">Description</th>
+          {% for asset in subtopic_assets %}
+
+           <td>{{ asset.title }}</td>
+           <td>{{ asset.shortDescription }}</td>
+           <td></td>
+       </tr>
             {% endfor %}
-    </ul>
-{% endfor %}
-              </div>
+</table>
       </div>
-    </div>
   </section>
 {% endblock %}
