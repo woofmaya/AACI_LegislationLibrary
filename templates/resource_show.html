@@ -1,5 +1,16 @@
 {% extends "base_site" %}
 
+{% set asset = craft.assets.id(number).first() %}
+
+{% block heading %} {{ asset.title }} {% endblock %}
+
 {% block main %}
 
+    <section id="page-wrap">
+        <div class="container">
+            <div class="row">
+
+            </div>
+        </div>
+    </section>
 {% endblock %}

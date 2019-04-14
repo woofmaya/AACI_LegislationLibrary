@@ -1,5 +1,6 @@
 {% extends "base_site" %}
 
+{% block heading %} {{ entry.heading }} {% endblock %}
 
 {% block main %}
 <!-- LISTS ALL THE TOPICS !-->
@@ -18,14 +19,14 @@
         </div>
 
     </section>
-        
+
         <!-- topics -->
         <section class="content-section" id="programs-section">
             <div class="bg bg-light-gray"></div>
             <div class="container">
                 <div id="programs-list" class="row mb-big">
-                    
-                    {# Create the query to display topics as panels #}
+
+          {# Create the query to display topics as panels #}
 					{% set topicsEntryQuery = craft.entries()
 					    .section('all_topics')
 					    .level('1') %}

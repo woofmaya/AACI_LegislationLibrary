@@ -5,35 +5,35 @@
 	<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <meta name="description" content="">        
+    <meta name="description" content="">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/font-awesome.min.css" rel="stylesheet">
-    <link href="css/fonts.css" rel="stylesheet">
-    <link href="js/slick/slick.css" rel="stylesheet">
-    <link href="css/theme.css" rel="stylesheet">
-    <link href="css/responsive.css" rel="stylesheet">
+    <link href="{{ alias('@web/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ alias('@web/css/font-awesome.min.css') }}" rel="stylesheet">
+    <link href="{{ alias('@web/css/fonts.css') }}" rel="stylesheet">
+    <link href="{{ alias('@web/js/slick/slick.css') }}" rel="stylesheet">
+    <link href="{{ alias('@web/css/theme.css') }}" rel="stylesheet">
+    <link href="{{ alias('@web/css/responsive.css') }}" rel="stylesheet">
 
-    <script src="js/jquery.min.js"></script>
+    <script src="{{ alias('@web/js/jquery.min.js') }}"></script>
     <script src='https://cdn.jsdelivr.net/jquery.mixitup/latest/jquery.mixitup.min.js'></script>
     <script src='https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js'></script>
-   
+
     <script defer src="https://use.fontawesome.com/releases/v5.8.1/js/all.js" integrity="sha384-g5uSoOSBd7KkhAMlnQILrecXvzst9TdC09/VM+pjDTCM+1il8RHz5fKANTFFb+gQ" crossorigin="anonymous"></script>
 </head>
 
 <body>
 	<a class="affix-top" href="#top" id="scrollup" data-spy="affix" data-offset-top="101" title="Scroll Up"></a>
-	
+
 	<!-- PAGE_BODY -->
     <section id="page-wrap">
-        
+
         <!-- header -->
         <header id="header">
-            
+
             <nav class="navbar affix-top" data-spy="affix" data-offset-top="101">
                 <div class="container">
-                
+
                     <div class="navbar-header">
                         <a class="navbar-brand" href="{{ siteUrl }}">
                             <img src={{ alias('@web/assets/images/logo.png') }} alt="Company Logo" title="">
@@ -55,16 +55,16 @@
 
                             <ul class="nav navbar-nav" id="top-nav">
                             </ul>
-                            
+
                         </div>
                     </div>
-                
+
                 </div>
             </nav>
 
         </header>
         <!-- /header -->
-        
+
         <!-- internal-header -->
         <section class="internal-header-section bg-dark-blue color-white">
             <div class="front-graphic-top"></div>
@@ -72,7 +72,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-8 col-md-offset-3 col-sm-11 col-sm-offset-1">
-                        <h1>{{ entry.heading }}</h1>
+                        <h1>{% block heading %} {% endblock %}</h1>
                     </div>
                 </div>
             </div>
@@ -81,19 +81,19 @@
 
         {% block main %}
         {% endblock %}
-            
+
     </section>
     <!-- /PAGE_BODY -->
-    
+
     <!-- FOOTER -->
     <footer id="footer">
- 
+
         <!-- footer-top -->
         <section id="footer-top">
             <div class="container">
                 <div class="row">
                     <div class="col-md-4 mb-sm mb-big-xs">
-                    
+
                         <div class="contacts-wrap">
                             <div class="item footer-brand mb">
                                 <a href="index.html"><img src={{ alias('@web/assets/img/logo-compact.png') }} alt="imge"></a>
@@ -106,7 +106,7 @@
                                     <strong>Association of American Cancer Institutes</strong>
                                 </div>
                                 <div>
-                                    3708 Fifth Avenue Medical Arts Building, Suite 503 Pittsburgh, PA 15213 
+                                    3708 Fifth Avenue Medical Arts Building, Suite 503 Pittsburgh, PA 15213
                                 </div>
                             </div>
                             <div class="item mb">
@@ -133,13 +133,13 @@
                             	<a href="aserger"><span class="fa fa-rss fa-lg"></span></a>
                         	</div> -->
                         </div>
-                        
+
                     </div>
-                    
+
             </div>
         </section>
         <!-- /footer-top -->
-        
+
         <!-- footer-bottom -->
         <section id="footer-bottom">
             <div class="container">
@@ -157,14 +157,14 @@
             </div>
         </section>
         <!-- /footer-bottom -->
-        
+
     </footer>
     <!-- /FOOTER -->
-    
+
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/custom.js"></script>
-    
+
     <!-- slick carousel -->
     <script type="text/javascript" src="js/slick/slick.min.js"></script>
     <script type="text/javascript">
