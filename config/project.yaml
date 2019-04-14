@@ -10,7 +10,7 @@ categoryGroups:
     structure:
       maxLevels: null
       uid: f86a74ca-7e91-4e78-8af6-452451af6d4a
-dateModified: 1555268358
+dateModified: 1555270350
 email:
   fromEmail: egiuse@andrew.cmu.edu
   fromName: Craft3manual
@@ -577,4 +577,4 @@ volumes:
       path: '@webroot/assets/resources'
     sortOrder: '7'
     type: craft\volumes\Local
-    url: /assets/resources
+    url: /assets/resources/
