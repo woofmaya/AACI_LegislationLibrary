@@ -10,7 +10,7 @@ categoryGroups:
     structure:
       maxLevels: null
       uid: f86a74ca-7e91-4e78-8af6-452451af6d4a
-dateModified: 1554678023
+dateModified: 1555268358
 email:
   fromEmail: egiuse@andrew.cmu.edu
   fromName: Craft3manual
@@ -44,60 +44,6 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
-  2d6b8162-e845-4685-ab5e-97cb427833a1:
-    contentColumnType: string
-    fieldGroup: e5d0e74d-dd9e-4ae9-b4b2-5e347b915e8f
-    handle: contentCategoryTagField
-    instructions: ''
-    name: 'Content Category Tag'
-    searchable: true
-    settings:
-      limit: null
-      localizeRelations: false
-      selectionLabel: ''
-      source: 'taggroup:f870fcf5-c00e-4116-8119-beb68daab851'
-      sources: '*'
-      targetSiteId: null
-      viewMode: null
-    translationKeyFormat: null
-    translationMethod: site
-    type: craft\fields\Tags
-  3520c4c3-1f26-49ea-bd54-ccfd77995a8c:
-    contentColumnType: string
-    fieldGroup: e5d0e74d-dd9e-4ae9-b4b2-5e347b915e8f
-    handle: institutionTagField
-    instructions: ''
-    name: 'Institution Tag'
-    searchable: true
-    settings:
-      limit: null
-      localizeRelations: false
-      selectionLabel: ''
-      source: 'taggroup:3cf0a51d-6681-4ef9-a9d2-827f9e0ed36a'
-      sources: '*'
-      targetSiteId: null
-      viewMode: null
-    translationKeyFormat: null
-    translationMethod: site
-    type: craft\fields\Tags
-  4e8f10fd-629a-44d9-a227-a25cd1e0cdd1:
-    contentColumnType: string
-    fieldGroup: e5d0e74d-dd9e-4ae9-b4b2-5e347b915e8f
-    handle: locationStateTagField
-    instructions: ''
-    name: 'Location State Tag'
-    searchable: true
-    settings:
-      limit: null
-      localizeRelations: false
-      selectionLabel: ''
-      source: 'taggroup:5fd43216-4949-46d6-a2c5-07b661977ab1'
-      sources: '*'
-      targetSiteId: null
-      viewMode: null
-    translationKeyFormat: null
-    translationMethod: site
-    type: craft\fields\Tags
   5859f2ae-a21b-45b2-8f44-f8e7a8fefd31:
     contentColumnType: string
     fieldGroup: f9beb7ff-1bba-4e77-845f-8a92691f87a7
@@ -236,24 +182,6 @@ fields:
     translationKeyFormat: null
     translationMethod: site
     type: craft\fields\Assets
-  fc50edbb-828e-4f6e-96a2-2f1e988d8ee9:
-    contentColumnType: string
-    fieldGroup: e5d0e74d-dd9e-4ae9-b4b2-5e347b915e8f
-    handle: fileTypeTagField
-    instructions: ''
-    name: 'File Type Tag'
-    searchable: true
-    settings:
-      limit: null
-      localizeRelations: false
-      selectionLabel: ''
-      source: 'taggroup:d9eafeb5-1a3b-41cd-9ca3-6f880f1a131d'
-      sources: '*'
-      targetSiteId: null
-      viewMode: null
-    translationKeyFormat: null
-    translationMethod: site
-    type: craft\fields\Tags
 plugins:
   child-me:
     edition: standard
@@ -502,7 +430,7 @@ superTableBlockTypes:
       2a23569a-a1d0-4191-bed6-fc858f3b4bb2:
         contentColumnType: string
         fieldGroup: null
-        handle: stateTag
+        handle: stateTagField
         instructions: ''
         name: 'State Tag'
         searchable: true
@@ -520,7 +448,7 @@ superTableBlockTypes:
       481a06cd-7b7b-4896-b424-92f974707d75:
         contentColumnType: string
         fieldGroup: null
-        handle: institutionTag
+        handle: institutionTagField
         instructions: ''
         name: 'Institution Tag'
         searchable: true
@@ -538,7 +466,7 @@ superTableBlockTypes:
       81a65cb5-3e61-4703-9956-f476c8a6ea05:
         contentColumnType: string
         fieldGroup: null
-        handle: contentTag
+        handle: contentTagField
         instructions: ''
         name: 'Content Tag'
         searchable: true
@@ -556,7 +484,7 @@ superTableBlockTypes:
       94cc11fa-8674-4f16-a557-280a339f59f8:
         contentColumnType: string
         fieldGroup: null
-        handle: fileTypeTag
+        handle: filetypeTagField
         instructions: ''
         name: 'File Type Tag'
         searchable: true
@@ -579,11 +507,14 @@ system:
   timeZone: America/Los_Angeles
 tagGroups:
   3cf0a51d-6681-4ef9-a9d2-827f9e0ed36a:
-    handle: institution
+    handle: institutionTagGroup
     name: Institution
   5fd43216-4949-46d6-a2c5-07b661977ab1:
     handle: stateTagGroup
     name: State
+  70b688d8-fe29-4d02-9f18-3a847121ab1c:
+    handle: locationTagGroup
+    name: Location
   d9eafeb5-1a3b-41cd-9ca3-6f880f1a131d:
     fieldLayouts:
       14f2db13-e780-4939-a8d5-1d352f62dce9:
@@ -595,13 +526,10 @@ tagGroups:
                 sortOrder: 1
             name: Content
             sortOrder: 1
-    handle: fileType
+    handle: filetypeTagGroup
     name: 'File Type'
-  f2cd8507-090e-414c-b6ea-fb24c7120ee9:
-    handle: documentTitle
-    name: Title
   f870fcf5-c00e-4116-8119-beb68daab851:
-    handle: documentContent
+    handle: contentTagGroup
     name: Content
 users:
   allowPublicRegistration: false
@@ -612,22 +540,22 @@ users:
 volumes:
   14a5170c-9eed-42d3-a7e7-103749b44e85:
     handle: subtopicIcons
-    hasUrls: false
+    hasUrls: true
     name: 'Subtopic Icons'
     settings:
       path: '@webroot/assets/images/subtopic-icons'
-    sortOrder: 2
+    sortOrder: '2'
     type: craft\volumes\Local
-    url: ''
+    url: /assets/images/subtopic-icons
   af5d9f4c-8370-4936-b18f-2656c9900a8d:
     handle: topicIcons
     hasUrls: true
     name: 'Topic Icons'
     settings:
-      path: '@webroot/assets/img/topic-icons'
+      path: '@webroot/assets/images/topic-icons'
     sortOrder: '1'
     type: craft\volumes\Local
-    url: /assets/img/topic-icons
+    url: /assets/images/topic-icons
   c9fb2884-b316-47b8-8ee1-8c13739b99cb:
     fieldLayouts:
       4e5a5859-199e-4487-af13-9869b3a713d2:
@@ -643,10 +571,10 @@ volumes:
             name: Content
             sortOrder: 1
     handle: resources
-    hasUrls: false
+    hasUrls: true
     name: Resources
     settings:
       path: '@webroot/assets/resources'
     sortOrder: '7'
     type: craft\volumes\Local
-    url: ''
+    url: /assets/resources

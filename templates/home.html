@@ -10,13 +10,12 @@
                 <form action="{{ url('search-results') }}" >
                     <input type="search" name='q' class="searchTerm" placeholder="What are you looking for?">
                     <button type="submit" class="searchButton">
-
-                        <a href="{{ url('search-results') }}"><img src={{ alias('@web/assets/img/search.svg') }} alt="search"></a>
-           <!--          <i class="fa fa-search"></i> -->
+                        <i class="fa fa-search"></i>
                     </button>
                 </form>
             </div>
         </div>
+
     </section>
 
 {% endblock %}

@@ -45,11 +45,11 @@
 	.indent-right{padding-right:4rem;}
 
 	[class*='bg-image']{ background-size:cover; background-position:center;}
-	.bg-image1{ background-image: url(../img/img01.jpg);}
-	.bg-image2{ background-image: url(../img/img08.jpg);}
-	.bg-image3{background-image: url(../img/img09.jpg);}
-	.bg-image4{background-image: url(../img/img11.jpg);}
-	.bg-image5{background-image: url(../img/img12.jpg);}
+	.bg-image1{ background-image: url(../assets/images/img01.jpg);}
+	.bg-image2{ background-image: url(../assets/images/img08.jpg);}
+	.bg-image3{background-image: url(../assets/images/img09.jpg);}
+	.bg-image4{background-image: url(../assets/images/img11.jpg);}
+	.bg-image5{background-image: url(../assets/images/img12.jpg);}
 
 
 	/* typography */
@@ -79,7 +79,7 @@
 	.textbox figure img{margin:0;}
 
 	.textbox ul{ list-style-type:none; padding-left:2.5rem; overflow:hidden;}
-	.textbox ul li{padding-left:1.4rem; background:url(../img/list-marker.png) no-repeat 0 0.5rem;}
+	.textbox ul li{padding-left:1.4rem; background:url(../assets/images/list-marker.png) no-repeat 0 0.5rem;}
 
 	.textbox ol{counter-reset: listCounter; padding-left:4rem; overflow:hidden;}
 	.textbox ol li{ list-style:none;}
@@ -134,8 +134,8 @@
 			background: -webkit-linear-gradient(120deg, #1bc3ee, #007ab9);
 		    background: -ms-linear-gradient(120deg, #1bc3ee, #007ab9);
 		    background: linear-gradient(120deg, #1bc3ee, #007ab9);
-			}	
-		
+			}
+
 
 	.sep-gray{
 		height: 2px;
@@ -155,13 +155,13 @@
 	.anchor-link{ position:absolute; display:inline-block; top:2rem; width:0; height:0;}
 
 	.more-link{ font-size:1rem; padding-right:3rem; color:#034380; border-top:1px solid #034380; padding-top:1.2rem; display:inline-block; font-weight:700; line-height:1;}
-	.more-link:after{ content:''; display:block; position:absolute; height:0.62rem; width:1rem; right:0; top:50%; margin-top:0.3rem; background:url(../img/i-arrow-blue.png) no-repeat right center; transition:width 0.4s ease;}
+	.more-link:after{ content:''; display:block; position:absolute; height:0.62rem; width:1rem; right:0; top:50%; margin-top:0.3rem; background:url(../assets/images/i-arrow-blue.png) no-repeat right center; transition:width 0.4s ease;}
 	.more-link:hover:after, .more-link:focus:after{width:2.5rem;}
 	.more-link:hover, .more-link:focus{color:#034380;}
 	.more-link.fixed-width{width:15rem;}
 
 	.color-white .more-link{color:#fff; border-color:#fff;}
-	.color-white .more-link:after{background-image:url(../img/i-arrow-white.png);}
+	.color-white .more-link:after{background-image:url(../assets/images/i-arrow-white.png);}
 
 	.link-block{ display:block;}
 
@@ -255,7 +255,7 @@
 
 	.btn { padding:1.3rem 7rem 1.3rem 2rem; font-weight:700; font-size:1rem; text-transform:none; font-style:normal; letter-spacing:0; border:0; border-radius:0; transition:color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease; -webkit-transition:color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;}
 	.btn:focus{outline:0;}
-	.btn:after{ content:''; display:block; position:absolute; height:0.62rem; width:1rem; right:2rem; top:50%; margin-top:-0.31rem; background:url(../img/i-arrow-white.png) no-repeat right center; /*background-size:auto 100%*/; transition:width 0.4s ease;}
+	.btn:after{ content:''; display:block; position:absolute; height:0.62rem; width:1rem; right:2rem; top:50%; margin-top:-0.31rem; background:url(../assets/images/i-arrow-white.png) no-repeat right center; /*background-size:auto 100%*/; transition:width 0.4s ease;}
 	.btn:hover:after, .btn:focus:after{width:3rem;}
 
 	.btn-default{color:white; background-color: #034380;}
@@ -263,7 +263,7 @@
 		color:white; background-color: #022f66; box-shadow:0 2px 6px rgba(8,38,100,0.29);}
 
 	.btn-white{color:#034380; background-color: #fff;}
-	.btn-white:after{background-image:url(../img/i-arrow-blue.png);}
+	.btn-white:after{background-image:url(../assets/images/i-arrow-blue.png);}
 	.btn-white:hover, .btn-white:focus, .focus.btn-white, .btn-white:active, .active.btn-white, .open > .btn-white.dropdown-toggle{
 		color:#034380; background-color: #fff; box-shadow:0 2px 6px rgba(8,38,100,0.29);}
 
@@ -296,8 +296,8 @@
 		.dropdown-select .dropdown-menu > .active > a{color:#034380; background-color:transparent;}
 		.dropdown-select .dropdown-menu > .active > a:hover, .categories-selector .dropdown-menu > .active > a:focus{color:#034380; background-color:transparent;}
 
-		.dropdown-select .dropdown-menu > li > a:after{ content:''; display:block; width:1.25rem; height:1.25rem; position:absolute; right:1.5rem; top:50%; margin-top:-0.62rem; background-image:url(../img/i-uncheked.png); background-repeat:no-repeat; background-position:center; background-size:contain;}
-		.dropdown-select .dropdown-menu > .active > a:after{ background-image:url(../img/i-checked.png);}
+		.dropdown-select .dropdown-menu > li > a:after{ content:''; display:block; width:1.25rem; height:1.25rem; position:absolute; right:1.5rem; top:50%; margin-top:-0.62rem; background-image:url(../assets/images/i-uncheked.png); background-repeat:no-repeat; background-position:center; background-size:contain;}
+		.dropdown-select .dropdown-menu > .active > a:after{ background-image:url(../assets/images/i-checked.png);}
 
 
 		/* upload */
@@ -415,7 +415,7 @@
 	#top-nav > li > a:hover .fa, #top-nav > li > a:focus .fa{color:#034380;}
 
 	#top-nav > li > .btn-donate{padding:0.6rem 3rem 0.6rem 1rem; color:#034380; background-color:transparent; border:1px solid #034380; margin-left:1rem;}
-	#top-nav > li > .btn-donate:after{background-image:url(../img/i-arrow-blue.png); right:1rem;}
+	#top-nav > li > .btn-donate:after{background-image:url(../assets/images/i-arrow-blue.png); right:1rem;}
 	#top-nav > li > .btn-donate:hover:after, #top-nav > li > .btn-donate:focus:after{width:1.25rem;}
 	#top-nav > li > .btn-donate:hover, #top-nav > li > .btn-donate:focus{color:#034380; background-color:#e5ecf2; border-color:#034380; }
 
@@ -483,7 +483,7 @@
 	/* double-cta */
 	#double-cta-section > .container > .row{align-items:flex-end;}
 
-	#cta-right .bg-graphic-blue{ background-image:url(../img/graphic03.png); background-repeat:no-repeat; background-position:right bottom; background-size:auto;}
+	#cta-right .bg-graphic-blue{ background-image:url(../assets/images/graphic03.png); background-repeat:no-repeat; background-position:right bottom; background-size:auto;}
 
 	#cta-left [class*='bg-image'][class*='overlay-color-']:before{ opacity:0.8;}
 
@@ -532,8 +532,8 @@
 	#breadcrumbs a:hover, #breadcrumbs a:focus{ text-decoration:underline;}
 	#breadcrumbs .active{color:#78a22f;}
 
-	.internal-header-section .front-graphic-top{ position:absolute; top:0; left:0; width:28.9rem; height:9.4rem; background:url(../img/graphic01.png) no-repeat left top; background-size:contain;}
-	.internal-header-section .front-graphic-bottom{ position:absolute; bottom:0; right:0; width:30.43rem; height:6.25rem; background:url(../img/graphic04.png) no-repeat right bottom; background-size:contain;}
+	.internal-header-section .front-graphic-top{ position:absolute; top:0; left:0; width:28.9rem; height:9.4rem; background:url(../assets/images/graphic01.png) no-repeat left top; background-size:contain;}
+	.internal-header-section .front-graphic-bottom{ position:absolute; bottom:0; right:0; width:30.43rem; height:6.25rem; background:url(../assets/images/graphic04.png) no-repeat right bottom; background-size:contain;}
 	.internal-header-section > .container{padding-top:5rem; padding-bottom:5rem;}
 
 	/* internal-nav */
@@ -570,7 +570,7 @@
 	.blockquote-wrap .company{color:#a3a3a3; letter-spacing:0.1em; text-transform:uppercase; line-height:1.2;}
 
 	/* cta-section */
-	.cta-section .front-graphic-bottom{ position:absolute; bottom:0; right:0; width:37.68rem; height:17.37rem; background:url(../img/graphic05.png) no-repeat right bottom; background-size:contain;}
+	.cta-section .front-graphic-bottom{ position:absolute; bottom:0; right:0; width:37.68rem; height:17.37rem; background:url(../assets/images/graphic05.png) no-repeat right bottom; background-size:contain;}
 
 	.cta-simple-section{padding:2.5rem 0; font-size:1.12rem;}
 	.cta-simple-section > .container > .row{ display:flex; align-items:center;}
@@ -829,11 +829,11 @@
 	}
 
 	.searchTerm:focus{
-	  color: #00B4CC;
+	  color: #000000;
 	}
 
 	.searchButton {
-	  position: absolute;  
+	  position: absolute;
 	  right: -50px;
 	  width: 40px;
 	  height: 36px;

@@ -7,7 +7,7 @@
 	  left: 0;
 	  width: 28.9rem;
 	  height: 9.4rem;
-	  background: url(../img/graphic06.png) no-repeat left top;
+	  background: url(../assets/images/graphic06.png) no-repeat left top;
 	  background-size: contain;
 	}
 
@@ -17,7 +17,7 @@
 	  right: 0;
 	  width: 60%;
 	  height: 75rem;
-	  background: url(../img/graphic07.png) no-repeat right bottom;
+	  background: url(../assets/images/graphic07.png) no-repeat right bottom;
 	  background-size: contain;
 	}
 

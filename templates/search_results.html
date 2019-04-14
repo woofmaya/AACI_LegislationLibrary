@@ -2,15 +2,29 @@
 
 {% set searchTerm = craft.app.request.getParam('q') %}
 
-{% set searchResults = craft.assets.search(searchTerm).orderBy('score') %}
+{% set searchResults = craft.assets.volume('resources').search(searchTerm).orderBy('score') %}
 
 {% block main %}
-	
-		{% if searchResults|length %}
-			{% for asset in searchResults.all() %}
-				{{ asset.title }}
-				<br>
-			{% endfor %}
-		{% endif %}
+
+	<section class="content-section">
+    	<div class="container">
+        	<div class="row">
+
+				<div class="col-md-7 col-lg-8">
+					{% if searchResults|length %}
+						{% for asset in searchResults.all() %}
+							<a href="{{ asset.url }}" target="_blank">{{ asset.title }}</a>
+							<embed src="{{ asset.url }}" type="application/pdf" width="100%" height="600px" />
+							<br>
+						{% endfor %}
+					{% else %}
+						No results matched your search.
+					{% endif %}
+
+                </div>
+    		</div>
+    	</div>
+    </section>
+
 
 {% endblock %}
