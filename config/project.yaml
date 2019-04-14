@@ -10,7 +10,7 @@ categoryGroups:
     structure:
       maxLevels: null
       uid: f86a74ca-7e91-4e78-8af6-452451af6d4a
-dateModified: 1555272529
+dateModified: 1555276575
 email:
   fromEmail: egiuse@andrew.cmu.edu
   fromName: Craft3manual
@@ -347,7 +347,20 @@ sections:
         uriFormat: /about
     type: single
   c469a882-e929-4b33-9e7b-bea1c720755e:
+    name: 'Topics Entries'
+    handle: all_topics
+    type: structure
     enableVersioning: true
+    propagateEntries: true
+    siteSettings:
+      06419039-5941-41b4-a10b-a0003a4a0a8a:
+        enabledByDefault: true
+        hasUrls: true
+        uriFormat: '{slug}'
+        template: entry
+    structure:
+      uid: 1cdb4495-063e-48df-b0e9-31f4b275d062
+      maxLevels: ''
     entryTypes:
       729cad62-7474-495f-bd45-7de8bb49f42d:
         fieldLayouts:
@@ -378,19 +391,6 @@ sections:
         sortOrder: 1
         titleFormat: ''
         titleLabel: Title
-    handle: all_topics
-    name: 'Topics Entries'
-    propagateEntries: true
-    siteSettings:
-      06419039-5941-41b4-a10b-a0003a4a0a8a:
-        enabledByDefault: true
-        hasUrls: true
-        template: topic_show
-        uriFormat: '{parent.uri}/{slug}'
-    structure:
-      maxLevels: ''
-      uid: 1cdb4495-063e-48df-b0e9-31f4b275d062
-    type: structure
 siteGroups:
   36f6937e-673b-4f31-845c-d37b7f19de90:
     name: Craft3manual

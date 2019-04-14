@@ -3,18 +3,7 @@
 {% extends "base_site" %}
 
 {% block main %}
-
-
-   <!-- topics -->
-       <section class="content-section" id="programs-section">
-           <div class="bg bg-light-gray"></div>
-           <div class="container">
-               <div id="programs-list" class="row mb-big">
-
-                   {# Create the query to display the topic and related information #}
-               </div>
-           </div>
-            <!-- topics -->
+            <!-- subtopics -->
        <section class="content-section" id="programs-section">
            <div class="bg bg-light-gray"></div>
            <div class="container">
@@ -43,9 +32,10 @@
                                    {% set subtopicIcon = entry.icon.one() %}
                                {% endif %}
 
-                                 <img src="{{ subtopicIcon.url }}" alt="{{ subtopicIcon.title }}">
+                               <img src="{{ subtopicIcon.url }}" alt="{{ subtopicIcon.title }}">
 
                            </div>
+
                            <div class="item-content">
                                <div class="inner-wrap mb">
                                    <h4>{{ entry.heading }}</h4>
@@ -57,13 +47,13 @@
                                </div>
                                <a class="more-link link-block" href="{{ entry.url }}">Learn More </a>
                            </div>
+
                            <div class="border bg-green"></div>
+
                        </div>
-                   {% endfor %}
-
-       <!-- /topics -->
-
-
-
-
+                  {% endfor %}
+                  <!-- subtopics -->
+                  </div>
+                  </div>
+                  </section>
 {% endblock %}
