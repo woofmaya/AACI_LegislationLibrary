@@ -6,16 +6,13 @@
     <div class="container">
 
   <!-- find all assets for this subtopic -->
-        {% set relatedAssets = entry.documents.all() %}
-        {% set subtopic_assets = craft.assets.volume('resources').all() %}
+        {% set subtopic_assets = entry.documents.all() %}
 <!-- list all resources -->
 <div class="col-sm-8">
   <h2>Resources about {{entry.title}}</h2>
     <div class="news-list">
       <!-- loop thru resources -->
-      {% for asset in relatedAssets %}
-      hi
-      {{entry.heading}}
+      {% for asset in subtopic_assets %}
       <div class="item">
         <!-- show title, type of file, and short description if there is one -->
             <div class="item-date small color-blue">
