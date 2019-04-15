@@ -1,23 +1,35 @@
 {% extends "base_site" %}
 
 {% block main %}
+
 <section class="content-section">
     <div class="container">
 
-
+  <!-- find all assets for this subtopic -->
+        {% set relatedAssets = entry.documents.all() %}
         {% set subtopic_assets = craft.assets.volume('resources').all() %}
-<table>
-        <tr>
-          <th>Name</th>
-    <th colspan="2">Description</th>
-          {% for asset in subtopic_assets %}
+<!-- list all resources -->
+<div class="col-sm-8">
+  <h2>Resources about {{entry.title}}</h2>
+    <div class="news-list">
+      <!-- loop thru resources -->
+      {% for asset in relatedAssets %}
+      hi
+      {{entry.heading}}
+      <div class="item">
+        <!-- show title, type of file, and short description if there is one -->
+            <div class="item-date small color-blue">
+              {{asset.kind}}
+            </div>
+            <div class="item-content">
+              <h4>{{asset.title}}</h4>
+              <h6> {{asset.shortDescription}}</h6>
+                <a class="more-link fixed-width" href="sreger">See Resource</a>
+            </div>
+            <a class="area-link" href="serge"></a>
+        </div>
+          {% endfor %}
 
-           <td>{{ asset.title }}</td>
-           <td>{{ asset.shortDescription }}</td>
-           <td></td>
-       </tr>
-            {% endfor %}
-</table>
-      </div>
+    </div><!-- /list -->
   </section>
 {% endblock %}
