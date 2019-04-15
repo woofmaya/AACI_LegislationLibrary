@@ -1,0 +1,6 @@
+{% switch entry.level %}
+    {% case 1 %}
+        {% include 'topic_show.html' %}
+    {% default %}
+        {% include 'subtopic_show.html' %}
+{% endswitch %}
