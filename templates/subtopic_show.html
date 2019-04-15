@@ -8,7 +8,7 @@
   <!-- find all assets for this subtopic -->
         {% set subtopic_assets = entry.documents.all() %}
 <!-- list all resources -->
-<div class="col-sm-8">
+<div class="col-md-12 col-lg-8">
   <h2>Resources about {{entry.title}}</h2>
     <div class="news-list">
       <!-- loop thru resources -->
@@ -21,9 +21,8 @@
             <div class="item-content">
               <h4>{{asset.title}}</h4>
               <h6> {{asset.shortDescription}}</h6>
-                <a class="more-link fixed-width" href="sreger">See Resource</a>
+              <a href="{{ alias('@web/resources/' ~ asset.id) }}" target="_blank">See Resource</a>
             </div>
-            <a class="area-link" href="serge"></a>
         </div>
           {% endfor %}
 

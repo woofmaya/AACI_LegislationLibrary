@@ -13,17 +13,27 @@
     	<div class="container">
         	<div class="row">
 
-				<div class="col-md-7 col-lg-8">
+				<div class="col-md-12 col-lg-8">
 					<h3> Resources: </h3>
+					<div class="news-list">
 					{% if assetResults|length %}
 						{% for asset in assetResults.all() %}
-								<a href="{{ alias('@web/resources/' ~ asset.id) }}" target="_blank">{{ asset.title }}</a>
-							<br>
+						<div class="item">
+							<!-- show title, type of file, and short description if there is one -->
+									<div class="item-date small color-blue">
+										{{asset.kind}}
+									</div>
+									<div class="item-content">
+										<h4>{{asset.title}}</h4>
+										<h6> {{asset.shortDescription}}</h6>
+										<a href="{{ alias('@web/resources/' ~ asset.id) }}" target="_blank">See Resource</a>
+									</div>
+							</div>
 						{% endfor %}
 					{% else %}
 						No resources matched your search.
 					{% endif %}
-
+					</div>
 					<br><br>
 					<h3> Topics/Subtopics: </h3>
 					{% if entryResults|length %}
