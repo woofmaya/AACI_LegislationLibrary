@@ -10,6 +10,7 @@ categoryGroups:
     structure:
       maxLevels: null
       uid: f86a74ca-7e91-4e78-8af6-452451af6d4a
+dateModified: 1555376847
 email:
   fromEmail: egiuse@andrew.cmu.edu
   fromName: Craft3manual
@@ -25,6 +26,8 @@ fieldGroups:
     name: Tags
   f9beb7ff-1bba-4e77-845f-8a92691f87a7:
     name: Homepage
+  8a5a34c5-81f9-453b-b9e0-c70cad3fb353:
+    name: About
 fields:
   0e50d7a7-a7e6-44a5-93b4-c81eff229a26:
     contentColumnType: text
@@ -181,6 +184,53 @@ fields:
     translationKeyFormat: null
     translationMethod: site
     type: craft\fields\Assets
+  c4670617-924a-43cf-a32c-030fea581dcf:
+    name: CallToAction1Link
+    handle: calltoaction1link
+    instructions: 'link for call to action blurb 1'
+    searchable: true
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\Url
+    settings:
+      placeholder: ''
+      maxLength: '255'
+    contentColumnType: string(255)
+    fieldGroup: 8a5a34c5-81f9-453b-b9e0-c70cad3fb353
+  5d5e5d17-65a2-421c-bbd6-085dbcc94d4c:
+    name: CallToAction1LinkText
+    handle: calltoaction1linktext
+    instructions: 'text to be hyperlinked ie "click me"'
+    searchable: true
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\PlainText
+    settings:
+      placeholder: ''
+      code: ''
+      multiline: ''
+      initialRows: '4'
+      charLimit: ''
+      columnType: text
+    contentColumnType: text
+    fieldGroup: 8a5a34c5-81f9-453b-b9e0-c70cad3fb353
+  423fedad-5009-471c-afd6-be99457fc23c:
+    name: CallToAction1Text
+    handle: calltoaction1text
+    instructions: 'body of the call to action blurb'
+    searchable: true
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\PlainText
+    settings:
+      placeholder: ''
+      code: ''
+      multiline: ''
+      initialRows: '4'
+      charLimit: ''
+      columnType: text
+    contentColumnType: text
+    fieldGroup: 8a5a34c5-81f9-453b-b9e0-c70cad3fb353
 plugins:
   child-me:
     edition: standard
@@ -330,22 +380,38 @@ sections:
     enableVersioning: true
     entryTypes:
       ad1814ea-c8e3-4ce8-bcc8-f017f3f3bc45:
+        name: About
+        handle: about_section
+        hasTitleField: false
+        titleLabel: Title
+        titleFormat: About
+        sortOrder: 1
         fieldLayouts:
           64cd9903-ea4f-469a-a59d-b6721a893839:
             tabs:
               -
+                name: Content
+                sortOrder: 1
                 fields:
                   a45974e5-3976-47ad-8022-b97e2e2b7e46:
-                    required: '1'
-                    sortOrder: '1'
-                name: Content
-                sortOrder: '1'
-        handle: about_section
-        hasTitleField: '0'
-        name: About
-        sortOrder: 1
-        titleFormat: About
-        titleLabel: Title
+                    required: true
+                    sortOrder: 1
+                  0e50d7a7-a7e6-44a5-93b4-c81eff229a26:
+                    required: false
+                    sortOrder: 2
+              -
+                name: About
+                sortOrder: 2
+                fields:
+                  c4670617-924a-43cf-a32c-030fea581dcf:
+                    required: false
+                    sortOrder: 1
+                  5d5e5d17-65a2-421c-bbd6-085dbcc94d4c:
+                    required: false
+                    sortOrder: 2
+                  423fedad-5009-471c-afd6-be99457fc23c:
+                    required: false
+                    sortOrder: 3
     handle: about_section
     name: About
     propagateEntries: true

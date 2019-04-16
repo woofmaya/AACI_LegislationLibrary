@@ -3,5 +3,88 @@
 {% block heading %} {{ entry.heading }} {% endblock %}
 
 {% block main %}
+        <!-- content -->
+        <section class="content-section">
+            <div class="container">
+                <div class="row">
+                    <!-- main-col -->
+                    <div class="col-md-8 mb-big-sm">
+                        
+                        
+                        <h2>About the Presidential Initiative</h2>
+                        <div class="textbox">{{ entry.shortDescription}}&nbsp;</div>
+                        
+                        <!-- keep the next two lines in order to preserve the grid structure -->
+                        <!-- so that the green call to action floats right accordingly --> 
+                        <h2></h2>
+                        <div class="textbox"></div>
+                        
+                        
+                    </div>
+                    <!-- /main-col -->
+                    
+                    <!-- side-col -->
+                    <aside class="col-md-4 indent-left">
+                        
+                        
+                        <div class="side-block mb  bg-mint-green-gradient  color-white">
+                            
+                            <h3>Meet Our Board</h3>
+                            <div class="textbox"> {{entry.calltoaction1text }}&nbsp;</div>
+                            <A   class="more-link link-block"  HREF= "{{ entry.calltoaction1link }}">{{entry.calltoaction1linktext }}</A>
+
+                        </div>
+                        
+<!--                         <div class="side-block mb bg-dark-blue-gradient color-white">
+                            
+                            <h3>Public Policy</h3>
+                            <div class="textbox">AACI works on behalf of its cancer centers to advocate for federal funding for the National Institutes of Health and the National Cancer Institute.&nbsp;</div>
+                            <A   class="more-link link-block"  HREF="/public-policy">Learn More</A>
+                        </div>
+                        
+                        <div class="blockquote-wrap mb">
+                            <h3 class="blockquote-title"></h3>
+                            <div class="blockquote-text mb">My hope is that by creating model legislation on a variety of key issues, we will be able to collectively push state policies forward to improve the prevention and treatment of cancer across the country.&nbsp;</div>
+                            <div class="blockquote-author">
+                                <div class="author">Dr. Roy A. Jensen</div>
+                                <div class="company small">AACI Board of Directors</div>
+                            </div>
+                        </div> -->
+                        
+                        
+                    </aside>
+                    <!-- /side-col -->
+                </div>
+            </div>
+        </section>
+        <!-- /content -->
+        
+        
+        
+        <!-- cta -->
+        <section class="content-section cta-section bg-dark-blue color-white text-center">
+            <div class="front-graphic-bottom"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3">
+                        <h2>How Does Cancer<br>Impact Your State?</h2>
+                        <div class="textbox">
+                            
+                            <p><A   class="btn btn-white"  HREF="/state-fact-sheets">View State Fact Sheets</A></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- /cta -->
+        
+        
+    </section>
+    <!-- /PAGE_BODY -->
+    
+
+
+    
+
 
 {% endblock %}
