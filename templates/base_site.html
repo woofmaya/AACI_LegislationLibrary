@@ -9,7 +9,7 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
     <link href="{{ alias('@web/css/bootstrap.min.css') }}" rel="stylesheet">
-    <link href="{{ alias('@web/css/font-awesome.min.css') }}" rel="stylesheet">
+    <!-- <link href="{{ alias('@web/css/font-awesome.min.css') }}" rel="stylesheet"> -->
     <link href="{{ alias('@web/css/fonts.css') }}" rel="stylesheet">
     <link href="{{ alias('@web/js/slick/slick.css') }}" rel="stylesheet">
     <link href="{{ alias('@web/css/theme.css') }}" rel="stylesheet">
@@ -21,7 +21,9 @@
     <script src='https://cdn.jsdelivr.net/jquery.mixitup/latest/jquery.mixitup.min.js'></script>
     <script src='https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js'></script>
 
-    <script defer src="https://use.fontawesome.com/releases/v5.8.1/js/all.js" integrity="sha384-g5uSoOSBd7KkhAMlnQILrecXvzst9TdC09/VM+pjDTCM+1il8RHz5fKANTFFb+gQ" crossorigin="anonymous"></script>
+    <!-- <script defer src="https://use.fontawesome.com/releases/v5.8.1/js/all.js" integrity="sha384-g5uSoOSBd7KkhAMlnQILrecXvzst9TdC09/VM+pjDTCM+1il8RHz5fKANTFFb+gQ" crossorigin="anonymous"></script> -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 </head>
 
 <body>
@@ -67,26 +69,11 @@
         </header>
         <!-- /header -->
 
-        <!-- internal-header -->
-        <section class="internal-header-section bg-dark-blue color-white">
-            <div class="front-graphic-top"></div>
-            <div class="front-graphic-bottom"></div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-8 col-md-offset-3 col-sm-11 col-sm-offset-1">
-                        <h1>{% block heading %} {% endblock %}</h1>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- /internal-header -->
-
-        {% block main %}
-        {% endblock %}
-
-				{% block main2 %}
-
+				{% block internalHeader %}
 				{% endblock %}
+
+				{% block main %}
+        {% endblock%}
 
     </section>
     <!-- /PAGE_BODY -->
@@ -96,6 +83,7 @@
 
         <!-- footer-top -->
         <section id="footer-top">
+						{% set entry = craft.entries.section('home_footer_section').first() %}
             <div class="container">
                 <div class="row">
                     <div class="col-md-4 mb-sm mb-big-xs">
@@ -106,10 +94,10 @@
                                     Address
                                 </div>
                                 <div>
-                                    <strong>Association of American Cancer Institutes</strong>
+                                    <strong>{{ entry.addressHeading }}</strong>
                                 </div>
                                 <div>
-                                    3708 Fifth Avenue Medical Arts Building, Suite 503 Pittsburgh, PA 15213
+                                    {{ entry.address }}
                                 </div>
                             </div>
                             <div class="item mb">
@@ -117,7 +105,7 @@
                                     Phone
                                 </div>
                                 <div>
-                                    <a href="tel:4126476111">412-647-6111</a>
+                                    <a href="tel:{{ entry.phoneNumber }}">{{entry.phoneNumber}}</a>
                                 </div>
                             </div>
                             <div class="item mb">
@@ -125,16 +113,14 @@
                                     Email
                                 </div>
                                 <div>
-                                    <a href="mailto:mail@accicancer.org">mail@accicancer.org</a>
+                                    <a href="mailto:{{entry.email}}">{{entry.email}}</a>
                                 </div>
                             </div>
-                            <!-- TODO: fix these for social media -->
-                            <!-- <div class="social-links">
-                        		<a href="aserger"><span class="fa fa-twitter fa-lg"></span></a>
-                            	<a href="aserger"><span class="fa fa-linkedin fa-lg"></span></a>
-                            	<a href="aserger"><span class="fa fa-facebook-f fa-lg"></span></a>
-                            	<a href="aserger"><span class="fa fa-rss fa-lg"></span></a>
-                        	</div> -->
+                            <div class="social-links">
+                        		  <a href="{{ entry.socialMediaLinks.twitterLink }}" target="_blank"><span class="fa fa-twitter fa-lg"></span></a>
+                            	<a href="{{ entry.socialMediaLinks.facebookLink }}" target="_blank"><span class="fa fa-linkedin fa-lg"></span></a>
+                            	<a href="{{ entry.socialMediaLinks.linkedinLink }}" target="_blank"><span class="fa fa-facebook-f fa-lg"></span></a>
+                        	</div>
                         </div>
 
                     </div>

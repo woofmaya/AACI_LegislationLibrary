@@ -1,6 +1,10 @@
 {% extends "base_site" %}
 
-{% block heading %} {{ entry.heading }} {% endblock %}
+{% block internalHeader %}
+  <br>
+  <br>
+  <img src={{ alias('@web/assets/images/logo-compact.png') }} alt="Company Logo" class="home-logo">
+{% endblock %}
 
 {% block main %}
 

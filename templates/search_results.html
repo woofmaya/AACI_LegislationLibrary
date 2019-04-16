@@ -5,7 +5,21 @@
 {% set assetResults = craft.assets.volume('resources').search(searchTerm).orderBy('score') %}
 {% set entryResults = craft.entries.section('all_topics').search(searchTerm).orderBy('score') %}
 
-{% block heading %} {{ entry.heading }}{% endblock %}
+{% block internalHeader %}
+<!-- internal-header -->
+<section class="internal-header-section bg-dark-blue color-white">
+    <div class="front-graphic-top"></div>
+    <div class="front-graphic-bottom"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-3 col-sm-11 col-sm-offset-1">
+                <h1>{{ entry.heading }}</h1>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- /internal-header -->
+{% endblock %}
 
 {% block main %}
 
