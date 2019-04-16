@@ -27,11 +27,8 @@
 
                    {# Create the query to display topics as panels #}
 
-                   <!-- Take all the entries under the section "all_topics" -->
-                   {# a test comment #}
-                   {% set subtopicsEntryQuery = craft.entries()
-                       .section('all_topics')
-                       .level('2') %}
+                   <!-- Take all the subtopic entries underneath this parent entry -->
+                   {% set subtopicsEntryQuery = entry.children %}
 
                    {# Fetch the topics entries #}
                    {% set subtopicsEntries = subtopicsEntryQuery.all() %}
@@ -56,9 +53,7 @@
                                <div class="inner-wrap mb">
                                    <h4>{{ entry.heading }}</h4>
                                    <div class="textbox small">
-                                       <p>
-                                       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                                       </p>
+                                       {{ entry.shortDescription}}
                                    </div>
                                </div>
                                <a class="more-link link-block" href="{{ entry.url }}">Learn More </a>

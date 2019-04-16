@@ -10,7 +10,7 @@ categoryGroups:
     structure:
       maxLevels: null
       uid: f86a74ca-7e91-4e78-8af6-452451af6d4a
-dateModified: 1555447611
+dateModified: 1555451244
 email:
   fromEmail: egiuse@andrew.cmu.edu
   fromName: Craft3manual
@@ -435,15 +435,8 @@ sections:
           4711eda5-f6b1-4a0f-9292-752e23d80424:
             tabs:
               -
-                name: Content
-                sortOrder: 1
-                fields:
-                  a45974e5-3976-47ad-8022-b97e2e2b7e46:
-                    required: true
-                    sortOrder: 1
-              -
                 name: Footer
-                sortOrder: 2
+                sortOrder: 1
                 fields:
                   efe538f4-dcdf-4821-955f-e064ef687137:
                     required: true
@@ -581,29 +574,6 @@ sections:
         sortOrder: 1
         titleFormat: ''
         titleLabel: Title
-      17edc604-9139-41c5-a6ac-128b92a11379:
-        name: child_entry_type
-        handle: childEntryType
-        hasTitleField: true
-        titleLabel: Title
-        titleFormat: ''
-        sortOrder: 2
-        fieldLayouts:
-          18946e20-1e92-4eff-a0d0-2a4a2e2e08ac:
-            tabs:
-              -
-                name: Content
-                sortOrder: 1
-                fields:
-                  a45974e5-3976-47ad-8022-b97e2e2b7e46:
-                    required: false
-                    sortOrder: 1
-                  0e50d7a7-a7e6-44a5-93b4-c81eff229a26:
-                    required: false
-                    sortOrder: 2
-                  f9540f2f-94dc-4496-bb78-51b9dde2a76f:
-                    required: false
-                    sortOrder: 3
   345efab1-fada-4e25-a378-a2fbf5497f19:
     name: 'Resource Show'
     handle: resourceShow
