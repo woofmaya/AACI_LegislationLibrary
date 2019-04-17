@@ -51,10 +51,14 @@
                     <div class="collapse navbar-collapse" id="navigation">
                         <div class="inner-wrap">
 
+														{% set base_site_header = craft.entries.section('base_site_section').first() %}
+														{% set home_name = base_site_header.navBarText.homePageName %}
+														{% set about_name = base_site_header.navBarText.aboutPageName %}
+														{% set topics_name = base_site_header.navBarText.topicsPageName %}
                             <ul class="nav navbar-nav" id="main-nav">
-                                <li><a href="{{ siteUrl }}">Home</a></li>
-                                <li><a href="{{ url('about') }}">About</a></li>
-                                <li><a href="{{ url('topics') }}">Topics</a></li>
+                                <li><a href="{{ siteUrl }}">{{ home_name }}</a></li>
+                                <li><a href="{{ url('about') }}">{{ about_name }}</a></li>
+                                <li><a href="{{ url('topics') }}">{{ topics_name }}</a></li>
                             </ul>
 
                             <ul class="nav navbar-nav" id="top-nav">
@@ -83,7 +87,7 @@
 
         <!-- footer-top -->
         <section id="footer-top">
-						{% set entry = craft.entries.section('home_footer_section').first() %}
+						{% set entry = craft.entries.section('base_site_section').first() %}
             <div class="container">
                 <div class="row">
                     <div class="col-md-4 mb-sm mb-big-xs">

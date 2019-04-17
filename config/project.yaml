@@ -10,7 +10,7 @@ categoryGroups:
     structure:
       maxLevels: null
       uid: f86a74ca-7e91-4e78-8af6-452451af6d4a
-dateModified: 1555451244
+dateModified: 1555517011
 email:
   fromEmail: egiuse@andrew.cmu.edu
   fromName: Craft3manual
@@ -22,14 +22,12 @@ fieldGroups:
     name: Topic/Subtopics
   bd49d05a-3814-4821-bcf9-2aedfed2e879:
     name: General
-  e5d0e74d-dd9e-4ae9-b4b2-5e347b915e8f:
-    name: Tags
-  f9beb7ff-1bba-4e77-845f-8a92691f87a7:
-    name: Homepage
   8a5a34c5-81f9-453b-b9e0-c70cad3fb353:
     name: About
   9db828f4-ff3c-4c88-9c21-2060e6088b3c:
-    name: Home/Footer
+    name: Footer
+  c87c8cb6-47a4-4346-86ac-533a2c6b1870:
+    name: 'Base Site'
 fields:
   0e50d7a7-a7e6-44a5-93b4-c81eff229a26:
     contentColumnType: text
@@ -48,31 +46,6 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
-  5859f2ae-a21b-45b2-8f44-f8e7a8fefd31:
-    contentColumnType: string
-    fieldGroup: f9beb7ff-1bba-4e77-845f-8a92691f87a7
-    handle: clientlogos
-    instructions: ''
-    name: clientLogos
-    searchable: true
-    settings:
-      allowedKinds: null
-      defaultUploadLocationSource: ''
-      defaultUploadLocationSubpath: ''
-      limit: ''
-      localizeRelations: false
-      restrictFiles: ''
-      selectionLabel: ''
-      singleUploadLocationSource: ''
-      singleUploadLocationSubpath: ''
-      source: null
-      sources: '*'
-      targetSiteId: null
-      useSingleFolder: ''
-      viewMode: large
-    translationKeyFormat: null
-    translationMethod: site
-    type: craft\fields\Assets
   820ecbe8-2ac2-4a00-84a9-dd4a5331d6fe:
     name: 'Document Tags'
     handle: documentTagsField
@@ -101,22 +74,22 @@ fields:
     contentColumnType: string
     fieldGroup: 7aec1807-48f2-41c7-b821-83a622e4258f
   a45974e5-3976-47ad-8022-b97e2e2b7e46:
-    contentColumnType: text
-    fieldGroup: bd49d05a-3814-4821-bcf9-2aedfed2e879
+    name: Heading
     handle: heading
     instructions: ''
-    name: Heading
     searchable: true
-    settings:
-      charLimit: ''
-      code: ''
-      columnType: text
-      initialRows: '4'
-      multiline: ''
-      placeholder: 'This will show at the top of the page.'
-    translationKeyFormat: null
     translationMethod: none
+    translationKeyFormat: null
     type: craft\fields\PlainText
+    settings:
+      placeholder: 'This will show at the top of the page.'
+      code: ''
+      multiline: ''
+      initialRows: '4'
+      charLimit: ''
+      columnType: text
+    contentColumnType: text
+    fieldGroup: bd49d05a-3814-4821-bcf9-2aedfed2e879
   af0c2fba-82a5-4eb5-860f-606d34e9ee17:
     contentColumnType: string
     fieldGroup: 7aec1807-48f2-41c7-b821-83a622e4258f
@@ -326,6 +299,31 @@ fields:
       selectionLabel: ''
     contentColumnType: string
     fieldGroup: 9db828f4-ff3c-4c88-9c21-2060e6088b3c
+  8b0ca859-3435-4bfe-a482-c42eaa8bb15a:
+    name: 'Nav Bar Text'
+    handle: navBarText
+    instructions: 'This is what the page names will be in the nav bar. (i.e. ''Home'', ''About'')'
+    searchable: false
+    translationMethod: site
+    translationKeyFormat: null
+    type: verbb\supertable\fields\SuperTableField
+    settings:
+      minRows: ''
+      maxRows: ''
+      contentTable: '{{%stc_navbartext}}'
+      localizeBlocks: false
+      staticField: '1'
+      columns:
+        62:
+          width: ''
+        63:
+          width: ''
+        64:
+          width: ''
+      fieldLayout: table
+      selectionLabel: ''
+    contentColumnType: string
+    fieldGroup: c87c8cb6-47a4-4346-86ac-533a2c6b1870
 plugins:
   child-me:
     edition: standard
@@ -412,8 +410,8 @@ sections:
         uriFormat: search-results
     type: single
   3323900d-bc90-4c77-8638-89fe3d9baaa1:
-    name: Home/Footer
-    handle: home_footer_section
+    name: Home
+    handle: home_section
     type: single
     enableVersioning: true
     propagateEntries: true
@@ -425,34 +423,12 @@ sections:
         template: home
     entryTypes:
       d28dcdf2-fece-4f08-8997-be4605045f0d:
-        name: Home/Footer
+        name: Home
         handle: home_section
         hasTitleField: false
         titleLabel: Title
         titleFormat: '{section.name|raw}'
         sortOrder: 1
-        fieldLayouts:
-          4711eda5-f6b1-4a0f-9292-752e23d80424:
-            tabs:
-              -
-                name: Footer
-                sortOrder: 1
-                fields:
-                  efe538f4-dcdf-4821-955f-e064ef687137:
-                    required: true
-                    sortOrder: 1
-                  350f4bbd-1c23-4ebe-87bc-f1f98ab8c053:
-                    required: true
-                    sortOrder: 2
-                  006470aa-a799-427a-9b9e-bd8431ab26c6:
-                    required: true
-                    sortOrder: 3
-                  f6d2a043-1c67-4fe1-afe6-d44760e6c2c9:
-                    required: true
-                    sortOrder: 4
-                  13858c6c-3e07-4feb-a327-4a2d2c6d8feb:
-                    required: true
-                    sortOrder: 5
   467a7187-2226-4c46-bcc4-3b390493f66a:
     enableVersioning: true
     entryTypes:
@@ -574,9 +550,9 @@ sections:
         sortOrder: 1
         titleFormat: ''
         titleLabel: Title
-  345efab1-fada-4e25-a378-a2fbf5497f19:
-    name: 'Resource Show'
-    handle: resourceShow
+  d896bb5f-1988-41f1-96d5-9316da4541a4:
+    name: 'Base Site'
+    handle: base_site_section
     type: single
     enableVersioning: true
     propagateEntries: true
@@ -584,16 +560,45 @@ sections:
       06419039-5941-41b4-a10b-a0003a4a0a8a:
         enabledByDefault: true
         hasUrls: true
-        uriFormat: 'resources/{slug}'
-        template: resource_show
+        uriFormat: base_site
+        template: ''
     entryTypes:
-      dd00dd86-29c2-4cc0-bee9-40a0e34ddba4:
-        name: 'Resource Show'
-        handle: resourceShow
+      e0942f0e-a53f-4b23-9633-84d18505e169:
+        name: 'Base Site'
+        handle: footer_section
         hasTitleField: false
-        titleLabel: null
+        titleLabel: ''
         titleFormat: '{section.name|raw}'
         sortOrder: 1
+        fieldLayouts:
+          1412e9c1-6633-447b-81aa-f3c41bac1f8a:
+            tabs:
+              -
+                name: Header
+                sortOrder: 1
+                fields:
+                  8b0ca859-3435-4bfe-a482-c42eaa8bb15a:
+                    required: false
+                    sortOrder: 1
+              -
+                name: Footer
+                sortOrder: 2
+                fields:
+                  350f4bbd-1c23-4ebe-87bc-f1f98ab8c053:
+                    required: false
+                    sortOrder: 1
+                  efe538f4-dcdf-4821-955f-e064ef687137:
+                    required: false
+                    sortOrder: 2
+                  f6d2a043-1c67-4fe1-afe6-d44760e6c2c9:
+                    required: false
+                    sortOrder: 3
+                  006470aa-a799-427a-9b9e-bd8431ab26c6:
+                    required: false
+                    sortOrder: 4
+                  13858c6c-3e07-4feb-a327-4a2d2c6d8feb:
+                    required: false
+                    sortOrder: 5
 siteGroups:
   36f6937e-673b-4f31-845c-d37b7f19de90:
     name: Craft3manual
@@ -770,6 +775,76 @@ superTableBlockTypes:
                 required: true
                 sortOrder: 2
               9e2ceeff-b09b-4de0-acde-09f5210b9795:
+                required: true
+                sortOrder: 3
+  5a242407-9f6e-42e8-88f6-6ba999c8b977:
+    field: 8b0ca859-3435-4bfe-a482-c42eaa8bb15a
+    fields:
+      2402f913-3987-4af3-9aaf-28bd42ea67b9:
+        name: 'Home Page Name'
+        handle: homePageName
+        instructions: ''
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\PlainText
+        settings:
+          placeholder: Home
+          code: ''
+          multiline: ''
+          initialRows: '4'
+          charLimit: ''
+          columnType: text
+        contentColumnType: text
+        fieldGroup: null
+      51dd64d3-0751-47de-87a3-03eca5aea2af:
+        name: 'About Page Name'
+        handle: aboutPageName
+        instructions: ''
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\PlainText
+        settings:
+          placeholder: About
+          code: ''
+          multiline: ''
+          initialRows: '4'
+          charLimit: ''
+          columnType: text
+        contentColumnType: text
+        fieldGroup: null
+      0c39d570-26e1-41c7-b88d-fe3a8b979bdf:
+        name: 'Topics Page Name'
+        handle: topicsPageName
+        instructions: ''
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\PlainText
+        settings:
+          placeholder: Topics
+          code: ''
+          multiline: ''
+          initialRows: '4'
+          charLimit: ''
+          columnType: text
+        contentColumnType: text
+        fieldGroup: null
+    fieldLayouts:
+      11684432-5fbd-41af-b939-5b631c3426e4:
+        tabs:
+          -
+            name: Content
+            sortOrder: 1
+            fields:
+              2402f913-3987-4af3-9aaf-28bd42ea67b9:
+                required: true
+                sortOrder: 1
+              51dd64d3-0751-47de-87a3-03eca5aea2af:
+                required: true
+                sortOrder: 2
+              0c39d570-26e1-41c7-b88d-fe3a8b979bdf:
                 required: true
                 sortOrder: 3
 system:
