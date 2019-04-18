@@ -7,8 +7,8 @@
     <div class="front-graphic-bottom"></div>
     <div class="container">
         <div class="row">
-            <div class="col-md-8 col-md-offset-3 col-sm-11 col-sm-offset-1">
-                <h1>{{entry.heading}}</h1>
+            <div class="col-md-11 col-md-offset-3 col-sm-11 col-sm-offset-1">
+                <h2>{{entry.heading}}</h2>
             </div>
         </div>
     </div>
@@ -23,25 +23,25 @@
 
   <!-- find all assets for this subtopic -->
         {% set subtopic_assets = entry.documents.all() %}
-<!-- list all resources -->
-<div class="col-md-12 col-lg-8">
-  <h2>Resources about {{entry.title}}</h2>
-    <div class="news-list">
-      <!-- loop thru resources -->
-      {% for asset in subtopic_assets %}
-      <div class="item">
-        <!-- show title, type of file, and short description if there is one -->
-            <div class="item-date small color-blue">
-              {{asset.kind}}
-            </div>
-            <div class="item-content">
-              <h4>{{asset.title}}</h4>
-              <h6> {{asset.shortDescription}}</h6>
-              <a href="{{ alias('@web/resources/' ~ asset.id) }}" target="_blank">See Resource</a>
-            </div>
-        </div>
-          {% endfor %}
+        <!-- list all resources -->
+        <div class="col-md-12 col-lg-8">
+          <h2>Resources about {{entry.title}}</h2>
+            <div class="news-list">
+              <!-- loop thru resources -->
+              {% for asset in subtopic_assets %}
+              <div class="item">
+                <!-- show title, type of file, and short description if there is one -->
+                    <div class="item-date small color-blue">
+                      {{asset.kind}}
+                    </div>
+                    <div class="item-content">
+                      <h4>{{asset.title}}</h4>
+                      <h6> {{asset.shortDescription}}</h6>
+                      <a href="{{ alias('@web/resources/' ~ asset.id) }}" target="_blank">See Resource</a>
+                    </div>
+                </div>
+                  {% endfor %}
 
-    </div><!-- /list -->
+            </div><!-- /list -->
   </section>
 {% endblock %}

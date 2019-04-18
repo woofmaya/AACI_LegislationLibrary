@@ -10,7 +10,7 @@ categoryGroups:
     structure:
       maxLevels: null
       uid: f86a74ca-7e91-4e78-8af6-452451af6d4a
-dateModified: 1555517011
+dateModified: 1555524122
 email:
   fromEmail: egiuse@andrew.cmu.edu
   fromName: Craft3manual
@@ -367,6 +367,14 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 1.0.0
+  admin-bar:
+    edition: standard
+    enabled: true
+    schemaVersion: 3.1.0
+  entry-instructions:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
 routes:
   b4379810-3d2a-4035-a2a2-4e87d9c9da43:
     template: resource_show
@@ -506,7 +514,7 @@ sections:
         uriFormat: /about
     type: single
   c469a882-e929-4b33-9e7b-bea1c720755e:
-    name: 'Topics Entries'
+    name: Topics/Subtopics
     handle: all_topics
     type: structure
     enableVersioning: true
@@ -519,37 +527,66 @@ sections:
         template: entry
     structure:
       uid: 1cdb4495-063e-48df-b0e9-31f4b275d062
-      maxLevels: ''
+      maxLevels: '2'
     entryTypes:
       729cad62-7474-495f-bd45-7de8bb49f42d:
+        name: Topic
+        handle: topics_entry_type
+        hasTitleField: true
+        titleLabel: Title
+        titleFormat: ''
+        sortOrder: 1
         fieldLayouts:
           0eeebb26-5582-45bc-94b8-c53afd5dec24:
             tabs:
               -
+                name: Content
+                sortOrder: 1
                 fields:
-                  0e50d7a7-a7e6-44a5-93b4-c81eff229a26:
-                    required: false
-                    sortOrder: 3
                   a45974e5-3976-47ad-8022-b97e2e2b7e46:
                     required: true
                     sortOrder: 1
                   af0c2fba-82a5-4eb5-860f-606d34e9ee17:
                     required: false
                     sortOrder: 2
+                  0e50d7a7-a7e6-44a5-93b4-c81eff229a26:
+                    required: false
+                    sortOrder: 3
                   b782df66-c05d-4de6-be7b-963cc07585d5:
                     required: false
                     sortOrder: 4
                   f9540f2f-94dc-4496-bb78-51b9dde2a76f:
                     required: false
                     sortOrder: 5
+      ace4315a-7bdf-466c-b4ed-2444c22baf7c:
+        name: Subtopic
+        handle: subtopics_entry_type
+        hasTitleField: true
+        titleLabel: Title
+        titleFormat: ''
+        sortOrder: 3
+        fieldLayouts:
+          3aca31c2-e0fc-46ec-ba65-16428a3fd99c:
+            tabs:
+              -
                 name: Content
                 sortOrder: 1
-        handle: topics_entry_type
-        hasTitleField: true
-        name: topics_entry_type
-        sortOrder: 1
-        titleFormat: ''
-        titleLabel: Title
+                fields:
+                  a45974e5-3976-47ad-8022-b97e2e2b7e46:
+                    required: true
+                    sortOrder: 1
+                  af0c2fba-82a5-4eb5-860f-606d34e9ee17:
+                    required: false
+                    sortOrder: 2
+                  0e50d7a7-a7e6-44a5-93b4-c81eff229a26:
+                    required: false
+                    sortOrder: 3
+                  b782df66-c05d-4de6-be7b-963cc07585d5:
+                    required: false
+                    sortOrder: 4
+                  f9540f2f-94dc-4496-bb78-51b9dde2a76f:
+                    required: false
+                    sortOrder: 5
   d896bb5f-1988-41f1-96d5-9316da4541a4:
     name: 'Base Site'
     handle: base_site_section

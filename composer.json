@@ -7,11 +7,13 @@
     "mmikkel/child-me": "^1.0",
     "mmikkel/cp-field-inspect": "1.0.5",
     "spicyweb/craft-embedded-assets": "2.0.2",
+    "superbig/craft-entry-instructions": "1.0.4",
     "verbb/cp-nav": "^2.0",
     "verbb/expanded-singles": "1.0.7",
     "verbb/field-manager": "2.0.5",
     "verbb/super-table": "2.1.16",
-    "vlucas/phpdotenv": "^2.4.0"
+    "vlucas/phpdotenv": "^2.4.0",
+    "wbrowar/adminbar": "3.1.7.1"
   },
   "autoload": {
     "psr-4": {

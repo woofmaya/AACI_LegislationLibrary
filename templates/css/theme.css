@@ -54,7 +54,8 @@
 
 	/* typography */
 	h1, h2, h3, h4, h5, h6	{
-		font-family: "PlayfairDisplay", Times, serif;
+		/* font-family: "PlayfairDisplay", Times, serif; */
+		font-family: 'Karla', Arial, Helvetica, sans-serif
 		font-weight:400;
 		color: inherit;
 		line-height:1.2;
@@ -496,10 +497,10 @@
 	#footer{flex:0 0 auto; margin-top:auto; border-top:1px solid #e5e5e5;}
 
 	/* footer-top */
-	#footer-top{padding-top:6.75rem; padding-bottom:3.25rem;}
+	#footer-top{padding-top:2.0rem; padding-bottom:2.0rem;}
 
 	.contacts-wrap{padding-right:3rem;}
-	.contacts-wrap .item-label{ letter-spacing:0.1em; text-transform:uppercase;}
+	.contacts-wrap .item-label{letter-spacing:0.1em; text-transform:uppercase;}
 	.contacts-wrap .footer-brand img{margin-bottom:0.35rem;}
 	.contacts-wrap a{color:inherit;}
 	.contacts-wrap a:hover, .contacts-wrap a:focus{color:#034380; text-decoration:underline;}
@@ -532,9 +533,9 @@
 	#breadcrumbs a:hover, #breadcrumbs a:focus{ text-decoration:underline;}
 	#breadcrumbs .active{color:#78a22f;}
 
-	.internal-header-section .front-graphic-top{ position:absolute; top:0; left:0; width:28.9rem; height:9.4rem; background:url(../assets/images/graphic01.png) no-repeat left top; background-size:contain;}
+	.internal-header-section .front-graphic-top{ position:absolute; top:0; left:0; width:28.9rem; height:9.0rem; background:url(../assets/images/graphic01.png) no-repeat left top; background-size:contain;}
 	.internal-header-section .front-graphic-bottom{ position:absolute; bottom:0; right:0; width:30.43rem; height:6.25rem; background:url(../assets/images/graphic04.png) no-repeat right bottom; background-size:contain;}
-	.internal-header-section > .container{padding-top:5rem; padding-bottom:5rem;}
+	.internal-header-section > .container{padding-top:3rem; padding-bottom:3rem;}
 
 	/* internal-nav */
 	.internal-nav-section{ background-color:#f7f7f5; border-bottom:1px solid #dee5e9;}
