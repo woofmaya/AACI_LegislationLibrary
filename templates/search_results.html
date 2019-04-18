@@ -28,7 +28,7 @@
         	<div class="row">
 
 				<div class="col-md-12 col-lg-8">
-					<h3> Resources: </h3>
+					<h3><strong> Resources: </strong></h3>
 					<div class="news-list">
 					{% if assetResults|length %}
 						{% for asset in assetResults.all() %}
@@ -38,7 +38,7 @@
 										{{asset.kind}}
 									</div>
 									<div class="item-content">
-										<h4>{{asset.title}}</h4>
+										<h5>{{asset.title}}</h5>
 										<h6> {{asset.shortDescription}}</h6>
 										<a href="{{ alias('@web/resources/' ~ asset.id) }}" target="_blank">See Resource</a>
 									</div>
@@ -49,16 +49,32 @@
 					{% endif %}
 					</div>
 					<br><br>
-					<h3> Topics/Subtopics: </h3>
+					<h3><strong> Topics/Subtopics: </strong></h3>
+          <div class="news-list">
 					{% if entryResults|length %}
 						{% for entry in entryResults.all() %}
-							<a href = "{{ entry.url }}" target="_blank">{{ entry.title }}</a>
-							<br>
+            <div class="item">
+							<!-- show title, type of file, and short description if there is one -->
+              <div class="item-date small color-blue">
+                {% if entry.level == 2 %}
+                  {% set entryType = 'Subtopic' %}
+                {% else %}
+                  {% set entryType = 'Topic' %}
+                {% endif %}
+                {{ entryType }}
+              </div>
+									<div class="item-content">
+										<h5>{{entry.title}}</h5>
+										<h6> {{entry.shortDescription}}</h6>
+										<a href="{{ entry.url }}" target="_blank">See Resource</a>
+									</div>
+							</div>
 						{% endfor %}
 
 					{% else %}
 						No topics matched your search.
 					{% endif %}
+          </div>
         </div>
 
     		</div>
