@@ -502,7 +502,7 @@
 	#footer{flex:0 0 auto; margin-top:auto; border-top:1px solid #e5e5e5;}
 
 	/* footer-top */
-	#footer-top{padding-top:2.0rem; padding-bottom:2.0rem;}
+	#footer-top{padding-top:1.0rem; padding-bottom:1.0rem;}
 
 	.contacts-wrap{padding-right:3rem;}
 	.contacts-wrap .item-label{letter-spacing:0.1em; text-transform:uppercase;}
@@ -522,6 +522,7 @@
 
 	.privacy-links{ text-align:right;}
 	.privacy-links span+span:before{ content:'|'; margin-left:1rem; margin-right:1rem; color:#e8e8e8;}
+	.privacy-links .home-link{ text-align:right;}
 
 
 
