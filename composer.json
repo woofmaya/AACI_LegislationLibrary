@@ -4,7 +4,7 @@
     "craftcms/redactor": "^2.3",
     "doublesecretagency/craft-cpcss": "2.1.0",
     "ether/tags": "1.0.1",
-    "mmikkel/child-me": "^1.0",
+    "mmikkel/child-me": "1.0.4",
     "mmikkel/cp-field-inspect": "1.0.5",
     "spicyweb/craft-embedded-assets": "2.0.2",
     "superbig/craft-entry-instructions": "1.0.4",

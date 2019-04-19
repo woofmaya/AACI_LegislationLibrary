@@ -1,4 +1,4 @@
-
+/*
 	.board-header-section{overflow: hidden;}
 	.board-header-section > .container{padding-top: 7rem; padding-bottom: 10rem;}
 	.board-header-section .front-graphic-top {
@@ -89,4 +89,97 @@
 	}
 	@media (max-width: 767px) {
 		.members-listing [class*="col-"]{width: 100%;}
-	}
+	} */
+
+
+		.board-header-section{overflow: hidden;}
+		.board-header-section > .container{padding-top: 7rem; padding-bottom: 10rem;}
+		.board-header-section .front-graphic-top {
+		  position: absolute;
+		  top: 0;
+		  left: 0;
+		  width: 28.9rem;
+		  height: 9.4rem;
+		  background: url(../img/graphic06.png) no-repeat left top;
+		  background-size: contain;
+		}
+
+		.board-header-section .front-graphic-bottom {
+		  position: absolute;
+		  bottom: 0;
+		  right: 0;
+		  width: 60%;
+		  height: 75rem;
+		  background: url(../img/graphic07.png) no-repeat right bottom;
+		  background-size: contain;
+		}
+
+		.personal-card{
+			background-color: #fff;
+			border: solid 1px #e5e5e5;
+		}
+		.personal-card:after{
+			content: '';
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			background-color: #f9b217;
+			width: 10px;
+			height: 0;
+			transition: all 0.4s ease;
+		}
+		.personal-card:hover:after{
+			height: 100%;
+		}
+		.personal-card .image-block{margin-right: 2rem;}
+		.personal-card .image-block img{width: 100%;}
+
+		.personal-card .card-body{
+			padding: 2rem 1.5rem;
+		}
+		.personal-card .card-body .card-title{margin-bottom: 0.5rem;}
+		.personal-card .card-body .post {
+		  margin-bottom: 0.5rem;
+		  color: rgba(0, 0, 0, 0.5);
+		  font-size: 0.875rem;
+		  text-transform: uppercase;
+		  letter-spacing: 1.4px;
+		}
+		.personal-card .card-body .textbox{margin-bottom: 1.875rem;}
+		.personal-card .card-body .textbox:last-child{margin-bottom: 0rem;}
+
+		.president-block .personal-card{margin-top: -11rem}
+		.president-content{padding-left: 5.5rem;}
+
+		.members-listing{display: flex; flex-wrap:wrap;}
+		.members-listing:last-child{margin-bottom: -2rem;}
+		.members-listing [class*="col-"]{display: flex;flex-direction: column; margin-bottom: 2rem;}
+		.members-listing .personal-card{display: flex;flex-direction: column;flex: 1 0 auto;}
+		.members-listing .personal-card .image-block{flex: 0 0 auto;}
+		.members-listing .personal-card .card-body{flex: 1 0 auto;display: flex;flex-direction: column;}
+		.members-listing .personal-card .card-body .link-block{margin-top: auto;}
+		.members-listing .personal-card img{max-height: 200px;}
+
+
+
+		@media (max-width: 1199px) {
+			.president-content{padding-left: 3rem;}
+			.members-listing .personal-card .card-body {padding: 1.5rem 1rem;}
+			.members-listing .personal-card .image-block{margin-right: 1rem;}
+			.members-listing .personal-card .card-body .textbox {margin-bottom: 1.5rem;}
+		}
+
+		@media (max-width: 991px) {
+			.president-content{padding-left: 15px;}
+			.members-listing .personal-card .card-body {padding: 2rem 1.5rem;}
+			.members-listing .personal-card .image-block{margin-right: 2rem;}
+
+			.board-header-section > .container {padding-top: 3rem; padding-bottom: 6rem;}
+			.president-block .personal-card {margin-top: -7rem;}
+
+			.members-listing [class*="col-"]{width: calc(50% - 1px);}
+			.members-listing .personal-card img{max-height: none;}
+		}
+		@media (max-width: 767px) {
+			.members-listing [class*="col-"]{width: 100%;}
+		}

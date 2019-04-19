@@ -10,7 +10,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-11 col-md-offset-3 col-sm-11 col-sm-offset-1">
-                <h2>{{entry.heading}}</h2>
+                <h2>{{entry.title}}</h2>
             </div>
         </div>
     </div>
@@ -20,24 +20,36 @@
 
 {% block main %}
             <!-- subtopics -->
-       <section class="content-section" id="programs-section">
-           <div class="bg bg-light-gray"></div>
-           <div class="container">
-               <div id="programs-list" class="row mb-big">
+            <link href="{{ alias('@web/css/members-module.css') }}" rel="stylesheet">
+            <div class="content-section">
+                <div class="container">
+                  <h4>{{ entry.slogan }}</h4><br>
+                  <h6>{{ entry.shortDescription}}</h6>
+                    <div class="row members-listing">
 
                    {# Create the query to display topics as panels #}
 
                    <!-- Take all the subtopic entries underneath this parent entry -->
-                   {% set subtopicsEntryQuery = entry.children %}
+                   {% if entry.children|length %}
+                    {% set subtopicsEntryQuery = entry.children %}
+                   {% else %}
+                      {% set subtopicsEntryQuery = NULL %}
+                   {% endif %}
 
                    {# Fetch the topics entries #}
-                   {% set subtopicsEntries = subtopicsEntryQuery.all() %}
+                   {% if subtopicsEntryQuery|length %}
+                    {% set subtopicsEntries = subtopicsEntryQuery.all() %}
+                   {% else %}
+                    {% set subtopicsEntries = NULL %}
+                    {% endif %}
 
                    {# Display the entries #}
+
                    {% for entry in subtopicsEntries %}
-                       <div class="col-sm-4 item">
-                           <div class="item-image">
-                               {% set subtopicIcon = craft.assets.volume('subtopicIcons').title('Default').one() %}
+                       <div class="col-md-3 col-sm-6 col-xs-12">
+                         <div class="personal-card">
+                        <div class="image-block">
+                               {% set subtopicIcon = craft.assets.volume('topicIcons').title('Default').one() %}
 
                                {# if there is an icon given #}
                                {# set the subtopic icon to it #}
@@ -49,10 +61,10 @@
 
                            </div>
 
-                           <div class="item-content">
+                           <div class="card-body">
                                <div class="inner-wrap mb">
-                                   <h4>{{ entry.heading }}</h4>
-                                   <div class="textbox small">
+                                   <h4 class="card-title">{{ entry.title }}</h4>
+                                   <div class="textbox">
                                        {{ entry.shortDescription}}
                                    </div>
                                </div>
@@ -62,9 +74,8 @@
                            <div class="border bg-green"></div>
 
                        </div>
+                       </div>
                   {% endfor %}
                   <!-- subtopics -->
-                  </div>
-                  </div>
-                  </section>
+
 {% endblock %}

@@ -8,7 +8,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-11 col-md-offset-3 col-sm-11 col-sm-offset-1">
-                <h2>{{entry.heading}}</h2>
+                <h2>{{entry.title}}</h2>
             </div>
         </div>
     </div>
@@ -20,7 +20,8 @@
 
 <section class="content-section">
     <div class="container">
-
+        <h4>{{ entry.slogan }}</h4><br>
+        <h6>{{ entry.shortDescription}}</h6>
   <!-- find all assets for this subtopic -->
         {% set subtopic_assets = entry.documents.all() %}
         <!-- list all resources -->

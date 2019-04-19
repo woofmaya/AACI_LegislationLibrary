@@ -10,7 +10,7 @@ categoryGroups:
     structure:
       maxLevels: null
       uid: f86a74ca-7e91-4e78-8af6-452451af6d4a
-dateModified: 1555524122
+dateModified: 1555633004
 email:
   fromEmail: egiuse@andrew.cmu.edu
   fromName: Craft3manual
@@ -59,7 +59,7 @@ fields:
       maxRows: ''
       contentTable: '{{%stc_documenttagsfield}}'
       localizeBlocks: false
-      staticField: ''
+      staticField: '1'
       columns:
         29:
           width: ''
@@ -325,10 +325,6 @@ fields:
     contentColumnType: string
     fieldGroup: c87c8cb6-47a4-4346-86ac-533a2c6b1870
 plugins:
-  child-me:
-    edition: standard
-    enabled: true
-    schemaVersion: 1.0.0
   cp-css:
     edition: standard
     enabled: true
@@ -372,6 +368,10 @@ plugins:
     enabled: true
     schemaVersion: 3.1.0
   entry-instructions:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  child-me:
     edition: standard
     enabled: true
     schemaVersion: 1.0.0
@@ -441,22 +441,22 @@ sections:
     enableVersioning: true
     entryTypes:
       f73d5627-97e9-4ce2-8239-72feadd13639:
+        name: 'Topics Index'
+        handle: topics_index_section
+        hasTitleField: false
+        titleLabel: 'Topics Index'
+        titleFormat: 'Topics Index'
+        sortOrder: 1
         fieldLayouts:
           88d9e27f-a3e2-406f-b2ef-47da2f72ed51:
             tabs:
               -
+                name: Content
+                sortOrder: 1
                 fields:
                   a45974e5-3976-47ad-8022-b97e2e2b7e46:
-                    required: '1'
-                    sortOrder: '1'
-                name: Content
-                sortOrder: '1'
-        handle: topics_index_section
-        hasTitleField: '1'
-        name: 'Topics Index'
-        sortOrder: 1
-        titleFormat: '{section.name|raw}'
-        titleLabel: 'Topics Index'
+                    required: true
+                    sortOrder: 1
     handle: topics_index_section
     name: 'Topics Index'
     propagateEntries: true
@@ -534,7 +534,7 @@ sections:
         handle: topics_entry_type
         hasTitleField: true
         titleLabel: Title
-        titleFormat: ''
+        titleFormat: '{entry.heading}'
         sortOrder: 1
         fieldLayouts:
           0eeebb26-5582-45bc-94b8-c53afd5dec24:
@@ -543,21 +543,15 @@ sections:
                 name: Content
                 sortOrder: 1
                 fields:
-                  a45974e5-3976-47ad-8022-b97e2e2b7e46:
-                    required: true
-                    sortOrder: 1
                   af0c2fba-82a5-4eb5-860f-606d34e9ee17:
                     required: false
-                    sortOrder: 2
+                    sortOrder: 1
                   0e50d7a7-a7e6-44a5-93b4-c81eff229a26:
                     required: false
-                    sortOrder: 3
+                    sortOrder: 2
                   b782df66-c05d-4de6-be7b-963cc07585d5:
                     required: false
-                    sortOrder: 4
-                  f9540f2f-94dc-4496-bb78-51b9dde2a76f:
-                    required: false
-                    sortOrder: 5
+                    sortOrder: 3
       ace4315a-7bdf-466c-b4ed-2444c22baf7c:
         name: Subtopic
         handle: subtopics_entry_type
@@ -572,21 +566,18 @@ sections:
                 name: Content
                 sortOrder: 1
                 fields:
-                  a45974e5-3976-47ad-8022-b97e2e2b7e46:
-                    required: true
-                    sortOrder: 1
                   af0c2fba-82a5-4eb5-860f-606d34e9ee17:
                     required: false
-                    sortOrder: 2
+                    sortOrder: 1
                   0e50d7a7-a7e6-44a5-93b4-c81eff229a26:
                     required: false
-                    sortOrder: 3
+                    sortOrder: 2
                   b782df66-c05d-4de6-be7b-963cc07585d5:
                     required: false
-                    sortOrder: 4
+                    sortOrder: 3
                   f9540f2f-94dc-4496-bb78-51b9dde2a76f:
                     required: false
-                    sortOrder: 5
+                    sortOrder: 4
   d896bb5f-1988-41f1-96d5-9316da4541a4:
     name: 'Base Site'
     handle: base_site_section

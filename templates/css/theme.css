@@ -450,7 +450,7 @@
 	/* programs */
 	#programs-section .bg{ position:absolute; bottom:0; left:0; right:0; top:20.45rem;}
 	#programs-list{ display:flex; align-items:stretch;}
-	#programs-list .item{display:flex; flex-direction:column;}
+	#programs-list .item{display:flex; flex-direction:column; border: solid 1px #e5e5e5;}
 	#programs-list .item .border{ position:absolute; left:15px; width:10px; bottom:0; top:16.45rem; transition:top 0.4s ease;}
 	#programs-list .item-image{flex:none;}
 	#programs-list .item-image img{width:100%; max-width:100%;}
