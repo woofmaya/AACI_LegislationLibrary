@@ -10,7 +10,7 @@ categoryGroups:
     structure:
       maxLevels: null
       uid: f86a74ca-7e91-4e78-8af6-452451af6d4a
-dateModified: 1555650508
+dateModified: 1555685757
 email:
   fromEmail: egiuse@andrew.cmu.edu
   fromName: Craft3manual
@@ -100,7 +100,7 @@ fields:
     type: craft\fields\Assets
     settings:
       useSingleFolder: ''
-      defaultUploadLocationSource: 'volume:14a5170c-9eed-42d3-a7e7-103749b44e85'
+      defaultUploadLocationSource: 'volume:af5d9f4c-8370-4936-b18f-2656c9900a8d'
       defaultUploadLocationSubpath: ''
       singleUploadLocationSource: 'volume:af5d9f4c-8370-4936-b18f-2656c9900a8d'
       singleUploadLocationSubpath: ''
