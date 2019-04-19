@@ -10,7 +10,7 @@ categoryGroups:
     structure:
       maxLevels: null
       uid: f86a74ca-7e91-4e78-8af6-452451af6d4a
-dateModified: 1555650508
+dateModified: 1555686508
 email:
   fromEmail: egiuse@andrew.cmu.edu
   fromName: Craft3manual
@@ -333,6 +333,53 @@ fields:
       localizeRelations: false
     contentColumnType: string
     fieldGroup: bd49d05a-3814-4821-bcf9-2aedfed2e879
+  c17d86f6-a9b0-4da5-ad30-a5a430832543:
+    name: 'Call To Action Banner Title'
+    handle: callToActionBannerTitle
+    instructions: ''
+    searchable: true
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\PlainText
+    settings:
+      placeholder: 'How Does Cancer Affect Your State?'
+      code: ''
+      multiline: ''
+      initialRows: '4'
+      charLimit: ''
+      columnType: text
+    contentColumnType: text
+    fieldGroup: c87c8cb6-47a4-4346-86ac-533a2c6b1870
+  5d8b82d9-595d-4210-8f8b-811fbc395b73:
+    name: 'Call To Action Banner Link'
+    handle: callToActionBannerLink
+    instructions: ''
+    searchable: true
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\Url
+    settings:
+      placeholder: ''
+      maxLength: '255'
+    contentColumnType: string(255)
+    fieldGroup: c87c8cb6-47a4-4346-86ac-533a2c6b1870
+  6b5071d5-6847-4990-a811-fec5ac3cafbd:
+    name: 'Call To Action Banner Link Text'
+    handle: callToActionBannerLinkText
+    instructions: ''
+    searchable: true
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\PlainText
+    settings:
+      placeholder: 'text to be hyperlinked'
+      code: ''
+      multiline: ''
+      initialRows: '4'
+      charLimit: ''
+      columnType: text
+    contentColumnType: text
+    fieldGroup: c87c8cb6-47a4-4346-86ac-533a2c6b1870
 plugins:
   cp-css:
     edition: standard
