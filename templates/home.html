@@ -1,9 +1,16 @@
 {% extends "base_site" %}
 
 {% block internalHeader %}
-  <br>
-  <br>
-  <img src={{ alias('@web/assets/images/logo-compact.png') }} alt="Company Logo" class="home-logo">
+  
+  {% if entry.homePageSearchLogo|length %}
+    {% set logo = entry.homePageSearchLogo.one() %}
+  {% else %}
+    {% set logo = craft.assets.volume('Logos').title('Default').one() %}
+  {% endif %}
+
+  <a class="home-brand">
+  <img src="{{ logo.url }}"" alt="Company Logo" class="home-logo">
+  </a>
 {% endblock %}
 
 {% block main %}

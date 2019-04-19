@@ -10,7 +10,7 @@ categoryGroups:
     structure:
       maxLevels: null
       uid: f86a74ca-7e91-4e78-8af6-452451af6d4a
-dateModified: 1555633004
+dateModified: 1555650508
 email:
   fromEmail: egiuse@andrew.cmu.edu
   fromName: Craft3manual
@@ -91,31 +91,31 @@ fields:
     contentColumnType: text
     fieldGroup: bd49d05a-3814-4821-bcf9-2aedfed2e879
   af0c2fba-82a5-4eb5-860f-606d34e9ee17:
-    contentColumnType: string
-    fieldGroup: 7aec1807-48f2-41c7-b821-83a622e4258f
+    name: Icon
     handle: icon
     instructions: ''
-    name: Icon
     searchable: true
+    translationMethod: site
+    translationKeyFormat: null
+    type: craft\fields\Assets
     settings:
-      allowedKinds: null
+      useSingleFolder: ''
       defaultUploadLocationSource: 'volume:14a5170c-9eed-42d3-a7e7-103749b44e85'
       defaultUploadLocationSubpath: ''
-      limit: '1'
-      localizeRelations: false
-      restrictFiles: ''
-      selectionLabel: 'Choose an icon.'
       singleUploadLocationSource: 'volume:af5d9f4c-8370-4936-b18f-2656c9900a8d'
       singleUploadLocationSubpath: ''
-      source: null
+      restrictFiles: ''
+      allowedKinds: null
       sources:
         - 'volume:af5d9f4c-8370-4936-b18f-2656c9900a8d'
+      source: null
       targetSiteId: null
-      useSingleFolder: ''
       viewMode: large
-    translationKeyFormat: null
-    translationMethod: site
-    type: craft\fields\Assets
+      limit: '1'
+      selectionLabel: 'Choose an icon.'
+      localizeRelations: false
+    contentColumnType: string
+    fieldGroup: 7aec1807-48f2-41c7-b821-83a622e4258f
   b782df66-c05d-4de6-be7b-963cc07585d5:
     contentColumnType: text
     fieldGroup: bd49d05a-3814-4821-bcf9-2aedfed2e879
@@ -134,31 +134,31 @@ fields:
     translationMethod: none
     type: craft\fields\PlainText
   f9540f2f-94dc-4496-bb78-51b9dde2a76f:
-    contentColumnType: string
-    fieldGroup: 7aec1807-48f2-41c7-b821-83a622e4258f
+    name: Documents
     handle: documents
     instructions: 'After adding an asset, double click on it for its information.'
-    name: Documents
     searchable: true
+    translationMethod: site
+    translationKeyFormat: null
+    type: craft\fields\Assets
     settings:
-      allowedKinds: null
+      useSingleFolder: ''
       defaultUploadLocationSource: 'volume:c9fb2884-b316-47b8-8ee1-8c13739b99cb'
       defaultUploadLocationSubpath: ''
-      limit: ''
-      localizeRelations: false
-      restrictFiles: ''
-      selectionLabel: ''
       singleUploadLocationSource: 'volume:c9fb2884-b316-47b8-8ee1-8c13739b99cb'
       singleUploadLocationSubpath: ''
-      source: null
+      restrictFiles: ''
+      allowedKinds: null
       sources:
         - 'volume:c9fb2884-b316-47b8-8ee1-8c13739b99cb'
+      source: null
       targetSiteId: null
-      useSingleFolder: ''
       viewMode: large
-    translationKeyFormat: null
-    translationMethod: site
-    type: craft\fields\Assets
+      limit: ''
+      selectionLabel: ''
+      localizeRelations: false
+    contentColumnType: string
+    fieldGroup: 7aec1807-48f2-41c7-b821-83a622e4258f
   c4670617-924a-43cf-a32c-030fea581dcf:
     name: CallToAction1Link
     handle: calltoaction1link
@@ -257,23 +257,6 @@ fields:
       columnType: text
     contentColumnType: text
     fieldGroup: 9db828f4-ff3c-4c88-9c21-2060e6088b3c
-  efe538f4-dcdf-4821-955f-e064ef687137:
-    name: 'Address Heading'
-    handle: addressHeading
-    instructions: ''
-    searchable: false
-    translationMethod: none
-    translationKeyFormat: null
-    type: craft\fields\PlainText
-    settings:
-      placeholder: ''
-      code: ''
-      multiline: ''
-      initialRows: '4'
-      charLimit: ''
-      columnType: text
-    contentColumnType: text
-    fieldGroup: 9db828f4-ff3c-4c88-9c21-2060e6088b3c
   13858c6c-3e07-4feb-a327-4a2d2c6d8feb:
     name: 'Social Media Links'
     handle: socialMediaLinks
@@ -324,6 +307,32 @@ fields:
       selectionLabel: ''
     contentColumnType: string
     fieldGroup: c87c8cb6-47a4-4346-86ac-533a2c6b1870
+  75243d1c-0115-4146-8c7d-55d0efb4d18d:
+    name: 'Home Page Search Logo'
+    handle: homePageSearchLogo
+    instructions: ''
+    searchable: false
+    translationMethod: site
+    translationKeyFormat: null
+    type: craft\fields\Assets
+    settings:
+      useSingleFolder: ''
+      defaultUploadLocationSource: 'volume:896bb516-1c31-415c-a053-1ff4437dc451'
+      defaultUploadLocationSubpath: ''
+      singleUploadLocationSource: 'volume:af5d9f4c-8370-4936-b18f-2656c9900a8d'
+      singleUploadLocationSubpath: ''
+      restrictFiles: ''
+      allowedKinds: null
+      sources:
+        - 'volume:896bb516-1c31-415c-a053-1ff4437dc451'
+      source: null
+      targetSiteId: null
+      viewMode: list
+      limit: '1'
+      selectionLabel: ''
+      localizeRelations: false
+    contentColumnType: string
+    fieldGroup: bd49d05a-3814-4821-bcf9-2aedfed2e879
 plugins:
   cp-css:
     edition: standard
@@ -437,6 +446,16 @@ sections:
         titleLabel: Title
         titleFormat: '{section.name|raw}'
         sortOrder: 1
+        fieldLayouts:
+          c28d3857-7dd1-43d5-bf6c-a659d592daed:
+            tabs:
+              -
+                name: Content
+                sortOrder: 1
+                fields:
+                  75243d1c-0115-4146-8c7d-55d0efb4d18d:
+                    required: false
+                    sortOrder: 1
   467a7187-2226-4c46-bcc4-3b390493f66a:
     enableVersioning: true
     entryTypes:
@@ -615,18 +634,15 @@ sections:
                   350f4bbd-1c23-4ebe-87bc-f1f98ab8c053:
                     required: false
                     sortOrder: 1
-                  efe538f4-dcdf-4821-955f-e064ef687137:
-                    required: false
-                    sortOrder: 2
                   f6d2a043-1c67-4fe1-afe6-d44760e6c2c9:
                     required: false
-                    sortOrder: 3
+                    sortOrder: 2
                   006470aa-a799-427a-9b9e-bd8431ab26c6:
                     required: false
-                    sortOrder: 4
+                    sortOrder: 3
                   13858c6c-3e07-4feb-a327-4a2d2c6d8feb:
                     required: false
-                    sortOrder: 5
+                    sortOrder: 4
 siteGroups:
   36f6937e-673b-4f31-845c-d37b7f19de90:
     name: Craft3manual
@@ -914,15 +930,6 @@ users:
   photoVolumeUid: null
   requireEmailVerification: true
 volumes:
-  14a5170c-9eed-42d3-a7e7-103749b44e85:
-    handle: subtopicIcons
-    hasUrls: true
-    name: 'Subtopic Icons'
-    settings:
-      path: '@webroot/assets/images/subtopic-icons'
-    sortOrder: '2'
-    type: craft\volumes\Local
-    url: /assets/images/subtopic-icons
   af5d9f4c-8370-4936-b18f-2656c9900a8d:
     handle: topicIcons
     hasUrls: true
@@ -954,3 +961,12 @@ volumes:
               820ecbe8-2ac2-4a00-84a9-dd4a5331d6fe:
                 required: false
                 sortOrder: 2
+  896bb516-1c31-415c-a053-1ff4437dc451:
+    name: Logos
+    handle: logos
+    type: craft\volumes\Local
+    hasUrls: true
+    url: assets/images/logos
+    settings:
+      path: '@webroot/assets/images/logos'
+    sortOrder: '8'

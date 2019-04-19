@@ -40,7 +40,7 @@
 
                     <div class="navbar-header">
                         <a class="navbar-brand" href="{{ siteUrl }}">
-                            <img src={{ alias('@web/assets/images/logo.png') }} alt="Company Logo" title="">
+                            <img src={{ alias('@web/assets/images/logos/logo.png') }} alt="Company Logo" title="">
                         </a>
                         <button id="mobile_nav_btn" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target-custom="#navigation">
                             <span class="sr-only">Toggle navigation</span>
@@ -88,22 +88,23 @@
         <!-- footer-top -->
         <section id="footer-top">
 						{% set entry = craft.entries.section('base_site_section').first() %}
-            <div class="container">
+            <div class="container-fluid">
                 <div class="row">
-                    <div class="col-md-4 mb-sm mb-big-xs">
-
+                    <div class="col-md-5 mb-sm mb-big-xs">
                         <div class="contacts-wrap">
                             <div class="item mb">
                                 <div class="item-label small color-blue">
                                     Address
                                 </div>
                                 <div>
-                                    <strong>{{ entry.addressHeading }}</strong>
-                                </div>
-                                <div>
                                     {{ entry.address }}
                                 </div>
                             </div>
+												</div>
+										</div>
+
+										<div class="col-md-5 mb-sm mb-big-xs">
+										  <div class="contacts-wrap">
                             <div class="item mb">
                                 <div class="item-label small color-blue">
                                     Phone
@@ -112,24 +113,35 @@
                                     <a href="tel:{{ entry.phoneNumber }}">{{entry.phoneNumber}}</a>
                                 </div>
                             </div>
-                            <div class="item mb">
-                                <div class="item-label small color-blue">
-                                    Email
-                                </div>
-                                <div>
-                                    <a href="mailto:{{entry.email}}">{{entry.email}}</a>
-                                </div>
-                            </div>
+
+											</div>
+									  </div>
+
+										<div class="col-md-5 mb-sm mb-big-xs">
+											<div class="contacts-wrap">
+												<div class="item mb">
+														<div class="item-label small color-blue">
+																Email
+														</div>
+														<div>
+																<a href="mailto:{{entry.email}}">{{entry.email}}</a>
+														</div>
+												</div>
+											</div>
+									  </div>
+
+
                             <div class="social-links">
                         		  <a href="{{ entry.socialMediaLinks.twitterLink }}" target="_blank"><span class="fa fa-twitter fa-lg"></span></a>
                             	<a href="{{ entry.socialMediaLinks.facebookLink }}" target="_blank"><span class="fa fa-linkedin fa-lg"></span></a>
                             	<a href="{{ entry.socialMediaLinks.linkedinLink }}" target="_blank"><span class="fa fa-facebook-f fa-lg"></span></a>
-                        	</div>
-                        </div>
+                        		</div>
+
+
+										</div>
+                    </div>
 
                     </div>
-									</div>
-								</div>
         </section>
         <!-- /footer-top -->
 
@@ -138,7 +150,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-6 mb-xs">
-                        Copyright 2018 AACI
+                        Copyright 2019 AACI
                     </div>
                     <div class="col-sm-6">
                         <div class="privacy-links">

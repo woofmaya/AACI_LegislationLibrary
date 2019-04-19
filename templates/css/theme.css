@@ -363,6 +363,9 @@
 	.navbar-toggle:focus{ background-color:transparent; color:inherit;}
 	[aria-expanded='true'].navbar-toggle:focus{ background-color:#78a22f; color:#fff;}
 
+	/* home page logo */
+
+	.home-brand img{width:20%;}
 	/*navigation */
 	#navigation{padding:0;}
 	#navigation > .inner-wrap{ display:flex; flex-wrap:wrap; padding-left:13rem; justify-content:flex-end;}
@@ -462,11 +465,13 @@
 	#programs-list .item:hover .item-content:before{right:-2.5rem;}
 
 	/* news-list */
-	.news-list .item{ display:flex; align-items:flex-start; padding:1.25rem 0;}
-	.news-list .item:before{ content:''; display:block; position:absolute; top:0; bottom:0; right:-1rem; left:-1rem; opacity:0; transition:opacity 0.2s ease;
-		background: -webkit-linear-gradient(top, #f7f7f5, #fff);
-	    background: -ms-linear-gradient(top, #f7f7f5, #fff);
-	    background: linear-gradient(top, #f7f7f5, #fff);
+
+	.news-list .item{display:flex; align-items:flex-start; padding:1.25rem 0;}
+	.news-list .item:before{ content:''; display:block; position:absolute; top:0; bottom:0; right:-1rem; left:-1rem; opacity:0.5; transition:opacity 0.2s ease;
+		background: -webkit-linear-gradient(top, 	#DCDCDC, #fff);
+	    background: -ms-linear-gradient(top, , 	#DCDCDC, #fff);
+	    background: linear-gradient(top, 	#DCDCDC, #fff);
+			border: solid 1px #e5e5e5;
 		}
 	.news-list .item-image{order:1; width:7.75rem; margin-right:1.75rem; flex:none;}
 	.news-list .item-image img{width:100%; max-width:100%; margin-top:0.35rem;}
@@ -475,7 +480,7 @@
 	.news-list .item-date strong{ display:block;}
 	.news-list .more-link{ z-index:2;}
 
-	.news-list .item:hover:before{ opacity:1;}
+	.news-list .item:hover:before{ opacity:1}
 
 	.twitter-heading{padding-left:2.2rem;}
 	.twitter-heading:before{ content: '\f099'; font-family: "FontAwesome"; margin-right:0.5rem; font-size: 80%; margin-left:-2.2rem;}
@@ -509,7 +514,7 @@
 	.site-map ul a{color:inherit;}
 	.site-map ul a:hover, .site-map ul a:focus{color:#034380; text-decoration:underline;}
 
-	.social-links a{ display:inline-block; margin-right:1.5rem; color:#034380;}
+	.social-links a{ text-align:left; display:inline-block; margin-right:1.5rem; color:#034380;}
 	.social-links a:hover, .social-links a:focus{color:#78a12f;}
 
 	/* footer-bottom */
