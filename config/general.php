@@ -48,7 +48,7 @@ return [
     ],
 
     // Use IP address of your droplet below
-  '12.34.56.78' => array(
+  '68.183.194.197' => array(
     'siteUrl' => 'http://68.183.194.197',
     'environmentVariables' => array(
       'basePath' => '/var/www/AACI_LegislationLibrary/',
