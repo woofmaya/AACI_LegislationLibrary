@@ -1,34 +1,43 @@
 {% extends "base_site" %}
 
 {% block internalHeader %}
-
-  {% if entry.homePageSearchLogo|length %}
-    {% set logo = entry.homePageSearchLogo.one() %}
-  {% else %}
-    {% set logo = craft.assets.volume('Logos').title('Default').one() %}
-  {% endif %}
-
-  <a class="home-brand">
-  <img src="{{ logo.url }}"" alt="Company Logo" class="home-logo">
-  </a>
 {% endblock %}
 
 {% block main %}
 
     <!-- search bar -->
     <!-- source: https://codepen.io/huange/pen/rbqsD -->
+
+    <div class="home">
+      <div class="logo_search">
+    {% if entry.homePageSearchLogo|length %}
+      {% set logo = entry.homePageSearchLogo.one() %}
+    {% else %}
+      {% set logo = craft.assets.volume('Logos').title('Default').one() %}
+    {% endif %}
+    <a class="home-logo">
+        <img src="{{ logo.url }}" alt="Company Logo" class="home-logo">
+    </a>
     <section class="content-section">
         <div class="wrap">
             <div class="search">
                 <form action="{{ url('search-results') }}" >
-                    <input type="search" name='q' class="searchTerm" placeholder="What are you looking for?">
+                    <input type="search" name='q' class="searchTerm" placeholder="Enter keyword">
                     <button type="submit" class="searchButton">
                         <i class="fa fa-search"></i>
                     </button>
                 </form>
             </div>
         </div>
+        </div>
+    </div>
 
     </section>
+
+    <!-- cta -->
+
+
+        <!-- /cta -->
+
 
 {% endblock %}

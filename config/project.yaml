@@ -10,7 +10,7 @@ categoryGroups:
     structure:
       maxLevels: null
       uid: f86a74ca-7e91-4e78-8af6-452451af6d4a
-dateModified: 1555685757
+dateModified: 1555804433
 email:
   fromEmail: egiuse@andrew.cmu.edu
   fromName: Craft3manual
@@ -24,32 +24,34 @@ fieldGroups:
     name: General
   8a5a34c5-81f9-453b-b9e0-c70cad3fb353:
     name: About
-  9db828f4-ff3c-4c88-9c21-2060e6088b3c:
-    name: Footer
   c87c8cb6-47a4-4346-86ac-533a2c6b1870:
     name: 'Base Site'
+  ccbf79e5-0368-4382-b22f-d385bfe92d7c:
+    name: Resources
+  6bdc0b9b-ef89-4294-8f60-62dc04e86201:
+    name: Home
 fields:
   0e50d7a7-a7e6-44a5-93b4-c81eff229a26:
+    name: 'Short Description'
+    handle: shortDescription
+    instructions: 'Enter the short description.'
+    searchable: true
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\PlainText
+    settings:
+      placeholder: ''
+      code: ''
+      multiline: ''
+      initialRows: '4'
+      charLimit: ''
+      columnType: text
     contentColumnType: text
     fieldGroup: bd49d05a-3814-4821-bcf9-2aedfed2e879
-    handle: shortDescription
-    instructions: ''
-    name: 'Short Description'
-    searchable: true
-    settings:
-      charLimit: ''
-      code: ''
-      columnType: text
-      initialRows: '4'
-      multiline: ''
-      placeholder: 'Enter the the short description.'
-    translationKeyFormat: null
-    translationMethod: none
-    type: craft\fields\PlainText
   820ecbe8-2ac2-4a00-84a9-dd4a5331d6fe:
-    name: 'Document Tags'
-    handle: documentTagsField
-    instructions: ''
+    name: 'Resource Tags'
+    handle: resourceTagsField
+    instructions: 'Enter the tags you want this resourced tagged with.'
     searchable: true
     translationMethod: site
     translationKeyFormat: null
@@ -57,7 +59,7 @@ fields:
     settings:
       minRows: ''
       maxRows: ''
-      contentTable: '{{%stc_documenttagsfield}}'
+      contentTable: '{{%stc_resourcetagsfield_1}}'
       localizeBlocks: false
       staticField: '1'
       columns:
@@ -69,10 +71,12 @@ fields:
           width: ''
         32:
           width: ''
+        70:
+          width: ''
       fieldLayout: row
       selectionLabel: ''
     contentColumnType: string
-    fieldGroup: 7aec1807-48f2-41c7-b821-83a622e4258f
+    fieldGroup: ccbf79e5-0368-4382-b22f-d385bfe92d7c
   a45974e5-3976-47ad-8022-b97e2e2b7e46:
     name: Heading
     handle: heading
@@ -117,26 +121,26 @@ fields:
     contentColumnType: string
     fieldGroup: 7aec1807-48f2-41c7-b821-83a622e4258f
   b782df66-c05d-4de6-be7b-963cc07585d5:
+    name: Slogan
+    handle: slogan
+    instructions: 'Enter the slogan'
+    searchable: true
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\PlainText
+    settings:
+      placeholder: ''
+      code: ''
+      multiline: ''
+      initialRows: '4'
+      charLimit: ''
+      columnType: text
     contentColumnType: text
     fieldGroup: bd49d05a-3814-4821-bcf9-2aedfed2e879
-    handle: slogan
-    instructions: ''
-    name: Slogan
-    searchable: true
-    settings:
-      charLimit: ''
-      code: ''
-      columnType: text
-      initialRows: '4'
-      multiline: ''
-      placeholder: 'Enter the slogan'
-    translationKeyFormat: null
-    translationMethod: none
-    type: craft\fields\PlainText
   f9540f2f-94dc-4496-bb78-51b9dde2a76f:
-    name: Documents
-    handle: documents
-    instructions: 'After adding an asset, double click on it for its information.'
+    name: Resources
+    handle: resources
+    instructions: 'After adding a resource, double click on it for its information.'
     searchable: true
     translationMethod: site
     translationKeyFormat: null
@@ -155,7 +159,7 @@ fields:
       targetSiteId: null
       viewMode: large
       limit: ''
-      selectionLabel: ''
+      selectionLabel: 'Add a resource'
       localizeRelations: false
     contentColumnType: string
     fieldGroup: 7aec1807-48f2-41c7-b821-83a622e4258f
@@ -209,54 +213,54 @@ fields:
   350f4bbd-1c23-4ebe-87bc-f1f98ab8c053:
     name: Address
     handle: address
-    instructions: ''
+    instructions: 'The address that will display in the footer.'
     searchable: false
     translationMethod: none
     translationKeyFormat: null
     type: craft\fields\PlainText
     settings:
-      placeholder: ''
+      placeholder: 'Medical Arts Building 3708 Fifth Avenue, Suite 503 Pittsburgh, PA 15213'
       code: ''
       multiline: ''
       initialRows: '4'
       charLimit: ''
       columnType: text
     contentColumnType: text
-    fieldGroup: 9db828f4-ff3c-4c88-9c21-2060e6088b3c
+    fieldGroup: c87c8cb6-47a4-4346-86ac-533a2c6b1870
   006470aa-a799-427a-9b9e-bd8431ab26c6:
     name: 'Phone Number'
     handle: phoneNumber
-    instructions: ''
+    instructions: 'The phone number that will display in the footer.'
     searchable: false
     translationMethod: none
     translationKeyFormat: null
     type: craft\fields\PlainText
     settings:
-      placeholder: ''
+      placeholder: 555-555-5555
       code: ''
       multiline: ''
       initialRows: '4'
       charLimit: ''
       columnType: text
     contentColumnType: text
-    fieldGroup: 9db828f4-ff3c-4c88-9c21-2060e6088b3c
+    fieldGroup: c87c8cb6-47a4-4346-86ac-533a2c6b1870
   f6d2a043-1c67-4fe1-afe6-d44760e6c2c9:
     name: Email
     handle: email
-    instructions: ''
+    instructions: 'The email that will display in the footer.'
     searchable: false
     translationMethod: none
     translationKeyFormat: null
     type: craft\fields\PlainText
     settings:
-      placeholder: ''
+      placeholder: test@test.org
       code: ''
       multiline: ''
       initialRows: '4'
       charLimit: ''
       columnType: text
     contentColumnType: text
-    fieldGroup: 9db828f4-ff3c-4c88-9c21-2060e6088b3c
+    fieldGroup: c87c8cb6-47a4-4346-86ac-533a2c6b1870
   13858c6c-3e07-4feb-a327-4a2d2c6d8feb:
     name: 'Social Media Links'
     handle: socialMediaLinks
@@ -281,7 +285,7 @@ fields:
       fieldLayout: row
       selectionLabel: ''
     contentColumnType: string
-    fieldGroup: 9db828f4-ff3c-4c88-9c21-2060e6088b3c
+    fieldGroup: c87c8cb6-47a4-4346-86ac-533a2c6b1870
   8b0ca859-3435-4bfe-a482-c42eaa8bb15a:
     name: 'Nav Bar Text'
     handle: navBarText
@@ -310,7 +314,7 @@ fields:
   75243d1c-0115-4146-8c7d-55d0efb4d18d:
     name: 'Home Page Search Logo'
     handle: homePageSearchLogo
-    instructions: ''
+    instructions: 'This logo will display on the home page above the search bar.'
     searchable: false
     translationMethod: site
     translationKeyFormat: null
@@ -329,10 +333,57 @@ fields:
       targetSiteId: null
       viewMode: list
       limit: '1'
-      selectionLabel: ''
+      selectionLabel: 'Add a logo'
       localizeRelations: false
     contentColumnType: string
-    fieldGroup: bd49d05a-3814-4821-bcf9-2aedfed2e879
+    fieldGroup: 6bdc0b9b-ef89-4294-8f60-62dc04e86201
+  c17d86f6-a9b0-4da5-ad30-a5a430832543:
+    name: 'Call To Action Banner Title'
+    handle: callToActionBannerTitle
+    instructions: ''
+    searchable: true
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\PlainText
+    settings:
+      placeholder: 'How Does Cancer Affect Your State?'
+      code: ''
+      multiline: ''
+      initialRows: '4'
+      charLimit: ''
+      columnType: text
+    contentColumnType: text
+    fieldGroup: c87c8cb6-47a4-4346-86ac-533a2c6b1870
+  5d8b82d9-595d-4210-8f8b-811fbc395b73:
+    name: 'Call To Action Banner Link'
+    handle: callToActionBannerLink
+    instructions: ''
+    searchable: true
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\Url
+    settings:
+      placeholder: ''
+      maxLength: '255'
+    contentColumnType: string(255)
+    fieldGroup: c87c8cb6-47a4-4346-86ac-533a2c6b1870
+  6b5071d5-6847-4990-a811-fec5ac3cafbd:
+    name: 'Call To Action Banner Link Text'
+    handle: callToActionBannerLinkText
+    instructions: ''
+    searchable: true
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\PlainText
+    settings:
+      placeholder: 'text to be hyperlinked'
+      code: ''
+      multiline: ''
+      initialRows: '4'
+      charLimit: ''
+      columnType: text
+    contentColumnType: text
+    fieldGroup: c87c8cb6-47a4-4346-86ac-533a2c6b1870
 plugins:
   cp-css:
     edition: standard
@@ -463,7 +514,7 @@ sections:
         name: 'Topics Index'
         handle: topics_index_section
         hasTitleField: false
-        titleLabel: 'Topics Index'
+        titleLabel: 'Page Title'
         titleFormat: 'Topics Index'
         sortOrder: 1
         fieldLayouts:
@@ -732,6 +783,24 @@ superTableBlockTypes:
           localizeRelations: false
         contentColumnType: string
         fieldGroup: null
+      41a5ac65-b261-4679-aef0-e2741698c080:
+        name: Misc
+        handle: miscTagField
+        instructions: ''
+        searchable: true
+        translationMethod: site
+        translationKeyFormat: null
+        type: craft\fields\Tags
+        settings:
+          sources: '*'
+          source: 'taggroup:f870fcf5-c00e-4116-8119-beb68daab851'
+          targetSiteId: null
+          viewMode: null
+          limit: null
+          selectionLabel: ''
+          localizeRelations: false
+        contentColumnType: string
+        fieldGroup: null
     fieldLayouts:
       6185ca10-51a0-432f-bbc2-44ec6ed400ab:
         tabs:
@@ -740,7 +809,7 @@ superTableBlockTypes:
             sortOrder: 1
             fields:
               2a23569a-a1d0-4191-bed6-fc858f3b4bb2:
-                required: true
+                required: false
                 sortOrder: 1
               81a65cb5-3e61-4703-9956-f476c8a6ea05:
                 required: false
@@ -751,19 +820,22 @@ superTableBlockTypes:
               481a06cd-7b7b-4896-b424-92f974707d75:
                 required: false
                 sortOrder: 4
+              41a5ac65-b261-4679-aef0-e2741698c080:
+                required: false
+                sortOrder: 5
   7b06b81d-8f6f-4863-8ab2-5a4175e0490e:
     field: 13858c6c-3e07-4feb-a327-4a2d2c6d8feb
     fields:
       61ce5209-9fd1-43b8-a165-50a48ce889de:
         name: 'Twitter Link'
         handle: twitterLink
-        instructions: ''
+        instructions: 'The link to AACI''s Twitter page.'
         searchable: true
         translationMethod: none
         translationKeyFormat: null
         type: craft\fields\PlainText
         settings:
-          placeholder: ''
+          placeholder: twitter.com/test
           code: ''
           multiline: ''
           initialRows: '4'
@@ -774,13 +846,13 @@ superTableBlockTypes:
       0e0cbf9e-1747-4372-8634-7a8500b7b411:
         name: 'Facebook Link'
         handle: facebookLink
-        instructions: ''
+        instructions: 'The link to AACI''s Facebook page.'
         searchable: true
         translationMethod: none
         translationKeyFormat: null
         type: craft\fields\PlainText
         settings:
-          placeholder: ''
+          placeholder: facebook.com/test
           code: ''
           multiline: ''
           initialRows: '4'
@@ -791,13 +863,13 @@ superTableBlockTypes:
       9e2ceeff-b09b-4de0-acde-09f5210b9795:
         name: 'LinkedIn Link'
         handle: linkedinLink
-        instructions: ''
+        instructions: 'The link to AACI''s LinkedIn link.'
         searchable: true
         translationMethod: none
         translationKeyFormat: null
         type: craft\fields\PlainText
         settings:
-          placeholder: ''
+          placeholder: linkedin.com/test
           code: ''
           multiline: ''
           initialRows: '4'
@@ -827,7 +899,7 @@ superTableBlockTypes:
       2402f913-3987-4af3-9aaf-28bd42ea67b9:
         name: 'Home Page Name'
         handle: homePageName
-        instructions: ''
+        instructions: 'This is the label for the first nav bar link in the upper right hand corner.'
         searchable: true
         translationMethod: none
         translationKeyFormat: null
@@ -844,7 +916,7 @@ superTableBlockTypes:
       51dd64d3-0751-47de-87a3-03eca5aea2af:
         name: 'About Page Name'
         handle: aboutPageName
-        instructions: ''
+        instructions: 'This is the label for the second nav bar link in the upper right hand corner.'
         searchable: true
         translationMethod: none
         translationKeyFormat: null
@@ -861,7 +933,7 @@ superTableBlockTypes:
       0c39d570-26e1-41c7-b88d-fe3a8b979bdf:
         name: 'Topics Page Name'
         handle: topicsPageName
-        instructions: ''
+        instructions: 'This is the label for the third nav bar link in the upper right hand corner.'
         searchable: true
         translationMethod: none
         translationKeyFormat: null
@@ -895,7 +967,7 @@ system:
   edition: pro
   live: true
   name: 'AACI Library'
-  schemaVersion: 3.1.26
+  schemaVersion: 3.1.27
   timeZone: America/Los_Angeles
 tagGroups:
   3cf0a51d-6681-4ef9-a9d2-827f9e0ed36a:

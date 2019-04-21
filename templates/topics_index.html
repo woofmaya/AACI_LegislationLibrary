@@ -5,10 +5,13 @@
 <section class="internal-header-section bg-dark-blue color-white">
     <div class="front-graphic-top"></div>
     <div class="front-graphic-bottom"></div>
+    <!-- <section id="breadcrumbs">
+    </section> -->
+    <br>
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-3 col-sm-11 col-sm-offset-1">
-                <h1>{{entry.title}}</h1>
+                <h1>{{entry.heading}}</h1>
             </div>
         </div>
     </div>
@@ -36,29 +39,34 @@
 
 					{# Display the entries #}
 					{% for entry in topicsEntries %}
-					    <div class="col-md-3 col-sm-6 col-xs-12">
+					    <div class="col-md-4 col-sm-6 col-xs-12">
+
+                          <a href="{{ entry.url }}">
                           <div class="personal-card">
-                        	<div class="image-block">
-                        		{% set topicIcon = craft.assets.volume('topicIcons').title('Default').one() %}
 
-                        		{% if entry.icon|length %}
-                        			{% set topicIcon = entry.icon.one() %}
-                        		{% endif %}
+                            <div class="image-block">
+                          		{% set topicIcon = craft.assets.volume('topicIcons').title('Default').one() %}
 
-                        		<img src="{{ topicIcon.url }}" alt="{{ topicIcon.title }}">
+                          		{% if entry.icon|length %}
+                          			{% set topicIcon = entry.icon.one() %}
+                          		{% endif %}
 
-                        	</div>
+                          		<img src="{{ topicIcon.url }}" alt="{{ topicIcon.title }}">
+
+                          	</div>
+
                         	<div class="card-body">
                             	<div class="inner-wrap mb">
-                                	<h4 class="card-title">{{ entry.title}}</h4>
-                                	<div class="textbox">
-                                    	{{ entry.shortDescription }}
+                                	<h4 class="card-title color-black">{{ entry.title}}</h4>
+                                	<div class="textbox color-black">
+                                    	{{ entry.shortDescription }}<br>
                                 	</div>
                             	</div>
                             	<a class="more-link link-block" href="{{ entry.url }}">Learn More </a>
                         	</div>
-                        	<div class="border bg-green"></div>
+
                     	</div>
+                      </a>
               </div>
 
 					{% endfor %}

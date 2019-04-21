@@ -1,9 +1,9 @@
 {
   "require": {
-    "craftcms/cms": "3.1.22",
+    "craftcms/cms": "3.1.23",
     "craftcms/redactor": "^2.3",
     "doublesecretagency/craft-cpcss": "2.1.0",
-    "ether/tags": "1.0.1",
+    "ether/tags": "1.0.2",
     "mmikkel/child-me": "1.0.4",
     "mmikkel/cp-field-inspect": "1.0.5",
     "spicyweb/craft-embedded-assets": "2.0.2",
@@ -12,7 +12,7 @@
     "verbb/expanded-singles": "1.0.7",
     "verbb/field-manager": "2.0.5",
     "verbb/image-resizer": "2.0.4",
-    "verbb/super-table": "2.1.16",
+    "verbb/super-table": "2.1.17",
     "vlucas/phpdotenv": "^2.4.0",
     "wbrowar/adminbar": "3.1.7.1"
   },

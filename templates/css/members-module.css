@@ -100,7 +100,7 @@
 		  left: 0;
 		  width: 28.9rem;
 		  height: 9.4rem;
-		  background: url(../img/graphic06.png) no-repeat left top;
+		  background: url(.../images/graphic06.png) no-repeat left top;
 		  background-size: contain;
 		}
 
@@ -110,7 +110,7 @@
 		  right: 0;
 		  width: 60%;
 		  height: 75rem;
-		  background: url(../img/graphic07.png) no-repeat right bottom;
+		  background: url(../images/graphic07.png) no-repeat right bottom;
 		  background-size: contain;
 		}
 
@@ -118,6 +118,8 @@
 			background-color: #fff;
 			border: solid 1px #e5e5e5;
 		}
+
+		/* orange bar after hovering */
 		.personal-card:after{
 			content: '';
 			position: absolute;
@@ -128,16 +130,19 @@
 			height: 0;
 			transition: all 0.4s ease;
 		}
+
 		.personal-card:hover:after{
 			height: 100%;
 		}
+
 		.personal-card .image-block{margin-right: 2rem;}
-		.personal-card .image-block img{width: 100%;}
+		.personal-card .image-block img{max-width: 100%;}
 
 		.personal-card .card-body{
 			padding: 2rem 1.5rem;
 		}
-		.personal-card .card-body .card-title{margin-bottom: 0.5rem;}
+
+		.personal-card .card-body .card-title{margin-bottom: 0.5rem;} /* space between title and description */
 		.personal-card .card-body .post {
 		  margin-bottom: 0.5rem;
 		  color: rgba(0, 0, 0, 0.5);
@@ -162,6 +167,7 @@
 
 
 
+		/* 1199*/
 		@media (max-width: 1199px) {
 			.president-content{padding-left: 3rem;}
 			.members-listing .personal-card .card-body {padding: 1.5rem 1rem;}

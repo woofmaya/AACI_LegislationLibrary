@@ -364,9 +364,6 @@
 	.navbar-toggle:focus{ background-color:transparent; color:inherit;}
 	[aria-expanded='true'].navbar-toggle:focus{ background-color:#78a22f; color:#fff;}
 
-	/* home page logo */
-
-	.home-brand img{width:20%;}
 	/*navigation */
 	#navigation{padding:0;}
 	#navigation > .inner-wrap{ display:flex; flex-wrap:wrap; padding-left:13rem; justify-content:flex-end;}
@@ -540,7 +537,7 @@
 	#breadcrumbs a:hover, #breadcrumbs a:focus{ text-decoration:underline;}
 	#breadcrumbs .active{color:#78a22f;}
 
-	.internal-header-section .front-graphic-top{ position:absolute; top:0; left:0; width:28.9rem; height:9.0rem; background:url(../assets/images/graphic01.png) no-repeat left top; background-size:contain;}
+	.internal-header-section .front-graphic-top{ position:absolute; top:0; left:0; width:28.9rem; height:9.4rem; background:url(../assets/images/graphic01.png) no-repeat left top; background-size:contain;}
 	.internal-header-section .front-graphic-bottom{ position:absolute; bottom:0; right:0; width:30.43rem; height:6.25rem; background:url(../assets/images/graphic04.png) no-repeat right bottom; background-size:contain;}
 	.internal-header-section > .container{padding-top:3rem; padding-bottom:3rem;}
 
@@ -812,13 +809,27 @@
 	table.roundtable_members td {border-color: rgb(122, 154, 1); text-align:center; padding:5rem;}
 	table.roundtable_members td img {width:100%;}
 
-	/* home page logo (above the search bar) */
+	/* slogan */
+	.slogan {
+		text-align: center;
+	}
+	/* home page */
+	.home {
+		border-top:1px solid #e5e5e5;
+	}
+
+	.home .logo_search {
+		position: relative;
+	}
+
 	.home-logo {
+		padding-top: 2rem;
 		display: block;
   	margin-left: auto;
   	margin-right: auto;
-  	width: 30%;
+  	width: 40%;
 	}
+
 	/* search bar (used in home page -> 'index.html') */
 	/*@import url(https:////fonts.googleapis.com/css?family=Open+Sans);*/
 
@@ -840,8 +851,10 @@
 	  height: 36px;
 	  border-radius: 5px;
 	  outline: none;
-	  color: #9DBFAF;
+	  color: #000000;
 	}
+
+	.search ::-webkit-input-placeholder { opacity: 1 !important; color: #a3a3a3 !important;}
 
 	.searchTerm:focus{
 	  color: #000000;

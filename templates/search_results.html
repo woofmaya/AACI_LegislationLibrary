@@ -3,13 +3,14 @@
 {% set searchTerm = craft.app.request.getParam('q') %}
 
 {% set assetResults = craft.assets.volume('resources').search(searchTerm).orderBy('score') %}
-{% set entryResults = craft.entries.section('all_topics').search(searchTerm).orderBy('score') %}
+{% set entryResults = craft.entries.section('all_topics').level('2').search(searchTerm).orderBy('score') %}
 
 {% block internalHeader %}
 <!-- internal-header -->
 <section class="internal-header-section bg-dark-blue color-white">
     <div class="front-graphic-top"></div>
     <div class="front-graphic-bottom"></div>
+    <br>
     <div class="container">
         <div class="row">
             <div class="col-md-11 col-md-offset-3 col-sm-11 col-sm-offset-1">
@@ -28,26 +29,45 @@
         	<div class="row">
 
 				<div class="col-md-12 col-lg-8">
-					<h3><strong> Resources: </strong></h3>
+					<!-- <h3><strong> Resources: </strong></h3> -->
 					<div class="news-list">
 					{% if assetResults|length %}
-						{% for asset in assetResults.all() %}
+            {% paginate assetResults.limit(10) as pageInfo, pageEntries %}
+						{% for asset in pageEntries %}
+            <a href="{{ alias('@web/resources/' ~ asset.id) }}" target="_blank">
 						<div class="item">
 							<!-- show title, type of file, and short description if there is one -->
-									<div class="item-date small color-blue">
+									<div class="item-date small color-black">
 										{{asset.kind}}
 									</div>
-									<div class="item-content">
+									<div class="item-content color-black">
 										<h5>{{asset.title}}</h5>
 										<h6> {{asset.shortDescription}}</h6>
-										<a href="{{ alias('@web/resources/' ~ asset.id) }}" target="_blank">See Resource</a>
 									</div>
 							</div>
+              </a>
 						{% endfor %}
+
+              {% if pageInfo.prevUrl %}<a href="{{ pageInfo.prevUrl }}">Prev |</a>{% endif %}
+
+              {% for page, url in pageInfo.getPrevUrls()%}
+                <a href="{{ url }}">{{ page }}</a>
+              {% endfor %}
+
+              <span class="current">{{ pageInfo.currentPage }}</span>
+
+              {% for page, url in pageInfo.getNextUrls() %}
+                <a href="{{ url }}">{{ page }}</a>
+              {% endfor %}
+
+              {% if pageInfo.nextUrl %}<a href="{{ pageInfo.nextUrl }}">| Next</a>{% endif %}
+
 					{% else %}
 						No resources matched your search.
 					{% endif %}
           </div>
+
+          {#
 					<br><br>
 					<h3><strong> Topics/Subtopics: </strong></h3>
           <div class="news-list">
@@ -75,6 +95,7 @@
 						No topics matched your search.
 					{% endif %}
           </div>
+          #}
         </div>
 
     		</div>
