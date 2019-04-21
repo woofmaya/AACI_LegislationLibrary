@@ -8,13 +8,21 @@
  * @see craft\config\DbConfig
  */
 
-return [
-    'driver' => getenv('DB_DRIVER'),
-    'server' => getenv('DB_SERVER'),
-    'user' => getenv('DB_USER'),
-    'password' => getenv('DB_PASSWORD'),
-    'database' => getenv('DB_DATABASE'),
-    'schema' => getenv('DB_SCHEMA'),
-    'tablePrefix' => getenv('DB_TABLE_PREFIX'),
-    'port' => getenv('DB_PORT')
-];
+return array(
+  '*' => array(
+    'server' => 'localhost',
+    'database' => 'craft',
+    'tablePrefix' => 'craft',
+  ),
+
+  'localhost' => array(
+    'user' => 'root',
+    'password' => 'Library2019',
+  ),
+
+  // Use IP of your droplet and MySQL credentials of a user you created
+  '68.183.194.197' => array(
+    'user' => 'craftcms',
+    'password' => 'Library2019',
+  )
+);

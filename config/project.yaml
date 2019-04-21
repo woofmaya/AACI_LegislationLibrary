@@ -10,7 +10,7 @@ categoryGroups:
     structure:
       maxLevels: null
       uid: f86a74ca-7e91-4e78-8af6-452451af6d4a
-dateModified: 1555873970
+dateModified: 1555875413
 email:
   fromEmail: egiuse@andrew.cmu.edu
   fromName: Craft3manual
@@ -397,10 +397,6 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 2.0.0
-  embeddedassets:
-    edition: standard
-    enabled: true
-    schemaVersion: 1.0.0
   expanded-singles:
     edition: standard
     enabled: true
@@ -435,6 +431,10 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 1.0.0
+  assetusage:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.0.0
 routes:
   b4379810-3d2a-4035-a2a2-4e87d9c9da43:
     template: resource_show

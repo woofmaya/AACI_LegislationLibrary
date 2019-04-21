@@ -46,4 +46,13 @@ return [
         // Prevent administrative changes from being made on production
         'allowAdminChanges' => false,
     ],
+
+    // Use IP address of your droplet below
+  '12.34.56.78' => array(
+    'siteUrl' => 'http://68.183.194.197',
+    'environmentVariables' => array(
+      'basePath' => '/var/www/AACI_LegislationLibrary/',
+      'baseUrl'  => 'http://68.183.194.197',
+    )
+  )
 ];
