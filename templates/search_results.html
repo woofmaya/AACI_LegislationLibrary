@@ -43,6 +43,10 @@
 									<div class="item-content color-black">
 										<h5>{{asset.title}}</h5>
 										<h6> {{asset.shortDescription}}</h6>
+                    {% set relatedEntry = craft.entries.section('all_topics').relatedTo(asset).one() %}
+                    {% if relatedEntry|length %}
+                    <h6>{{ relatedEntry }}</h6>
+                    {% endif %}
 									</div>
 							</div>
               </a>

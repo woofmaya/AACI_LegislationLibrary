@@ -10,7 +10,7 @@ categoryGroups:
     structure:
       maxLevels: null
       uid: f86a74ca-7e91-4e78-8af6-452451af6d4a
-dateModified: 1555804433
+dateModified: 1555873970
 email:
   fromEmail: egiuse@andrew.cmu.edu
   fromName: Craft3manual
@@ -140,7 +140,7 @@ fields:
   f9540f2f-94dc-4496-bb78-51b9dde2a76f:
     name: Resources
     handle: resources
-    instructions: 'After adding a resource, double click on it for its information.'
+    instructions: 'After adding a resource, double click on it for its information. (MUST BE A PDF)'
     searchable: true
     translationMethod: site
     translationKeyFormat: null
