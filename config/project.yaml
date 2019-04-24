@@ -10,7 +10,7 @@ categoryGroups:
     structure:
       maxLevels: null
       uid: f86a74ca-7e91-4e78-8af6-452451af6d4a
-dateModified: 1555873970
+dateModified: 1556070012
 email:
   fromEmail: egiuse@andrew.cmu.edu
   fromName: Craft3manual
@@ -337,53 +337,40 @@ fields:
       localizeRelations: false
     contentColumnType: string
     fieldGroup: 6bdc0b9b-ef89-4294-8f60-62dc04e86201
-  c17d86f6-a9b0-4da5-ad30-a5a430832543:
-    name: 'Call To Action Banner Title'
-    handle: callToActionBannerTitle
+  a899a842-f8b7-4132-9f81-a618c0bf7c5a:
+    name: CallToAction1Heading
+    handle: calltoaction1heading
     instructions: ''
-    searchable: true
+    searchable: false
     translationMethod: none
     translationKeyFormat: null
     type: craft\fields\PlainText
-    settings:
-      placeholder: 'How Does Cancer Affect Your State?'
-      code: ''
-      multiline: ''
-      initialRows: '4'
-      charLimit: ''
-      columnType: text
-    contentColumnType: text
-    fieldGroup: c87c8cb6-47a4-4346-86ac-533a2c6b1870
-  5d8b82d9-595d-4210-8f8b-811fbc395b73:
-    name: 'Call To Action Banner Link'
-    handle: callToActionBannerLink
-    instructions: ''
-    searchable: true
-    translationMethod: none
-    translationKeyFormat: null
-    type: craft\fields\Url
     settings:
       placeholder: ''
-      maxLength: '255'
-    contentColumnType: string(255)
-    fieldGroup: c87c8cb6-47a4-4346-86ac-533a2c6b1870
-  6b5071d5-6847-4990-a811-fec5ac3cafbd:
-    name: 'Call To Action Banner Link Text'
-    handle: callToActionBannerLinkText
-    instructions: ''
-    searchable: true
-    translationMethod: none
-    translationKeyFormat: null
-    type: craft\fields\PlainText
-    settings:
-      placeholder: 'text to be hyperlinked'
       code: ''
       multiline: ''
       initialRows: '4'
       charLimit: ''
       columnType: text
     contentColumnType: text
-    fieldGroup: c87c8cb6-47a4-4346-86ac-533a2c6b1870
+    fieldGroup: 8a5a34c5-81f9-453b-b9e0-c70cad3fb353
+  51048e60-3a93-43f1-8594-bb4911ea7262:
+    name: 'Content Heading'
+    handle: contentHeading
+    instructions: ''
+    searchable: false
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\PlainText
+    settings:
+      placeholder: ''
+      code: ''
+      multiline: ''
+      initialRows: '4'
+      charLimit: ''
+      columnType: text
+    contentColumnType: text
+    fieldGroup: 8a5a34c5-81f9-453b-b9e0-c70cad3fb353
 plugins:
   cp-css:
     edition: standard
@@ -557,22 +544,28 @@ sections:
                   a45974e5-3976-47ad-8022-b97e2e2b7e46:
                     required: true
                     sortOrder: 1
+                  51048e60-3a93-43f1-8594-bb4911ea7262:
+                    required: false
+                    sortOrder: 2
                   0e50d7a7-a7e6-44a5-93b4-c81eff229a26:
                     required: false
-                    sortOrder: 2
+                    sortOrder: 3
               -
-                name: About
+                name: 'Call To Action Box'
                 sortOrder: 2
                 fields:
-                  c4670617-924a-43cf-a32c-030fea581dcf:
+                  a899a842-f8b7-4132-9f81-a618c0bf7c5a:
                     required: false
                     sortOrder: 1
-                  5d5e5d17-65a2-421c-bbd6-085dbcc94d4c:
-                    required: false
-                    sortOrder: 2
                   423fedad-5009-471c-afd6-be99457fc23c:
                     required: false
+                    sortOrder: 2
+                  c4670617-924a-43cf-a32c-030fea581dcf:
+                    required: false
                     sortOrder: 3
+                  5d5e5d17-65a2-421c-bbd6-085dbcc94d4c:
+                    required: false
+                    sortOrder: 4
     handle: about_section
     name: About
     propagateEntries: true

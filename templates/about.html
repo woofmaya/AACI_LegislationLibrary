@@ -9,7 +9,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-11 col-md-offset-3 col-sm-11 col-sm-offset-3">
-                <h1>{{entry.title}}</h1>
+                <h1>{{entry.heading}}</h1>
             </div>
         </div>
     </div>
@@ -26,7 +26,7 @@
                     <div class="col-md-8 mb-big-sm">
 
 
-                        <h2>About the Presidential Initiative</h2>
+                        <h2>{{ entry.contentHeading }}</h2>
                         <div class="textbox">{{ entry.shortDescription}}&nbsp;</div>
 
                         <!-- keep the next two lines in order to preserve the grid structure -->
@@ -44,7 +44,7 @@
 
                         <div class="side-block mb  bg-mint-green-gradient  color-white">
 
-                            <h3>How Does Cancer Impact Your State?</h3>
+                            <h3> {{entry.calltoaction1heading}}</h3>
                             <div class="textbox"> {{entry.calltoaction1text }}&nbsp;</div>
                             <A   class="more-link link-block"  HREF= "{{ entry.calltoaction1link }}">{{entry.calltoaction1linktext }}</A>
 
