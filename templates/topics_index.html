@@ -30,14 +30,17 @@
                 <div class="row members-listing">
 
           {# Create the query to display topics as panels #}
+
 					{% set topicsEntryQuery = craft.entries()
 					    .section('all_topics')
 					    .level('1') %}
 
 					{# Fetch the topics entries #}
+
 					{% set topicsEntries = topicsEntryQuery.all() %}
 
 					{# Display the entries #}
+
 					{% for entry in topicsEntries %}
 					    <div class="col-md-4 col-sm-6 col-xs-12">
 

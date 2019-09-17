@@ -40,6 +40,7 @@
                    {% endif %}
 
                    {# Fetch the topics entries #}
+
                    {% if subtopicsEntryQuery|length %}
                     {% set subtopicsEntries = subtopicsEntryQuery.all() %}
                    {% else %}

@@ -1,9 +1,15 @@
+{# SEARCH RESULTS PAGE #}
+
 {% extends "base_site" %}
 
 {% set searchTerm = craft.app.request.getParam('q') %}
 
-{% set assetResults = craft.assets.volume('resources').search(searchTerm).orderBy('score') %}
-{% set entryResults = craft.entries.section('all_topics').level('2').search(searchTerm).orderBy('score') %}
+{% set allSubtopics = craft.entries.section('all_topics').level('2') %}
+{% if allSubtopics|length %}
+  {% set assetResults = craft.assets.volume('resources').relatedTo(allSubtopics).search(searchTerm).orderBy('score') %}
+{% endif %}
+
+{# set assetResults = craft.assets.volume('resources').search(searchTerm).orderBy('score') #}
 
 {% block internalHeader %}
 <!-- internal-header -->
@@ -29,28 +35,32 @@
         	<div class="row">
 
 				<div class="col-md-12 col-lg-8">
-					<!-- <h3><strong> Resources: </strong></h3> -->
 					<div class="news-list">
 					{% if assetResults|length %}
             {% paginate assetResults.limit(10) as pageInfo, pageEntries %}
 						{% for asset in pageEntries %}
+
             <a href="{{ alias('@web/resources/' ~ asset.id) }}" target="_blank">
 						<div class="item">
-							<!-- show title, type of file, and short description if there is one -->
+							<!-- show title, type of file, short description, and subtopic -->
 									<div class="item-date small color-black">
 										{{asset.kind}}
 									</div>
 									<div class="item-content color-black">
 										<h5>{{asset.title}}</h5>
 										<h6> {{asset.shortDescription}}</h6>
+
                     {% set relatedEntry = craft.entries.section('all_topics').relatedTo(asset).one() %}
                     {% if relatedEntry|length %}
                     <h6>{{ relatedEntry }}</h6>
                     {% endif %}
+
 									</div>
-							</div>
+						</div>
               </a>
 						{% endfor %}
+
+              {#  pagination #}
 
               {% if pageInfo.prevUrl %}<a href="{{ pageInfo.prevUrl }}">Prev |</a>{% endif %}
 
@@ -70,36 +80,6 @@
 						No resources matched your search.
 					{% endif %}
           </div>
-
-          {#
-					<br><br>
-					<h3><strong> Topics/Subtopics: </strong></h3>
-          <div class="news-list">
-					{% if entryResults|length %}
-						{% for entry in entryResults.all() %}
-            <div class="item">
-							<!-- show title, type of file, and short description if there is one -->
-              <div class="item-date small color-blue">
-                {% if entry.level == 2 %}
-                  {% set entryType = 'Subtopic' %}
-                {% else %}
-                  {% set entryType = 'Topic' %}
-                {% endif %}
-                {{ entryType }}
-              </div>
-									<div class="item-content">
-										<h5>{{entry.title}}</h5>
-										<h6> {{entry.shortDescription}}</h6>
-										<a href="{{ entry.url }}" target="_blank">See Resource</a>
-									</div>
-							</div>
-						{% endfor %}
-
-					{% else %}
-						No topics matched your search.
-					{% endif %}
-          </div>
-          #}
         </div>
 
     		</div>

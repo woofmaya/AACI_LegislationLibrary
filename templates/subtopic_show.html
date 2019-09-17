@@ -1,3 +1,5 @@
+{# SUBTOPIC SHOW PAGE #}
+
 {% extends "base_site" %}
 
 {% block internalHeader %}
@@ -22,9 +24,9 @@
 <section class="content-section">
     <div class="container">
         <div class="slogan">
-        <h4>{{ entry.slogan }}</h4><br>
+          {{ entry.slogan }}<br>
         </div>
-        <h6>{{ entry.shortDescription}}</h6><br>
+        {{ entry.shortDescription}}<br><br><br>
   <!-- find all assets for this subtopic -->
         {% set subtopic_assets = entry.resources %}
         {% paginate subtopic_assets.limit(10) as pageInfo, pageEntries %}
@@ -41,12 +43,20 @@
                       {{asset.kind}}
                     </div>
                     <div class="item-content color-black">
-                      <h4>{{asset.title}}</h4>
-                      <h6> {{asset.shortDescription}}</h6>
+                      <h5>{{asset.title}}</h5>
+  										<h6> {{asset.shortDescription}}</h6>
+
+                      {% set relatedEntry = craft.entries.section('all_topics').relatedTo(asset).one() %}
+                      {% if relatedEntry|length %}
+                      <h6>{{ relatedEntry }}</h6>
+                      {% endif %}
                     </div>
                 </div>
                 </a>
                   {% endfor %}
+
+                    {# pagination #}
+
                     {% if pageInfo.prevUrl %}<a href="{{ pageInfo.prevUrl }}">Prev |</a>{% endif %}
 
                     {% for page, url in pageInfo.getPrevUrls()%}

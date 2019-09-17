@@ -1,3 +1,5 @@
+{# HOME PAGE #}
+
 {% extends "base_site" %}
 
 {% block internalHeader %}
@@ -5,19 +7,20 @@
 
 {% block main %}
 
-    <!-- search bar -->
+    <!-- search bar and home logo-->
     <!-- source: https://codepen.io/huange/pen/rbqsD -->
 
     <div class="home">
       <div class="logo_search">
-    {% if entry.homePageSearchLogo|length %}
-      {% set logo = entry.homePageSearchLogo.one() %}
-    {% else %}
-      {% set logo = craft.assets.volume('Logos').title('Default').one() %}
-    {% endif %}
-    <a class="home-logo">
-        <img src="{{ logo.url }}" alt="Company Logo" class="home-logo">
-    </a>
+        {% if entry.homePageSearchLogo|length %}
+          {% set logo = entry.homePageSearchLogo.one() %}
+        {% else %}
+          {% set logo = craft.assets.volume('Logos').title('Default').one() %}
+        {% endif %}
+        <a class="home-logo">
+            <img src="{{ logo.url }}" alt="Company Logo" class="home-logo">
+        </a>
+      </div>
     <section class="content-section">
         <div class="wrap">
             <div class="search">
@@ -29,15 +32,7 @@
                 </form>
             </div>
         </div>
-        </div>
-    </div>
-
     </section>
-
-    <!-- cta -->
-
-
-        <!-- /cta -->
-
+    </div>
 
 {% endblock %}

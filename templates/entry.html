@@ -1,3 +1,5 @@
+{# This defines which template to load based on whether an entry is a subtopic or topic #}
+
 {% switch entry.level %}
     {% case 1 %}
         {% include 'topic_show.html' %}

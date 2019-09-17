@@ -10,7 +10,7 @@ categoryGroups:
     structure:
       maxLevels: null
       uid: f86a74ca-7e91-4e78-8af6-452451af6d4a
-dateModified: 1555873970
+dateModified: 1556662469
 email:
   fromEmail: egiuse@andrew.cmu.edu
   fromName: Craft3manual
@@ -38,14 +38,15 @@ fields:
     searchable: true
     translationMethod: none
     translationKeyFormat: null
-    type: craft\fields\PlainText
+    type: craft\redactor\Field
     settings:
-      placeholder: ''
-      code: ''
-      multiline: ''
-      initialRows: '4'
-      charLimit: ''
+      redactorConfig: Custom.json
+      purifierConfig: ''
+      cleanupHtml: '1'
+      purifyHtml: '1'
       columnType: text
+      availableVolumes: '*'
+      availableTransforms: '*'
     contentColumnType: text
     fieldGroup: bd49d05a-3814-4821-bcf9-2aedfed2e879
   820ecbe8-2ac2-4a00-84a9-dd4a5331d6fe:
@@ -97,7 +98,7 @@ fields:
   af0c2fba-82a5-4eb5-860f-606d34e9ee17:
     name: Icon
     handle: icon
-    instructions: ''
+    instructions: '350x350 size recommended.'
     searchable: true
     translationMethod: site
     translationKeyFormat: null
@@ -127,14 +128,15 @@ fields:
     searchable: true
     translationMethod: none
     translationKeyFormat: null
-    type: craft\fields\PlainText
+    type: craft\redactor\Field
     settings:
-      placeholder: ''
-      code: ''
-      multiline: ''
-      initialRows: '4'
-      charLimit: ''
+      redactorConfig: Custom.json
+      purifierConfig: ''
+      cleanupHtml: '1'
+      purifyHtml: '1'
       columnType: text
+      availableVolumes: '*'
+      availableTransforms: '*'
     contentColumnType: text
     fieldGroup: bd49d05a-3814-4821-bcf9-2aedfed2e879
   f9540f2f-94dc-4496-bb78-51b9dde2a76f:
@@ -164,10 +166,10 @@ fields:
     contentColumnType: string
     fieldGroup: 7aec1807-48f2-41c7-b821-83a622e4258f
   c4670617-924a-43cf-a32c-030fea581dcf:
-    name: CallToAction1Link
-    handle: calltoaction1link
-    instructions: 'link for call to action blurb 1'
-    searchable: true
+    name: 'CTA Link'
+    handle: ctaLink
+    instructions: 'Link for the call to action box.'
+    searchable: false
     translationMethod: none
     translationKeyFormat: null
     type: craft\fields\Url
@@ -177,10 +179,10 @@ fields:
     contentColumnType: string(255)
     fieldGroup: 8a5a34c5-81f9-453b-b9e0-c70cad3fb353
   5d5e5d17-65a2-421c-bbd6-085dbcc94d4c:
-    name: CallToAction1LinkText
-    handle: calltoaction1linktext
-    instructions: 'text to be hyperlinked ie "click me"'
-    searchable: true
+    name: 'CTA Link Text'
+    handle: ctaLinkText
+    instructions: 'Text to be hyperlinked. (i.e. "click me")'
+    searchable: false
     translationMethod: none
     translationKeyFormat: null
     type: craft\fields\PlainText
@@ -194,10 +196,10 @@ fields:
     contentColumnType: text
     fieldGroup: 8a5a34c5-81f9-453b-b9e0-c70cad3fb353
   423fedad-5009-471c-afd6-be99457fc23c:
-    name: CallToAction1Text
-    handle: calltoaction1text
-    instructions: 'body of the call to action blurb'
-    searchable: true
+    name: 'CTA Text'
+    handle: ctaText
+    instructions: 'Body text of the call to action block.'
+    searchable: false
     translationMethod: none
     translationKeyFormat: null
     type: craft\fields\PlainText
@@ -217,14 +219,15 @@ fields:
     searchable: false
     translationMethod: none
     translationKeyFormat: null
-    type: craft\fields\PlainText
+    type: craft\redactor\Field
     settings:
-      placeholder: 'Medical Arts Building 3708 Fifth Avenue, Suite 503 Pittsburgh, PA 15213'
-      code: ''
-      multiline: ''
-      initialRows: '4'
-      charLimit: ''
+      redactorConfig: Custom.json
+      purifierConfig: ''
+      cleanupHtml: '1'
+      purifyHtml: '1'
       columnType: text
+      availableVolumes: ''
+      availableTransforms: '*'
     contentColumnType: text
     fieldGroup: c87c8cb6-47a4-4346-86ac-533a2c6b1870
   006470aa-a799-427a-9b9e-bd8431ab26c6:
@@ -337,53 +340,60 @@ fields:
       localizeRelations: false
     contentColumnType: string
     fieldGroup: 6bdc0b9b-ef89-4294-8f60-62dc04e86201
-  c17d86f6-a9b0-4da5-ad30-a5a430832543:
-    name: 'Call To Action Banner Title'
-    handle: callToActionBannerTitle
-    instructions: ''
-    searchable: true
+  a899a842-f8b7-4132-9f81-a618c0bf7c5a:
+    name: 'CTA Heading'
+    handle: ctaHeading
+    instructions: 'The heading for the call to action box.'
+    searchable: false
     translationMethod: none
     translationKeyFormat: null
-    type: craft\fields\PlainText
+    type: craft\redactor\Field
     settings:
-      placeholder: 'How Does Cancer Affect Your State?'
-      code: ''
-      multiline: ''
-      initialRows: '4'
-      charLimit: ''
+      redactorConfig: Custom.json
+      purifierConfig: ''
+      cleanupHtml: '1'
+      purifyHtml: '1'
       columnType: text
+      availableVolumes: '*'
+      availableTransforms: '*'
     contentColumnType: text
-    fieldGroup: c87c8cb6-47a4-4346-86ac-533a2c6b1870
-  5d8b82d9-595d-4210-8f8b-811fbc395b73:
-    name: 'Call To Action Banner Link'
-    handle: callToActionBannerLink
+    fieldGroup: 8a5a34c5-81f9-453b-b9e0-c70cad3fb353
+  51048e60-3a93-43f1-8594-bb4911ea7262:
+    name: 'Content Heading'
+    handle: contentHeading
     instructions: ''
-    searchable: true
+    searchable: false
     translationMethod: none
     translationKeyFormat: null
-    type: craft\fields\Url
+    type: craft\redactor\Field
     settings:
-      placeholder: ''
-      maxLength: '255'
-    contentColumnType: string(255)
-    fieldGroup: c87c8cb6-47a4-4346-86ac-533a2c6b1870
-  6b5071d5-6847-4990-a811-fec5ac3cafbd:
-    name: 'Call To Action Banner Link Text'
-    handle: callToActionBannerLinkText
-    instructions: ''
-    searchable: true
-    translationMethod: none
-    translationKeyFormat: null
-    type: craft\fields\PlainText
-    settings:
-      placeholder: 'text to be hyperlinked'
-      code: ''
-      multiline: ''
-      initialRows: '4'
-      charLimit: ''
+      redactorConfig: Custom.json
+      purifierConfig: ''
+      cleanupHtml: '1'
+      purifyHtml: '1'
       columnType: text
+      availableVolumes: ''
+      availableTransforms: '*'
     contentColumnType: text
-    fieldGroup: c87c8cb6-47a4-4346-86ac-533a2c6b1870
+    fieldGroup: 8a5a34c5-81f9-453b-b9e0-c70cad3fb353
+  176ad3e0-d6f7-4e51-bac8-43778f369bd8:
+    name: 'Text Block'
+    handle: textBlock
+    instructions: ''
+    searchable: false
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\redactor\Field
+    settings:
+      redactorConfig: Custom.json
+      purifierConfig: ''
+      cleanupHtml: '1'
+      purifyHtml: '1'
+      columnType: text
+      availableVolumes: ''
+      availableTransforms: '*'
+    contentColumnType: text
+    fieldGroup: 8a5a34c5-81f9-453b-b9e0-c70cad3fb353
 plugins:
   cp-css:
     edition: standard
@@ -397,10 +407,6 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 2.0.0
-  embeddedassets:
-    edition: standard
-    enabled: true
-    schemaVersion: 1.0.0
   expanded-singles:
     edition: standard
     enabled: true
@@ -435,6 +441,34 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 1.0.0
+  image-resizer:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.0.0
+    settings:
+      enabled: ''
+      imageWidth: ''
+      imageHeight: ''
+      imageQuality: ''
+      assetSourceSettings:
+        1:
+          enabled: '1'
+          imageWidth: '350'
+          imageHeight: '350'
+          imageQuality: '100'
+        7:
+          enabled: ''
+          imageWidth: ''
+          imageHeight: ''
+          imageQuality: ''
+        8:
+          enabled: '1'
+          imageWidth: ''
+          imageHeight: ''
+          imageQuality: ''
+      skipLarger: '1'
+      nonDestructiveResize: '1'
+      nonDestructiveCrop: false
 routes:
   b4379810-3d2a-4035-a2a2-4e87d9c9da43:
     template: resource_show
@@ -557,22 +591,28 @@ sections:
                   a45974e5-3976-47ad-8022-b97e2e2b7e46:
                     required: true
                     sortOrder: 1
-                  0e50d7a7-a7e6-44a5-93b4-c81eff229a26:
+                  51048e60-3a93-43f1-8594-bb4911ea7262:
                     required: false
                     sortOrder: 2
-              -
-                name: About
-                sortOrder: 2
-                fields:
-                  c4670617-924a-43cf-a32c-030fea581dcf:
-                    required: false
-                    sortOrder: 1
-                  5d5e5d17-65a2-421c-bbd6-085dbcc94d4c:
-                    required: false
-                    sortOrder: 2
-                  423fedad-5009-471c-afd6-be99457fc23c:
+                  176ad3e0-d6f7-4e51-bac8-43778f369bd8:
                     required: false
                     sortOrder: 3
+              -
+                name: 'Call To Action Box'
+                sortOrder: 2
+                fields:
+                  a899a842-f8b7-4132-9f81-a618c0bf7c5a:
+                    required: false
+                    sortOrder: 1
+                  423fedad-5009-471c-afd6-be99457fc23c:
+                    required: false
+                    sortOrder: 2
+                  5d5e5d17-65a2-421c-bbd6-085dbcc94d4c:
+                    required: false
+                    sortOrder: 3
+                  c4670617-924a-43cf-a32c-030fea581dcf:
+                    required: false
+                    sortOrder: 4
     handle: about_section
     name: About
     propagateEntries: true
@@ -616,10 +656,10 @@ sections:
                   af0c2fba-82a5-4eb5-860f-606d34e9ee17:
                     required: false
                     sortOrder: 1
-                  0e50d7a7-a7e6-44a5-93b4-c81eff229a26:
+                  b782df66-c05d-4de6-be7b-963cc07585d5:
                     required: false
                     sortOrder: 2
-                  b782df66-c05d-4de6-be7b-963cc07585d5:
+                  0e50d7a7-a7e6-44a5-93b4-c81eff229a26:
                     required: false
                     sortOrder: 3
       ace4315a-7bdf-466c-b4ed-2444c22baf7c:
@@ -639,10 +679,10 @@ sections:
                   af0c2fba-82a5-4eb5-860f-606d34e9ee17:
                     required: false
                     sortOrder: 1
-                  0e50d7a7-a7e6-44a5-93b4-c81eff229a26:
+                  b782df66-c05d-4de6-be7b-963cc07585d5:
                     required: false
                     sortOrder: 2
-                  b782df66-c05d-4de6-be7b-963cc07585d5:
+                  0e50d7a7-a7e6-44a5-93b4-c81eff229a26:
                     required: false
                     sortOrder: 3
                   f9540f2f-94dc-4496-bb78-51b9dde2a76f:
@@ -793,7 +833,7 @@ superTableBlockTypes:
         type: craft\fields\Tags
         settings:
           sources: '*'
-          source: 'taggroup:f870fcf5-c00e-4116-8119-beb68daab851'
+          source: 'taggroup:64a5154b-2fe7-4efb-92f3-864859f47902'
           targetSiteId: null
           viewMode: null
           limit: null
@@ -968,7 +1008,7 @@ system:
   live: true
   name: 'AACI Library'
   schemaVersion: 3.1.27
-  timeZone: America/Los_Angeles
+  timeZone: America/Detroit
 tagGroups:
   3cf0a51d-6681-4ef9-a9d2-827f9e0ed36a:
     handle: institutionTagGroup
@@ -976,25 +1016,35 @@ tagGroups:
   5fd43216-4949-46d6-a2c5-07b661977ab1:
     handle: stateTagGroup
     name: State
-  70b688d8-fe29-4d02-9f18-3a847121ab1c:
-    handle: locationTagGroup
-    name: Location
   d9eafeb5-1a3b-41cd-9ca3-6f880f1a131d:
+    name: 'File Type'
+    handle: filetypeTagGroup
     fieldLayouts:
       14f2db13-e780-4939-a8d5-1d352f62dce9:
         tabs:
           -
+            name: Content
+            sortOrder: 1
             fields:
               0e50d7a7-a7e6-44a5-93b4-c81eff229a26:
                 required: false
                 sortOrder: 1
-            name: Content
-            sortOrder: 1
-    handle: filetypeTagGroup
-    name: 'File Type'
   f870fcf5-c00e-4116-8119-beb68daab851:
     handle: contentTagGroup
     name: Content
+  64a5154b-2fe7-4efb-92f3-864859f47902:
+    name: Misc
+    handle: misc
+    fieldLayouts:
+      91a7c125-ffeb-4784-93ea-511a2de3b6a4:
+        tabs:
+          -
+            name: Content
+            sortOrder: 1
+            fields:
+              0e50d7a7-a7e6-44a5-93b4-c81eff229a26:
+                required: false
+                sortOrder: 1
 users:
   allowPublicRegistration: false
   defaultGroup: null
@@ -1003,14 +1053,14 @@ users:
   requireEmailVerification: true
 volumes:
   af5d9f4c-8370-4936-b18f-2656c9900a8d:
+    name: 'Topic/Subtopic Icons'
     handle: topicIcons
+    type: craft\volumes\Local
     hasUrls: true
-    name: 'Topic Icons'
+    url: /assets/images/topic-icons
     settings:
       path: '@webroot/assets/images/topic-icons'
     sortOrder: '1'
-    type: craft\volumes\Local
-    url: /assets/images/topic-icons
   c9fb2884-b316-47b8-8ee1-8c13739b99cb:
     name: Resources
     handle: resources

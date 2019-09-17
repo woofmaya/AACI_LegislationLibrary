@@ -1,3 +1,5 @@
+{# ABOUT PAGE #}
+
 {% extends "base_site" %}
 
 {% block internalHeader %}
@@ -9,7 +11,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-11 col-md-offset-3 col-sm-11 col-sm-offset-3">
-                <h1>{{entry.title}}</h1>
+                <h1>{{entry.heading}}</h1>
             </div>
         </div>
     </div>
@@ -26,8 +28,8 @@
                     <div class="col-md-8 mb-big-sm">
 
 
-                        <h2>About the Presidential Initiative</h2>
-                        <div class="textbox">{{ entry.shortDescription}}&nbsp;</div>
+                        {{ entry.contentHeading }}
+                        <div class="textbox">{{ entry.textBlock }}&nbsp;</div>
 
                         <!-- keep the next two lines in order to preserve the grid structure -->
                         <!-- so that the green call to action floats right accordingly -->
@@ -38,37 +40,17 @@
                     </div>
                     <!-- /main-col -->
 
-                    <!-- side-col -->
+                    <!-- side-col (CTA) -->
                     <aside class="col-md-4 indent-left">
 
-
                         <div class="side-block mb  bg-mint-green-gradient  color-white">
-
-                            <h3>How Does Cancer Impact Your State?</h3>
-                            <div class="textbox"> {{entry.calltoaction1text }}&nbsp;</div>
-                            <A   class="more-link link-block"  HREF= "{{ entry.calltoaction1link }}">{{entry.calltoaction1linktext }}</A>
-
+                            {{ entry.ctaHeading }}
+                            <div class="textbox"> {{entry.ctaText }}&nbsp;</div>
+                            <A   class="more-link link-block"  HREF= "{{ entry.ctaLink }}">{{entry.ctaLinkText }}</A>
                         </div>
-
-<!--                         <div class="side-block mb bg-dark-blue-gradient color-white">
-
-                            <h3>Public Policy</h3>
-                            <div class="textbox">AACI works on behalf of its cancer centers to advocate for federal funding for the National Institutes of Health and the National Cancer Institute.&nbsp;</div>
-                            <A   class="more-link link-block"  HREF="/public-policy">Learn More</A>
-                        </div>
-
-                        <div class="blockquote-wrap mb">
-                            <h3 class="blockquote-title"></h3>
-                            <div class="blockquote-text mb">My hope is that by creating model legislation on a variety of key issues, we will be able to collectively push state policies forward to improve the prevention and treatment of cancer across the country.&nbsp;</div>
-                            <div class="blockquote-author">
-                                <div class="author">Dr. Roy A. Jensen</div>
-                                <div class="company small">AACI Board of Directors</div>
-                            </div>
-                        </div> -->
-
 
                     </aside>
-                    <!-- /side-col -->
+                    <!-- /side-col (CTA) -->
                 </div>
             </div>
 
