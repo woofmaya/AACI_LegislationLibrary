@@ -1,20 +1,20 @@
 {
   "require": {
-    "craftcms/cms": "3.1.23",
-    "craftcms/redactor": "^2.3",
-    "doublesecretagency/craft-cpcss": "2.1.0",
-    "ether/tags": "1.0.2",
+    "craftcms/cms": "3.3.4",
+    "craftcms/redactor": "2.4.0",
+    "doublesecretagency/craft-cpcss": "2.2.0",
+    "ether/tags": "1.0.5",
     "mmikkel/child-me": "1.0.4",
-    "mmikkel/cp-field-inspect": "1.0.5",
+    "mmikkel/cp-field-inspect": "1.0.6",
     "spicyweb/craft-embedded-assets": "2.0.2",
-    "superbig/craft-entry-instructions": "1.0.4",
+    "superbig/craft-entry-instructions": "1.0.5",
     "verbb/cp-nav": "^2.0",
     "verbb/expanded-singles": "1.0.7",
-    "verbb/field-manager": "2.0.5",
-    "verbb/image-resizer": "2.0.4",
-    "verbb/super-table": "2.1.17",
+    "verbb/field-manager": "2.1.0",
+    "verbb/image-resizer": "2.0.5",
+    "verbb/super-table": "2.3.0",
     "vlucas/phpdotenv": "^2.4.0",
-    "wbrowar/adminbar": "3.1.7.1"
+    "wbrowar/adminbar": "3.1.8.1"
   },
   "autoload": {
     "psr-4": {
@@ -31,6 +31,16 @@
   "scripts": {
     "post-root-package-install": [
       "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+    ],
+    "post-update-cmd": [
+      "@php craft clear-caches/all",
+      "@php craft migrate/all",
+      "@php craft project-config/sync"
+    ],
+    "post-install-cmd": [
+      "@php craft clear-caches/all",
+      "@php craft migrate/all",
+      "@php craft project-config/sync"
     ]
   }
 }
