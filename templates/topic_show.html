@@ -2,39 +2,59 @@
 
 {% extends "base_site" %}
 
+{% block internalHeader %}
+<!-- internal-header -->
+<section class="internal-header-section bg-dark-blue color-white">
+    <div class="front-graphic-top"></div>
+    <div class="front-graphic-bottom"></div>
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-11 col-md-offset-3 col-sm-11 col-sm-offset-1">
+                <h1>{{entry.title}}</h1>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- /internal-header -->
+{% endblock %}
+
 {% block main %}
-
-
-   <!-- topics -->
-       <section class="content-section" id="programs-section">
-           <div class="bg bg-light-gray"></div>
-           <div class="container">
-               <div id="programs-list" class="row mb-big">
-
-                   {# Create the query to display the topic and related information #}
-               </div>
-           </div>
-            <!-- topics -->
-       <section class="content-section" id="programs-section">
-           <div class="bg bg-light-gray"></div>
-           <div class="container">
-               <div id="programs-list" class="row mb-big">
+            <!-- subtopics -->
+            <link href="{{ alias('@web/css/members-module.css') }}" rel="stylesheet">
+            <div class="content-section">
+                <div class="container">
+                  <div class="slogan">
+                  <h4>{{ entry.slogan }}</h4><br>
+                  </div>
+                  <h6>{{ entry.shortDescription}}</h6><br>
+                    <div class="row members-listing">
 
                    {# Create the query to display topics as panels #}
 
-                   <!-- Take all the entries under the section "all_topics" -->
-                   {% set subtopicsEntryQuery = craft.entries()
-                       .section('all_topics')
-                       .level('2') %}
+                   <!-- Take all the subtopic entries underneath this parent entry -->
+                   {% if entry.children|length %}
+                    {% set subtopicsEntryQuery = entry.children %}
+                   {% else %}
+                      {% set subtopicsEntryQuery = NULL %}
+                   {% endif %}
 
                    {# Fetch the topics entries #}
-                   {% set subtopicsEntries = subtopicsEntryQuery.all() %}
+
+                   {% if subtopicsEntryQuery|length %}
+                    {% set subtopicsEntries = subtopicsEntryQuery.all() %}
+                   {% else %}
+                    {% set subtopicsEntries = NULL %}
+                    {% endif %}
 
                    {# Display the entries #}
+
                    {% for entry in subtopicsEntries %}
-                       <div class="col-sm-4 item">
-                           <div class="item-image">
-                               {% set subtopicIcon = craft.assets.volume('subtopicIcons').title('Default').one() %}
+                       <div class="col-md-4 col-sm-6 col-xs-12">
+                         <a href="{{ entry.url }}">
+                         <div class="personal-card">
+                        <div class="image-block">
+                               {% set subtopicIcon = craft.assets.volume('topicIcons').title('Default').one() %}
 
                                {# if there is an icon given #}
                                {# set the subtopic icon to it #}
@@ -42,27 +62,23 @@
                                    {% set subtopicIcon = entry.icon.one() %}
                                {% endif %}
 
-                                 <img src="{{ subtopicIcon.url }}" alt="{{ subtopicIcon.title }}">
+                               <img src="{{ subtopicIcon.url }}" alt="{{ subtopicIcon.title }}">
 
                            </div>
-                           <div class="item-content">
+
+                           <div class="card-body">
                                <div class="inner-wrap mb">
-                                   <h4>{{ entry.heading }}</h4>
-                                   <div class="textbox small">
-                                       <p>
-                                       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                                       </p>
+                                   <h4 class="card-title color-black">{{ entry.title }}</h4>
+                                   <div class="textbox color-black">
+                                       {{ entry.shortDescription}}<br>
                                    </div>
                                </div>
                                <a class="more-link link-block" href="{{ entry.url }}">Learn More </a>
                            </div>
-                           <div class="border bg-green"></div>
                        </div>
-                   {% endfor %}
-
-       <!-- /topics -->
-
-
-
+                       </a>
+                       </div>
+                  {% endfor %}
+                  <!-- subtopics -->
 
 {% endblock %}

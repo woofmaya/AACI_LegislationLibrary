@@ -1,22 +1,38 @@
+{# HOME PAGE #}
+
 {% extends "base_site" %}
+
+{% block internalHeader %}
+{% endblock %}
 
 {% block main %}
 
-    <!-- search bar -->
+    <!-- search bar and home logo-->
     <!-- source: https://codepen.io/huange/pen/rbqsD -->
+
+    <div class="home">
+      <div class="logo_search">
+        {% if entry.homePageSearchLogo|length %}
+          {% set logo = entry.homePageSearchLogo.one() %}
+        {% else %}
+          {% set logo = craft.assets.volume('Logos').title('Default').one() %}
+        {% endif %}
+        <a class="home-logo">
+            <img src="{{ logo.url }}" alt="Company Logo" class="home-logo">
+        </a>
+      </div>
     <section class="content-section">
         <div class="wrap">
             <div class="search">
                 <form action="{{ url('search-results') }}" >
-                    <input type="search" name='q' class="searchTerm" placeholder="What are you looking for?">
+                    <input type="search" name='q' class="searchTerm" placeholder="Enter keyword (i.e. Pennsylvania, Tobacco, Article)">
                     <button type="submit" class="searchButton">
-
-                        <a href="{{ url('search-results') }}"><img src={{ alias('@web/assets/img/search.svg') }} alt="search"></a>
-           <!--          <i class="fa fa-search"></i> -->
+                        <i class="fa fa-search"></i>
                     </button>
                 </form>
             </div>
         </div>
     </section>
+    </div>
 
 {% endblock %}

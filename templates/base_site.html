@@ -1,3 +1,17 @@
+{#
+ # The base site layout template
+ # -----------------------------
+ # This template defines the base HTML structure for our site: the DTD, the
+ # `<html>`, `<head>`, `<title>`, and `<body>` tags, plus some `<meta>` tags and
+ # a `<link rel="stylesheet">` tags that includes CSS and JS files.
+ #
+ # This is the only place in our templates where we'll ever need to define that
+ # stuff. All other templates will extend this one.
+ #
+ # This template also defines two block regions for the child templates:
+ # the internaHeader for each page and the content.
+ #}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,31 +19,40 @@
 	<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <meta name="description" content="">        
+		<meta name="format-detection" content="telephone=no"
 
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/font-awesome.min.css" rel="stylesheet">
-    <link href="css/fonts.css" rel="stylesheet">
-    <link href="js/slick/slick.css" rel="stylesheet">
-    <link href="css/theme.css" rel="stylesheet">
-    <link href="css/responsive.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link href="{{ alias('@web/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ alias('@web/css/fonts.css') }}" rel="stylesheet">
+    <link href="{{ alias('@web/js/slick/slick.css') }}" rel="stylesheet">
+    <link href="{{ alias('@web/css/theme.css') }}" rel="stylesheet">
+    <link href="{{ alias('@web/css/responsive.css') }}" rel="stylesheet">
+
+    <script src="{{ alias('@web/js/jquery.min.js') }}"></script>
+
+    <script src="js/jquery.min.js"></script>
+    <script src='https://cdn.jsdelivr.net/jquery.mixitup/latest/jquery.mixitup.min.js'></script>
+    <script src='https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js'></script>
+
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 </head>
 
 <body>
-	<a class="affix-top" href="#top" id="scrollup" data-spy="affix" data-offset-top="101" title="Scroll Up"></a>
-	
+	<a title="affix-top" href="#top" id="scrollup" data-spy="affix" data-offset-top="101" title="Scroll Up"></a>
+
 	<!-- PAGE_BODY -->
     <section id="page-wrap">
-        
+
         <!-- header -->
         <header id="header">
-            
+
             <nav class="navbar affix-top" data-spy="affix" data-offset-top="101">
                 <div class="container">
-                
+
                     <div class="navbar-header">
                         <a class="navbar-brand" href="{{ siteUrl }}">
-                            <img src={{ alias('@web/assets/img/logo.png') }} alt="Company Logo" title="">
+                            <img src={{ alias('@web/assets/images/logos/logo.png') }} alt="Company Logo" title="">
                         </a>
                         <button id="mobile_nav_btn" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target-custom="#navigation">
                             <span class="sr-only">Toggle navigation</span>
@@ -40,124 +63,133 @@
                     <div class="collapse navbar-collapse" id="navigation">
                         <div class="inner-wrap">
 
+														{# The text that will appear for each page in the nav bar #}
+
+														{% set base_site_header = craft.entries.section('base_site_section').first() %}
+														{% set home_name = base_site_header.navBarText.homePageName %}
+														{% set about_name = base_site_header.navBarText.aboutPageName %}
+														{% set topics_name = base_site_header.navBarText.topicsPageName %}
                             <ul class="nav navbar-nav" id="main-nav">
-                                <li><a href="{{ siteUrl }}">Home</a></li>
-                                <li><a href="{{ url('about') }}">About</a></li>
-                                <li><a href="{{ url('topics') }}">Topics</a></li>
+                                <li><a href="{{ siteUrl }}">{{ home_name }}</a></li>
+                                <li><a href="{{ url('about') }}">{{ about_name }}</a></li>
+                                <li><a href="{{ url('topics') }}">{{ topics_name}}</a></li>
                             </ul>
 
                             <ul class="nav navbar-nav" id="top-nav">
+															<li><a></a></li>
+
                             </ul>
-                            
+
                         </div>
                     </div>
-                
+
                 </div>
             </nav>
 
         </header>
         <!-- /header -->
-        
-        <!-- internal-header -->
-        <section class="internal-header-section bg-dark-blue color-white">
-            <div class="front-graphic-top"></div>
-            <div class="front-graphic-bottom"></div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-8 col-md-offset-2 col-sm-11 col-sm-offset-1">
-                        <h1>{{ entry.heading }}</h1>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- /internal-header -->
 
-        {% block main %}
-        {% endblock %}
-            
+				{% block internalHeader %}
+				{% endblock %}
+
+				{% block main %}
+        {% endblock%}
+
     </section>
     <!-- /PAGE_BODY -->
-    
+
     <!-- FOOTER -->
     <footer id="footer">
- 
+
         <!-- footer-top -->
         <section id="footer-top">
-            <div class="container">
+						{% set entry = craft.entries.section('base_site_section').first() %}
+            <div class="container-fluid">
                 <div class="row">
-                    <div class="col-md-4 mb-sm mb-big-xs">
-                    
+                    <div class="col-md-5 mb-sm mb-big-xs">
                         <div class="contacts-wrap">
-                            <div class="item footer-brand mb">
-                                <a href="index.html"><img src={{ alias('@web/assets/img/logo-compact.png') }} alt="imge"></a>
-                            </div>
                             <div class="item mb">
                                 <div class="item-label small color-blue">
                                     Address
                                 </div>
                                 <div>
-                                    <strong>Association of American Cancer Institutes</strong>
-                                </div>
-                                <div>
-                                    3708 Fifth Avenue Medical Arts Building, Suite 503 Pittsburgh, PA 15213 
+                                    {{ entry.address }}
                                 </div>
                             </div>
+												</div>
+										</div>
+
+										<div class="col-md-5 mb-sm mb-big-xs">
+										  <div class="contacts-wrap">
                             <div class="item mb">
                                 <div class="item-label small color-blue">
                                     Phone
                                 </div>
                                 <div>
-                                    <a href="tel:4126476111">412-647-6111</a>
+                                    <a href="tel:{{ entry.phoneNumber }}">{{entry.phoneNumber}}</a>
                                 </div>
                             </div>
-                            <div class="item mb">
-                                <div class="item-label small color-blue">
-                                    Email
-                                </div>
-                                <div>
-                                    <a href="mailto:mail@accicancer.org">mail@accicancer.org</a>
-                                </div>
-                            </div>
-                            <!-- TODO: fix these for social media -->
-                            <!-- <div class="social-links">
-                        		<a href="aserger"><span class="fa fa-twitter fa-lg"></span></a>
-                            	<a href="aserger"><span class="fa fa-linkedin fa-lg"></span></a>
-                            	<a href="aserger"><span class="fa fa-facebook-f fa-lg"></span></a>
-                            	<a href="aserger"><span class="fa fa-rss fa-lg"></span></a>
-                        	</div> -->
-                        </div>
-                        
+
+											</div>
+									  </div>
+
+										<div class="col-md-5 mb-sm mb-big-xs">
+										  <div class="contacts-wrap">
+												<div class="item mb">
+														<div class="item-label small color-blue">
+																Email
+														</div>
+														<div>
+																<a href="mailto:{{entry.email}}">{{entry.email}}</a>
+														</div>
+												</div>
+											</div>
+									  </div>
+
+														<div class="col-sm-4 mb-big-xs">
+														<div class="mb">
+															<a class="more-link link-block" href="https://www.aaci-cancer.org/" target="_blank">
+																AACI Home Website
+															</a>
+														</div>
+													</div>
+										</div>
                     </div>
-                    
-            </div>
+
+                    </div>
         </section>
         <!-- /footer-top -->
-        
+
         <!-- footer-bottom -->
         <section id="footer-bottom">
             <div class="container">
                 <div class="row">
                     <div class="col-sm-6 mb-xs">
-                        Copyright 2018 AACI
+                        Copyright 2019 AACI
                     </div>
                     <div class="col-sm-6">
                         <div class="privacy-links">
-                            <span><a href="serger">Privacy Policy</a></span>
-                            <span><a href="sehr">Disclosures</a></span>
-                        </div>
+                            <!-- <span><a href="serger">Privacy Policy</a></span>
+                            <span><a href="sehr">Disclosures</a></span> -->
+														<div class="social-links">
+                        		  <a href="{{ entry.socialMediaLinks.twitterLink }}" target="_blank"><span class="fa fa-twitter fa-lg"></span></a>
+                            	<a href="{{ entry.socialMediaLinks.facebookLink }}" target="_blank"><span class="fa fa-linkedin fa-lg"></span></a>
+                            	<a href="{{ entry.socialMediaLinks.linkedinLink }}" target="_blank"><span class="fa fa-facebook-f fa-lg"></span></a>
+                        		</div>
+												</div>
                     </div>
                 </div>
             </div>
         </section>
         <!-- /footer-bottom -->
-        
+
     </footer>
     <!-- /FOOTER -->
-    
+
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/custom.js"></script>
-    
+
     <!-- slick carousel -->
     <script type="text/javascript" src="js/slick/slick.min.js"></script>
     <script type="text/javascript">

@@ -1,5 +1,61 @@
+{# ABOUT PAGE #}
+
 {% extends "base_site" %}
 
+{% block internalHeader %}
+<!-- internal-header -->
+<section class="internal-header-section bg-dark-blue color-white">
+    <div class="front-graphic-top"></div>
+    <div class="front-graphic-bottom"></div>
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-11 col-md-offset-3 col-sm-11 col-sm-offset-3">
+                <h1>{{entry.heading}}</h1>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- /internal-header -->
+{% endblock %}
+
 {% block main %}
+        <!-- content -->
+        <section class="content-section">
+            <div class="container">
+                <div class="row">
+                    <!-- main-col -->
+                    <div class="col-md-8 mb-big-sm">
+
+
+                        {{ entry.contentHeading }}
+                        <div class="textbox">{{ entry.textBlock }}&nbsp;</div>
+
+                        <!-- keep the next two lines in order to preserve the grid structure -->
+                        <!-- so that the green call to action floats right accordingly -->
+                        <h2></h2>
+                        <div class="textbox"></div>
+
+
+                    </div>
+                    <!-- /main-col -->
+
+                    <!-- side-col (CTA) -->
+                    <aside class="col-md-4 indent-left">
+
+                        <div class="side-block mb  bg-mint-green-gradient  color-white">
+                            {{ entry.ctaHeading }}
+                            <div class="textbox"> {{entry.ctaText }}&nbsp;</div>
+                            <A   class="more-link link-block"  HREF= "{{ entry.ctaLink }}">{{entry.ctaLinkText }}</A>
+                        </div>
+
+                    </aside>
+                    <!-- /side-col (CTA) -->
+                </div>
+            </div>
+
+        </section>
+        <!-- /content -->
+
 
 {% endblock %}

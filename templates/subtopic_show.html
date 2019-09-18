@@ -1,0 +1,76 @@
+{# SUBTOPIC SHOW PAGE #}
+
+{% extends "base_site" %}
+
+{% block internalHeader %}
+<!-- internal-header -->
+<section class="internal-header-section bg-dark-blue color-white">
+    <div class="front-graphic-top"></div>
+    <div class="front-graphic-bottom"></div>
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-11 col-md-offset-3 col-sm-11 col-sm-offset-1">
+                <h2>{{entry.title}}</h2>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- /internal-header -->
+{% endblock %}
+
+{% block main %}
+
+<section class="content-section">
+    <div class="container">
+        <div class="slogan">
+          {{ entry.slogan }}<br>
+        </div>
+        {{ entry.shortDescription}}<br><br><br>
+  <!-- find all assets for this subtopic -->
+        {% set subtopic_assets = entry.resources %}
+        {% paginate subtopic_assets.limit(10) as pageInfo, pageEntries %}
+        <!-- list all resources -->
+        <div class="col-md-12 col-lg-8">
+          <h4>Resources:</h4>
+            <div class="news-list">
+              <!-- loop thru resources -->
+              {% for asset in pageEntries %}
+              <a href="{{ alias('@web/resources/' ~ asset.id) }}" target="_blank">
+              <div class="item">
+                <!-- show title, type of file, and short description if there is one -->
+                    <div class="item-date small color-black">
+                      {{asset.kind}}
+                    </div>
+                    <div class="item-content color-black">
+                      <h5>{{asset.title}}</h5>
+  										<h6> {{asset.shortDescription}}</h6>
+
+                      {% set relatedEntry = craft.entries.section('all_topics').relatedTo(asset).one() %}
+                      {% if relatedEntry|length %}
+                      <h6>{{ relatedEntry }}</h6>
+                      {% endif %}
+                    </div>
+                </div>
+                </a>
+                  {% endfor %}
+
+                    {# pagination #}
+
+                    {% if pageInfo.prevUrl %}<a href="{{ pageInfo.prevUrl }}">Prev |</a>{% endif %}
+
+                    {% for page, url in pageInfo.getPrevUrls()%}
+                      <a href="{{ url }}">{{ page }}</a>
+                    {% endfor %}
+
+                    <span class="current">{{ pageInfo.currentPage }}</span>
+
+                    {% for page, url in pageInfo.getNextUrls() %}
+                      <a href="{{ url }}">{{ page }}</a>
+                    {% endfor %}
+
+                    {% if pageInfo.nextUrl %}<a href="{{ pageInfo.nextUrl }}">| Next</a>{% endif %}
+
+            </div><!-- /list -->
+  </section>
+{% endblock %}
